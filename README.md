@@ -1,1 +1,0 @@
-# vigoz-client
