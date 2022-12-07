@@ -1,8 +1,11 @@
 import React from 'react'
+import LoginC from './../components/Login.c'
 
 function Login() {
   return (
-    <div>Login</div>
+    <div>
+      <LoginC/>
+    </div>
   )
 }
 

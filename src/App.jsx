@@ -10,7 +10,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home Comp={Index} />} />
         <Route path="*" element={<Home Comp={NoPage} />} />
-        <Route path="/Login" element={<Home Comp={Login} />} />
+        <Route path="/Login" element={<Login/>} />
       </Routes>
     </Router>
   );
