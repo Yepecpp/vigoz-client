@@ -1,0 +1,9 @@
+import React from 'react'
+
+const NoPage = () =>{
+  return (
+    <div className=''>404 not found</div>
+  )
+}
+
+export default NoPage

@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+//scss
 import App from './App'
-import Cmenu from './components/Cmenu'
 
 const Render = () => {
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Cmenu/>
+    <App/>
   </React.StrictMode>
 )
 }
