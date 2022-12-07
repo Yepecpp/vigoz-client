@@ -1,23 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
-const Cmenu = () => {
+import { FaHouseUser, FaOutdent, FaBoxes, FaRegListAlt, FaTruck, FaUserAlt, FaRegBell, FaSlidersH, FaWindowClose } from "react-icons/fa";
+
+const Navbar = () => {
   return (
-    <nav className="nav_contenedor">
-      <ul className="nav_item">
-        <li className="ul_items"><Link to="/">Index</Link></li>
-        <li className="ul_items">Nomina</li>
-        <li className="ul_items">Almacen</li>
-        <li className="ul_items">Gastos</li>
-        <li className="ul_items">Distribución</li>
-        <br />
-        <li className="ul_items"><Link to="/Login">Log-in</Link></li>
-        <li className="ul_items">Perfil</li>
-        <li className="ul_items">Notificaciones</li>
-        <li className="ul_items">Configuraciones</li>
-        <li className="ul_items">Salir</li>
+    <>
+    <div className="contenedor_logo">
+    <h1 className="logo">Hielo Vigoz</h1>
+    </div>
+    <nav className="navbar">
+      <ul className="nav_ul">
+        <li className="nav_ul_item"><FaHouseUser/><Link className="li_a" to="/">Dashboard</Link></li>
+        <li className="nav_ul_item"><FaOutdent/><Link className="li_a" to="/Nomina">Nomina</Link></li>
+        <li className="nav_ul_item"><FaBoxes/><Link className="li_a" to="/Almacen">Almacen</Link></li>
+        <li className="nav_ul_item"><FaRegListAlt/><Link className="li_a" to="/Gastos">Gastos</Link></li>
+        <li className="nav_ul_item"><FaTruck/><Link className="li_a" to="/Distribucion">Distribución</Link></li>
+        <hr />
+        <li className="nav_ul_item"><FaUserAlt/><Link className="li_a" to="/Perfil">Perfil</Link></li>
+        <li className="nav_ul_item"><FaRegBell/><Link className="li_a" to="/Notificaciones">Notificaciones</Link></li>
+        <li className="nav_ul_item"><FaSlidersH/><Link className="li_a" to="/Configuraciones">Configuraciones</Link></li>
+        <li className="nav_ul_item"><FaWindowClose/><Link className="li_a" to="/Salir">Salir</Link></li>
       </ul>
     </nav>
+    </>
   );
 };
 
-export default Cmenu;
+export default Navbar;
