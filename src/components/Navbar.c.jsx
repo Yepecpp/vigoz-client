@@ -5,9 +5,9 @@ import { FaHouseUser, FaOutdent, FaBoxes, FaRegListAlt, FaTruck, FaUserAlt, FaRe
 const Navbar = () => {
   return (
     <>
-    <div className="contenedor_logo">
+    <header className="contenedor_logo">
     <h1 className="logo"><Link className="logo_a" to="/"> Hielo Vigoz</Link></h1>
-    </div>
+    </header>
     <nav className="navbar">
       <ul className="nav_ul">
         <li className="nav_ul_item"><FaHouseUser/><Link className="ul_li_a" to="/">Dashboard</Link></li>
@@ -22,7 +22,7 @@ const Navbar = () => {
         <li className="nav_ul_item"><FaWindowClose/><Link className="ul_li_a" to="/Salir">Salir</Link></li>
       </ul>
     </nav>
-    </>
+</>
   );
 };
 

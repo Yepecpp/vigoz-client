@@ -3,7 +3,9 @@ import {useNavigate} from 'react-router-dom'
 
 function Index() {
   return (
-      <div>Index</div>
+    <>
+      <div></div>
+    </>
   )
 }
 
