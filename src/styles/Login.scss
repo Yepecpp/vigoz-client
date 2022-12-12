@@ -9,12 +9,10 @@ html, body, .wrapper {height: 100%;}
 body{
     display: flex;
     place-items: center;
-    margin: 0;
-    background-image: url();
-    background-repeat: no-repeat;
+    background-image: url(../..//public/media/stacked-waves-haikei.png);
+    background-position: top;
     background-size: cover;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: #3a334e;
     animation: 
     rotate ls infinite alternate linear;
 }
@@ -25,41 +23,59 @@ button{
     cursor: pointer;
 }
 
-.control {
+.control{
     border: 0;
     border-radius: 8px;
     outline: none;
-    width: 100%;
+    width: 70%;
     height: 35px;
-    padding: 0 16px;
-    background: #edeaf7;
-    color: #5a4f79;
+    padding: 0 16px 20px 0;
+    background: #F7F9F9;
+    color: #000000;
     font-family: inherit;
     font-size: 16px;
     transition: 0.4s;
+    outline: #000000 solid 2px;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
 }
+
 .controle{
-    background-color: #1E90FF; 
-    color: white;
+    margin-top: 15px;
+    background-color: #2471A3; 
+    color: #000000;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
     cursor: pointer;
+    border: 10px;
+    border-radius: 15px;
+    padding: 0 16px;
+    width: 40%;
+    height: 40px;
+    font-family: inherit;
+    
 }
 .login{
-    width: 480px;
-    padding: 100px 30px 64px;
+    height: 670px;
+    width: 540px;
+    padding: 105px 30px 64px;
     border-radius: 1.25rem;
     background: #ffffff;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .login > h2 {
     font-size: 36px;
     font-weight: 600;
     margin: 0 0 6px;
+    
 }
 
 .login > h3 {
@@ -69,10 +85,9 @@ button{
     font-size: 1rem;
 }
 
-.form{
+.form-container{
     width: 100%;
     margin: 0;
-    display: grid;
     gap: 16px;
 }
 
@@ -96,17 +111,13 @@ button{
     transition: all 0.375s;
 }
 
-.password{ 
-    position: relative;
-    height: 35px;
-}
-.login .control:hover {
-    background-color: #A4DDED;
-    color: white;
+.login .control:focus {
+    background-color: #FDFEFE;
+    color: #000000;
+
   }
 .wrapper{
     padding: 15%;
-    border: 70px solid #7CB9E8;
     font-size: 1.6rem;
     margin: 0;
     padding: 0 1rem;
@@ -115,13 +126,12 @@ button{
     margin-bottom: 100px;
     margin-right: 150px;
     margin-left: 80px;
-    background: #7CB9E8;
 }
 
 .toogle{
     position: absolute;
-    top: 50%;
-    right: 16px;
+    top: 545px;
+    left: 500px;
     translate: 0 -50%;
     width: 30px;
     height: 30px;
@@ -134,3 +144,4 @@ button{
 .toogle.showing {
     background-image: url(../../public/media/p.jpg);
 }
+

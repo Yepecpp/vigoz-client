@@ -1,36 +1,19 @@
-import React from 'react'
+import React from "react";
 const Clogin = () => {
   return (
-    <div className='wrapper'>
-    <div className='login'>
+    <div className="wrapper">
+      <div className="login">
         <h2>Login</h2>
         <h3>Enter your credentials</h3>
-        <form action="form">
-        <input
-        className='control' 
-        type="text" 
-        placeholder='Username'
-        />
-        <div className='password'>
-            <input
-            className='control' 
-            id='password'
-            type="password"
-            placeholder='Password'
-            />
-            <button className='toogle'
-            type='button'
-            >
-            </button>
-        </div>
-        <button className='controle'>Login</button>
+        <form action="form" className="form-container">
+          <input className="control" type="text" placeholder="Username" />
+          <input className="control" id="password" type="password" placeholder="Password" />
+          <button className="toogle" type="button"></button>
+          <button className="controle">Login</button>
         </form>
-
+      </div>
     </div>
-    </div>
-  )
-}
+  );
+};
 
-
-export default Clogin
-
+export default Clogin;
