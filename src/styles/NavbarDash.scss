@@ -8,42 +8,31 @@ body{
 
 .contenedor_logo{
     width: 100%;
-    height: 6vh;
+    height: calc(100vh - 90vh);
     font-family: 'Open Sans', sans-serif;
     background-color: #E1E1E1;
 }
 
 .logo{
-    position: absolute;
-    line-height: 6vh;
-    font-size: 25px;
-    cursor: pointer;
     margin: 0;
+    padding-top: 20px;
+    padding-left: 100px;
+    cursor: pointer;
 }
 
 .logo_a{
     text-decoration: none;
-    margin-left: 100px;
-    color: #000000;
+    list-style-type: none;
+    color: #000;
 }
 
-.navbar{
-    width: 200px;
-    height: 94vh;
-    background-color: #E1E1E1;
-}
-
-.nav_ul{
-    margin-top: 0;
-    padding-top: 15px;
-}
 
 .nav_ul_item{
     list-style-type: none;
     padding-bottom: 20px;
     font-family: 'Open Sans', sans-serif;
     color: #5A5A5F;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .nav_ul_item .ul_li_a{
@@ -52,10 +41,17 @@ body{
     color: #5A5A5F;
 }
 
+.navbar{
+    display: flex;
+    width: 240px;
+    height: 90vh;
+    background-color: #E1E1E1;
+}
+
 .ul_li_a:link, .ul_li_a:visited, .ul_li_a:active {
     text-decoration:none;
 }
 
 .ul_li_a:hover{
-    color: rgb(0, 0, 0);
+    color: #000;
 }
