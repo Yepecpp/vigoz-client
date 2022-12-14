@@ -126,13 +126,13 @@ button{
     margin-bottom: 100px;
     margin-right: 150px;
     margin-left: 80px;
+    display: flex;
 }
-
 .toogle{
     position: absolute;
     top: 545px;
     left: 500px;
-    translate: 0 -50%;
+    translate: 0 -85%;
     width: 30px;
     height: 30px;
     background-image: url(../../public/media/ver.png);
@@ -144,4 +144,12 @@ button{
 .toogle.showing {
     background-image: url(../../public/media/p.jpg);
 }
+img{
+    width: 700px;
+}
 
+.img-container{
+    position: relative;
+    top: 10px;
+    left: 350px;
+}
