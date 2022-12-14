@@ -11,7 +11,6 @@ const Clogin = () => {
           <input className="control" id="password" type="password" placeholder="Password" />
           <button className="toogle" type="button"></button>
           <button className="controle">Login</button>
-          <Link to="/">Forgot your password?</Link>
         </form>
       </div>
       <div className="img-container">

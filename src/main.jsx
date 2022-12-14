@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+//scss
 import App from './App'
 //scss
 import './styles/Login.scss'

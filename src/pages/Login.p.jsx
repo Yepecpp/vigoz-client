@@ -1,12 +1,8 @@
-import React from 'react'
-import LoginC from './../components/Login.c'
+import React from "react";
+import LoginC from "./../components/Login.c";
 
 function Login() {
-  return (
-    <div>
-      <LoginC/>
-    </div>
-  )
+  return <LoginC />;
 }
 
-export default Login
+export default Login;
