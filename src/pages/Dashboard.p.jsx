@@ -1,19 +1,31 @@
-import React from 'react'
-import Footer from '../components/FooterDash.c'
-import Navbar from '../components/NavbarDash.c'
-import Proptypes from 'prop-types'
-const Dashboard = ({Comp}) => {
+import React from 'react';
+import Footer from '../components/FooterDash.c';
+import Navbar from '../components/NavbarDash.c';
+import Header from '../components/Header.dash.c';
+import Proptypes from 'prop-types';
+import { useAuthContext } from '../contexts/Auth';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+//import Cookies from 'universal-cookie'
+const Dashboard = ({ Comp }) => {
+  const [User, SetUser] = useAuthContext();
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!User.auth) {
+      navigate('/Login');
+    }
+  }, [User]);
   return (
     <>
-    <Navbar/>
-    <main>
-    <Comp/>
-    </main>
-    <Footer/>
+      <Header />
+      <div className="dashwrapper">
+        <Navbar />
+        <main>
+          <>{Comp ? <Comp /> : <h1>Home</h1>}</>
+        </main>
+      </div>
+      <Footer />
     </>
-  )
-}
-Dashboard.prototype = {
-  PageP: Proptypes.element.isRequired
-}
-export default Dashboard
+  );
+};
+export default Dashboard;
