@@ -4,35 +4,42 @@ import { useState, useEffect } from 'react';
 import { useAuthContext } from '../contexts/Auth';
 import Axios from '../libs/axios';
 import axios from '../libs/axios';
-import Cookies from 'universal-cookie';
 const Clogin = () => {
   const [User, SetUser] = useAuthContext();
   const navigate = useNavigate();
-  const cookies = new Cookies();
   useEffect(() => {
+    const AbortSignal = new AbortController();
     const doCheck = async () => {
-      if (!cookies.get('auth')) return;
-      console.log(cookies.get('auth'));
-      const response = await axios.get('/auth');
-      console.log(response);
-      if (response.status !== 200 || response.status >= 500) {
-        SetUser({ auth: false, token: null, User: {} });
-        cookies.remove('auth');
-        console.log('removed auth cookie');
-        return;
+      if (!localStorage.getItem('auth-token')) return;
+      try {
+        const response = await axios.get('/auth', {
+          signal: AbortSignal.signal,
+        });
+        if (response.status !== 200 || response.status >= 500) {
+          SetUser({ auth: false, token: null, User: {} });
+          localStorage.removeItem('auth-token');
+          return;
+        }
+        localStorage.setItem('auth-token', response.data.token);
+        SetUser({
+          auth: true,
+          token: response.data.token,
+          UserData: response.data.user,
+        });
+        navigate('/Dashboard');
+      } catch (error) {
+        if (error.name === 'AbortError') return;
+        if (error.response.status === 401) {
+          SetUser({ auth: false, token: null, User: {} });
+          localStorage.removeItem('auth-token');
+          return;
+        }
       }
-      cookies.set('auth', response.data.token, {
-        maxAge: 1000 * 60 * 60,
-        sameSite: true,
-      });
-      SetUser({
-        auth: true,
-        token: response.data.token,
-        UserData: response.data.user,
-      });
-      navigate('/Dashboard');
     };
     doCheck();
+    return () => {
+      AbortSignal.abort();
+    };
   }, []);
 
   const [user, setUser] = useState({
@@ -52,9 +59,7 @@ const Clogin = () => {
       token: response.data.token,
       UserData: response.data.user,
     });
-    cookies.set('auth', response.data.token, {
-      maxAge: 1000 * 60 * 60,
-    });
+    localStorage.setItem('auth-token', response.data.token);
     navigate('/Dashboard');
   };
   return (
