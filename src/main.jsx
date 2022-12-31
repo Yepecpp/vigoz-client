@@ -1,16 +1,18 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 //scss
-import navbar from './styles/NavbarDash.scss'
-import footer from './styles/FooterDash.scss'
-import Notfound from './styles/NotFound.scss'
-import App from './App'
+import App from './App';
+//scss
+import './styles/Login.scss';
+import './styles/FooterDash.scss';
+import './styles/Letters.scss';
+import './styles/NavbarDash.scss';
 
 const Render = () => {
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App/>
-  </React.StrictMode>
-)
-}
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+};
 Render();

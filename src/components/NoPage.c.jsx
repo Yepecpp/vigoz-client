@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from "react-router-dom";
 
 function NoPage() {
   return (
@@ -9,4 +8,4 @@ function NoPage() {
   );
 }
 
-export default NoPage
+export default NoPage;

@@ -1,10 +1,7 @@
-import React from 'react'
-import NoPage from './../components/NoPage.c';
+import React from 'react';
+import NoPagec from '../components/NoPage.c';
+const NoPage = () => {
+  return <NoPagec />;
+};
 
-const NoPageP = () =>{
-  return (
-    <NoPage/>
-  )
-}
-
-export default NoPageP
+export default NoPage;
