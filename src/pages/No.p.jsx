@@ -1,9 +1,10 @@
 import React from 'react'
+import NoPage from './../components/NoPage.c';
 
-const NoPage = () =>{
+const NoPageP = () =>{
   return (
-    <div>404 not found</div>
+    <NoPage/>
   )
 }
 
-export default NoPage
+export default NoPageP

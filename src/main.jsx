@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 //scss
 import navbar from './styles/NavbarDash.scss'
 import footer from './styles/FooterDash.scss'
+import Notfound from './styles/NotFound.scss'
 import App from './App'
 
 const Render = () => {
