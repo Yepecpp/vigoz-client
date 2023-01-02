@@ -5,8 +5,10 @@
 html,
 body,
 #root {
-  height: 100vh;
-  width: 100vw;
+  background-image: url(media/stacked-waves-haikei.png);
+  background-position: center;
+  background-size: cover;
+  background-attachment:fixed;
 }
 
 @keyframes rotate {
@@ -18,11 +20,9 @@ body,
 .wrapper {
   display: flex;
   place-items: center;
-  background-image: url(media/stacked-waves-haikei.png);
   background-position: top;
   background-size: cover;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande','Lucida Sans', Arial, sans-serif;
   animation: rotate ls infinite alternate linear;
 }
 
@@ -134,28 +134,13 @@ body,
   margin-left: 80px;
   display: flex;
 }
-.toogle {
-  position: absolute;
-  top: 545px;
-  left: 500px;
-  translate: 0 -110%;
-  width: 30px;
-  height: 30px;
-  background-image: url(media/ver.png);
-  background-size: 85%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
 
-.toogle.showing {
-  background-image: url(media/p.jpg);
-}
 img {
-  width: 700px;
+  width: 695px;
 }
 
 .img-container {
   position: relative;
   top: 10px;
-  left: 350px;
+  left: 300px;
 }

@@ -1,5 +1,5 @@
-@import './Colors.scss';
-@import './Letters.scss';
+@import './imports/Colors.scss';
+@import './imports/Letters.scss';
 
 .footerdash {
   background-color: #111;
@@ -78,9 +78,6 @@
 }
 
 // navbar
-@import './Colors.scss';
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-
 body {
   padding: 0;
   margin: 0;

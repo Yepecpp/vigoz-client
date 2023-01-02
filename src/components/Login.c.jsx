@@ -84,7 +84,6 @@ const Clogin = () => {
             onChange={(e) => setUser({ ...user, password: e.target.value })}
           />
           <p className="error">{error}</p>
-          <button className="toogle" type="button"></button>
           <button className="controle">Login</button>
         </form>
       </div>
