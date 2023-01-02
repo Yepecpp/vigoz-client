@@ -1,6 +1,7 @@
 @import './imports/Colors.scss';
 @import './imports/Letters.scss';
 
+//Footer
 .footerdash {
   background-color: #111;
   height: auto;
@@ -77,7 +78,7 @@
   font-weight: 200;
 }
 
-// navbar
+//Sidebar
 body {
   padding: 0;
   margin: 0;
@@ -91,8 +92,10 @@ body {
 }
 
 .logo {
+  display: inline-block;
   margin: 0;
-  padding-top: 20px;
+  padding: 10px 0 0 100px ;
+  padding-top: 10px;
   padding-left: 100px;
   cursor: pointer;
 }
@@ -147,3 +150,4 @@ body {
     margin: 0;
   }
 }
+

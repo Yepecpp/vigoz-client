@@ -1,11 +1,46 @@
-.contenedor_404{
-    width: 100vw;
-    height: 100vh;
-    background-color: blue;
-  }
+.semibody{
+  width: 100vw;
+  height: 100vh;
+  font-family: "montserrat", sans-serif;
+}
 
-.notfound{
-    margin: 0;
-    padding: 0;
-    
+.contenedor_404{
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: #000;
+}
+
+.contenedor_404 .p404{
+  font-size: 160px;
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 20px;
+}
+
+.btn_rac{
+  padding: 9px 25px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 18px;
+  transition: all .3s;
+  cursor: pointer;
+}
+
+.rac{
+  color: #fff;
+}
+
+.rac:link,
+.rac:visited,
+.rac:active {
+  text-decoration: none;
+}
+
+.btn_rac:hover{
+  background-color: rgb(82, 82, 82);
 }

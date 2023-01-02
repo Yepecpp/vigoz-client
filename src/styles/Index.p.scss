@@ -1,7 +1,11 @@
 @import './imports/Colors.scss';
 @import './imports/Letters.scss';
+* {
+    max-width: 100%;
+  }
 
-*{
+//Navbar
+body{
     margin: 0;
     padding: 0;
 }
@@ -10,22 +14,23 @@
     font-family: 'Open Sans', sans-serif;
     font-weight: 500;
     font-size: 1rem;
-    color: $color-base;
+    color: #000;
     text-decoration: none;
     padding: 0;
     margin: 0;
 }
 
 .index_header{
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
-    background-color: #000;
+    background-color: #fff;
 }
 
 .index_logo .h1_a{
-    color: #fff;
+    color: #000;
 }
 
 .index_li_a{
@@ -47,8 +52,8 @@
 
 .a_button{
     padding: 9px 25px;
-    background-color: $color-base;
-    color: #000;
+    background-color: #000;
+    color: #fff;
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -56,11 +61,31 @@
 }
 
 button:hover{
-    background-color: #DFDFDF;
+    background-color: #797979;
 }
 
 .index_logo .h1_a:link,
 .index_logo .h1_a:visited,
 .index_logo .h1_a:active {
   text-decoration: none;
+}
+
+//Sobre Nosotros
+
+.contenedor_sbn{
+    display: flex;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.082);
+}
+
+.imagen_sbn{
+    width: 50%;
+    height: 530px;
+}
+
+.texto_sbn{
+    padding-left: 25px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    color: #000;
 }
