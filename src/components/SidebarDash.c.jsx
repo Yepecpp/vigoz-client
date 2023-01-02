@@ -7,9 +7,6 @@ import {
   FaRegListAlt,
   FaTruck,
   FaUserAlt,
-  FaRegBell,
-  FaSlidersH,
-  FaWindowClose,
 } from 'react-icons/fa';
 
 const Navbar = () => {
@@ -47,29 +44,10 @@ const Navbar = () => {
           </Link>
         </li>
         <hr />
-        <li className="sidebar_ul_item">
-          <FaUserAlt />
-          <Link className="sidebar_ul_li_a" to="/Dashboard/Perfil">
-            Perfil
-          </Link>
-        </li>
-        <li className="sidebar_ul_item">
-          <FaRegBell />
-          <Link className="sidebar_ul_li_a" to="/Dashboard/Notificaciones">
-            Notificaciones
-          </Link>
-        </li>
-        <li className="sidebar_ul_item">
-          <FaSlidersH />
-          <Link className="sidebar_ul_li_a" to="/Dashboard/Configuraciones">
-            Configuraciones
-          </Link>
-        </li>
-        <li className="sidebar_ul_item">
-          <FaWindowClose />
-          <Link className="sidebar_ul_li_a" to="/Dashboard/Salir">
+        <li className="sidebar_ul_item buttonli">
+          <button className="sidebar_ul_li_button">
             Salir
-          </Link>
+          </button>
         </li>
       </ul>
     </nav>
