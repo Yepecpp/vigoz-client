@@ -21,6 +21,7 @@ const App = () => {
             element={<Dashboard Comp={Perfil} />}
           />
           <Route path="*" element={<Home Comp={NoPage} />} />
+          
         </Routes>
       </Router>
     </AuthProvider>
