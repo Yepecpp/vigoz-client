@@ -8,6 +8,7 @@ import Login from './pages/Login.p';
 import Index from './pages/indexpages/Index.p';
 import Perfil from './pages/dashpages/Perfil.dash';
 import About from './pages/indexpages/About.p';
+import Clientedash from './pages/dashpages/Cliente.dash';
 import { AuthProvider } from './contexts/Auth';
 
 
@@ -20,10 +21,9 @@ const App = () => {
           <Route path="/About" element={<Home Comp={About}/>}/>
           <Route path="/Login" element={<Home Comp={Login} />} />
           <Route path="/Dashboard" element={<Dashboard Comp={Indexdash} />} />
-          <Route
-            path="/Dashboard/Perfil"
-            element={<Dashboard Comp={Perfil} />}
-          />
+          <Route path="/Dashboard/Perfil" element={<Dashboard Comp={Perfil} />} />
+          <Route path="/Dashboard/Cliente" element={<Dashboard Comp={Clientedash} />} />
+          <Route path="/Perfil" element ={<Perfil/>}/>
            <Route path="*" element={<NoPage/>} />
         </Routes>
       </Router>
