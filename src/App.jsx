@@ -5,23 +5,31 @@ import Indexdash from './pages/dashpages/Index.dash';
 import Home from './pages/Home.p';
 import NoPage from './pages/No.p';
 import Login from './pages/Login.p';
-import Index from './pages/Index.p';
+import Index from './pages/indexpages/Index.p';
 import Perfil from './pages/dashpages/Perfil.dash';
+import About from './pages/indexpages/About.p';
 import { AuthProvider } from './contexts/Auth';
+
+
 const App = () => {
   return (
     <AuthProvider>
       <Router>
         <Routes>
           <Route path="/" element={<Home Comp={Index} />} />
+          <Route path="/About" element={<Home Comp={About}/>}/>
           <Route path="/Login" element={<Home Comp={Login} />} />
           <Route path="/Dashboard" element={<Dashboard Comp={Indexdash} />} />
           <Route
             path="/Dashboard/Perfil"
             element={<Dashboard Comp={Perfil} />}
           />
+<<<<<<< HEAD
           <Route path="*" element={<Home Comp={NoPage} />} />
           
+=======
+           <Route path="*" element={<NoPage/>} />
+>>>>>>> 174ce3238bf6bfb1d1ffe89a3fa09e712e89608b
         </Routes>
       </Router>
     </AuthProvider>

@@ -5,6 +5,9 @@ import App from './App';
 //scss
 import './styles/Login.p.scss';
 import './styles/Dashboard.p.scss';
+import './styles/NoPage.p.scss'
+import './styles/Index.p.scss'
+
 const Render = () => {
   ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
