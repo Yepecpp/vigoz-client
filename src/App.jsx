@@ -24,12 +24,8 @@ const App = () => {
             path="/Dashboard/Perfil"
             element={<Dashboard Comp={Perfil} />}
           />
-<<<<<<< HEAD
           <Route path="*" element={<Home Comp={NoPage} />} />
           
-=======
-           <Route path="*" element={<NoPage/>} />
->>>>>>> 174ce3238bf6bfb1d1ffe89a3fa09e712e89608b
         </Routes>
       </Router>
     </AuthProvider>
