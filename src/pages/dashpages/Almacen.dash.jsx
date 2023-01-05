@@ -1,16 +1,9 @@
-import React from 'react'
+import React from "react";
+import Almacenc from "../../components/Almacen.c";
 
-const Almacen = () => {
-    return (
-        <div classname="complete">
-            <div classname="cuadro">
-                <h2>S/0.00</h2>
-                <h3>Compras</h3>
-            </div>
-
-        </div>
-      );
-
-};
-
-export default Almacen;
+const Almacenp = () =>{
+    return(
+        <Almacenc/>
+    )
+}
+export default Almacenp

@@ -24,7 +24,7 @@ const Dashboard = ({ Comp }) => {
           <>{Comp ? <Comp /> : <h1>Home</h1>}</>
         </main>
       </div>
-      <Footer />
+      <Footer/>
     </>
   );
 };

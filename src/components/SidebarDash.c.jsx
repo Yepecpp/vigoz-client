@@ -45,6 +45,18 @@ const Navbar = () => {
           </Link>
         </li>
         <hr />
+        <li className="sidebar_ul_item">
+          <FaTruck />
+          <Link className="sidebar_ul_li_a" to="/Dashboard/Perfil">
+            Perfil
+          </Link>
+        </li>
+        <li className="sidebar_ul_item">
+          <FaTruck />
+          <Link className="sidebar_ul_li_a" to="/Dashboard/Cliente">
+            Clientes
+          </Link>
+        </li>
         <li className="sidebar_ul_item buttonli">
           <button className="sidebar_ul_li_button">
             Salir

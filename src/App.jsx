@@ -8,7 +8,10 @@ import Login from './pages/Login.p';
 import Index from './pages/indexpages/Index.p';
 import Perfil from './pages/dashpages/Perfil.dash';
 import About from './pages/indexpages/About.p';
+import Clientedash from './pages/dashpages/Cliente.dash';
 import { AuthProvider } from './contexts/Auth';
+import Almacenc from './components/Almacen.c';
+import Almacenp from './pages/dashpages/Almacen.dash';
 
 
 const App = () => {
@@ -23,6 +26,10 @@ const App = () => {
           <Route
             path="/Dashboard/Perfil"
             element={<Dashboard Comp={Perfil} />}
+          />
+          <Route
+          path="/Dashboard/Almacen"
+          element={<Dashboard Comp={Almacenp} />}
           />
           <Route path="*" element={<Home Comp={NoPage} />} />
           

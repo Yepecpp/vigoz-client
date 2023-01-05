@@ -8,7 +8,7 @@ import {
   FaGithub,
 } from 'react-icons/fa';
 
-function Footer() {
+function Footeri() {
   return (
     <>
       <footer className="footerdash">
@@ -57,4 +57,4 @@ function Footer() {
     </>
   );
 }
-export default Footer;
+export default Footeri;

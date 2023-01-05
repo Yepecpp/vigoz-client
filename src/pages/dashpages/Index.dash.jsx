@@ -1,7 +1,9 @@
-import React from 'react';
+import React from 'react'
 
-function Indexdash() {
-  return <div>Indexdash</div>;
+const Indexdash = () => {
+  return (
+    <div>Indexdash</div>
+  )
 }
 
-export default Indexdash;
+export default Indexdash

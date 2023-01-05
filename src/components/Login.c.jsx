@@ -88,7 +88,7 @@ const Clogin = () => {
         </form>
       </div>
       <div className="img-container">
-        <img src="media/IMG_removebg.jpg" />
+        <img src="" />
       </div>
     </div>
   );
