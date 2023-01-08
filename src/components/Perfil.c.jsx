@@ -45,6 +45,8 @@ const Perfilc = () => {
         </form>
       </div>
     </div>
+    
   );
 }
+
 export default Perfilc;
