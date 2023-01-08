@@ -23,8 +23,7 @@ const App = () => {
           <Route path="/Dashboard" element={<Dashboard Comp={Indexdash} />} />
           <Route path="/Dashboard/Perfil" element={<Dashboard Comp={Perfil} />} />
           <Route path="/Dashboard/Cliente" element={<Dashboard Comp={Clientedash} />} />
-          <Route path="/Perfil" element ={<Perfil/>}/>
-           <Route path="*" element={<NoPage/>} />
+          <Route path="*" element={<NoPage/>} />
         </Routes>
       </Router>
     </AuthProvider>
