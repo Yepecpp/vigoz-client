@@ -10,6 +10,7 @@ import Perfil from './pages/dashpages/Perfil.dash';
 import About from './pages/indexpages/About.p';
 import Clientedash from './pages/dashpages/Cliente.dash';
 import { AuthProvider } from './contexts/Auth';
+import Almacenp from './pages/dashpages/Almacen.dash';
 
 
 const App = () => {
@@ -21,9 +22,11 @@ const App = () => {
           <Route path="/About" element={<Home Comp={About}/>}/>
           <Route path="/Login" element={<Home Comp={Login} />} />
           <Route path="/Dashboard" element={<Dashboard Comp={Indexdash} />} />
-          <Route path="/Dashboard/Perfil" element={<Dashboard Comp={Perfil} />} />
-          <Route path="/Dashboard/Cliente" element={<Dashboard Comp={Clientedash} />} />
-          <Route path="*" element={<NoPage/>} />
+          <Route path="/Dashboard/Perfil" element={<Dashboard Comp={Perfil} />}/>
+          <Route path="/Dashboard/Cliente" element={<Dashboard Comp={Clientedash} />}/>
+          <Route path="/Dashboard/Almacen" element={<Dashboard Comp={Almacenp} />}/>
+          <Route path="*" element={<Home Comp={NoPage} />} />
+          
         </Routes>
       </Router>
     </AuthProvider>

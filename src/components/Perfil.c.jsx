@@ -1,16 +1,27 @@
 import React from 'react'
+import { Button} from '@mui/material';
+
 
 
 const Perfilc = () => {
   return (
     <div className="user-profile">
-      <div className="user-photo">
-        <img src="/public/media/fotousuario.png" alt="" />
+      <div className="contenedor_user_info">
+        <div className="user-photo">
+          <img src="/media/fotousuario.png" alt="" />
+        </div>
+        <Button variant="contained" component="label">
+            Upload
+            <input hidden accept="image/*" multiple type="file" />
+          </Button>
+        <div className="user-info">
+          <label htmlFor="" className="asd">Nombre completo</label>
+          <div className="full-name">Jonathan Valdez</div>
+          <label htmlFor="">Correo Electronico</label>
+          <div className="email">Jonathanvaldezmejia@gmail.com</div>
+          <label htmlFor="">Usuario</label>
+          <div className="username">Jona1912</div>
       </div>
-      <div className="user-info">
-        <div className="full-name"></div>
-        <div className="email"></div>
-        <div className="username"></div>
       </div>
       <div className="form-container">
         <form>
@@ -26,9 +37,9 @@ const Perfilc = () => {
             </div>
             <div className="form-row">
               <label htmlFor="phone-number">Phone Number</label>
-              <input type="tel" id="phone-number" name="phone-number" />
+              <input type="number" id="phone-number" name="phone-number" />
             </div>
-            <button type="submit">Save Changes</button>
+            <Button variant="outlined">Save Changes</Button>
           </div>
           <div className="account-data">
             <h3>Account Data</h3>
@@ -40,11 +51,13 @@ const Perfilc = () => {
               <label htmlFor="password">Password</label>
               <input type="password" id="password" name="password" />
             </div>
-            <button type="submit">Save Changes</button>
+            <Button variant="outlined">Save Changes</Button>
           </div>
         </form>
       </div>
     </div>
+    
   );
 }
+
 export default Perfilc;

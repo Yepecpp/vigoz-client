@@ -50,7 +50,7 @@ function Footer() {
         </div>
         <div className="footer_bajo">
           <p>
-            copyrigth &copy; 2022 Hielo Vigoz. designed by <span>Jona</span>
+            copyrigth &copy; 2022 Hielo Vigoz. designed by <span>Gregory</span>
           </p>
         </div>
       </footer>
