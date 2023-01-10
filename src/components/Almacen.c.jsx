@@ -48,7 +48,31 @@ const Almacenc = () => {
                 <img src="/media/producto.png" alt="" />
             </div>
         </div>
-        </div>        
+        <h1 class="title">Grafico de Ventas</h1>
+        <section class="container_grafico">
+            <div class="grafico">
+                <div class="container_leyenda">
+                    <span class="leyenda_all">
+                        <span class="color_1"></span>
+                        <p className="social">40% Hielo</p>
+                    </span>
+                    <span class="leyenda_all">
+                        <span class="color_2"></span>
+                        <p className="social">30% Caja de hielo</p>
+                    </span>
+                    <span class="leyenda_all">
+                        <span class="color_3"></span>
+                        <p className="social">18% Paquete de hielo</p>
+                    </span>
+                    <span class="leyenda_all">
+                        <span class="color_4"></span>
+                        <p className="social">12% Agua</p>
+                    </span>
+                    <p class="total">Total: 100%</p>
+                </div>
+            </div>
+        </section>
+        </div>      
          );
      }
 export default Almacenc;
