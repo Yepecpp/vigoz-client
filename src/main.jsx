@@ -10,6 +10,8 @@ import './styles/Index.p.scss'
 import './styles/Perfil.p.scss'
 import './styles/Cliente.scss'
 import './styles/Almacen.p.scss'
+import './styles/Gastos.p.scss'
+import './styles/Nomina.p.scss'
 //scss
 
 const Render = () => {

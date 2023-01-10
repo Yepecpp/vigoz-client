@@ -1,7 +1,8 @@
 import React from 'react'
-const Almacenc = () => {
 
+const Almacenc = () => {
     return (
+        
         <div class="completed">
         <div class="box-shadow">
             <div class="lette">
@@ -11,7 +12,7 @@ const Almacenc = () => {
                 <h3>$233,000</h3>
             </div>
             <div class="dinero">
-                <img src="/public/media/dollar.png" alt="" />
+                <img src="/media/dollar.png" alt="" />
             </div>
         </div>
         <div class="box-shado">
@@ -22,7 +23,7 @@ const Almacenc = () => {
                 <h3>12</h3>
             </div>
             <div class="caja">
-                <img src="/public/media/caja.png" alt="" />
+                <img src="/media/caja.png" alt="" />
             </div>
         </div>
         <div class="box">
@@ -33,7 +34,7 @@ const Almacenc = () => {
                 <h3>19</h3>
             </div>
             <div class="user">
-                <img src="/public/media/camion.png" alt="" />
+                <img src="/media/camion.png" alt="" />
             </div>
         </div>
         <div class="boxx">
@@ -44,11 +45,10 @@ const Almacenc = () => {
                 <h3>1245</h3>
             </div>
             <div class="produ">
-                <img src="/public/media/producto.png" alt="" />
+                <img src="/media/producto.png" alt="" />
             </div>
         </div>
-        </div>
-        
+        </div>        
          );
      }
 export default Almacenc;

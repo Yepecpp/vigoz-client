@@ -19,8 +19,6 @@ body,
 .wrapper {
   display: flex;
   place-items: center;
-  background-position: top;
-  background-size: cover;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande','Lucida Sans', Arial, sans-serif;
   animation: rotate ls infinite alternate linear;
 }
@@ -66,7 +64,7 @@ body,
   font-family: inherit;
 }
 .login {
-  height: 670px;
+  height: 575px;
   width: 540px;
   padding: 105px 30px 64px;
   border-radius: 1.25rem;
@@ -130,16 +128,22 @@ body,
   margin-top: 100px;
   margin-bottom: 100px;
   margin-right: 150px;
-  margin-left: 80px;
+  margin-left: 0px;
   display: flex;
+  
 }
 
 img {
-  width: 695px;
+  width: 680px;
 }
 
 .img-container {
   position: relative;
-  top: 10px;
-  left: 300px;
+  top: -10px;
+  left: 145px;
+}
+.fondo{
+  background-image: url(/media/fondologin.png);
+  background-size: cover;
+  border: 1px solid #03045e;
 }

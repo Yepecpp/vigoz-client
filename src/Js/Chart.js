@@ -1,5 +1,5 @@
 import { Line } from 'react-chartjs-2';
-
+// no se usar chart yepee como hago eso pa que aparezca en almacen.jsx mmg pls
 const data = {
   labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio'],
   datasets: [

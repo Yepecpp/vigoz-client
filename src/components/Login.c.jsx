@@ -63,6 +63,7 @@ const Clogin = () => {
     navigate('/Dashboard');
   };
   return (
+    <div className='fondo'>
     <div className="wrapper">
       <div className="login">
         <h2>Login</h2>
@@ -88,8 +89,9 @@ const Clogin = () => {
         </form>
       </div>
       <div className="img-container">
-        <img src="" />
+        <img src="/media/logopng.jpg" />
       </div>
+    </div>
     </div>
   );
 };
