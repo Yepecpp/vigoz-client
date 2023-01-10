@@ -2,7 +2,6 @@ import React from 'react'
 
 const Almacenc = () => {
     return (
-        
         <div class="completed">
         <div class="box-shadow">
             <div class="lette">
@@ -72,6 +71,15 @@ const Almacenc = () => {
                 </div>
             </div>
         </section>
+        <div class="container_more">
+            <h2 class="title_more">Productos en Almacen</h2>
+            <div className="button">
+                <img src="/media/mas.png" alt="" />
+                </div>
+                <div class="bx">
+                    <img src="/media/cajas.jpg" alt="" />
+                </div>
+        </div>
         </div>      
          );
      }
