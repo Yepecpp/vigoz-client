@@ -7,7 +7,13 @@ body,
   background-image: url();
   background-position: center;
   background-size: cover;
-  background-attachment:fixed;
+  background-attachment: fixed;
+}
+
+@-webkit-keyframes rotate {
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @keyframes rotate {
@@ -15,12 +21,12 @@ body,
     background-position: 0% 50%;
   }
 }
-
 .wrapper {
   display: flex;
   place-items: center;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande','Lucida Sans', Arial, sans-serif;
-  animation: rotate ls infinite alternate linear;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  -webkit-animation: rotate ls infinite alternate linear;
+          animation: rotate ls infinite alternate linear;
 }
 
 .button-login {
@@ -63,6 +69,7 @@ body,
   height: 40px;
   font-family: inherit;
 }
+
 .login {
   height: 575px;
   width: 540px;
@@ -96,6 +103,14 @@ body,
   gap: 16px;
 }
 
+.form input.control::-moz-placeholder {
+  color: #aaa7bc;
+}
+
+.form input.control:-ms-input-placeholder {
+  color: #aaa7bc;
+}
+
 .form input.control::placeholder {
   color: #aaa7bc;
 }
@@ -120,6 +135,7 @@ body,
   background-color: #fdfefe;
   color: #000000;
 }
+
 .wrapper {
   padding: 15%;
   font-size: 1.6rem;
@@ -131,7 +147,6 @@ body,
   margin-right: 150px;
   margin-left: 0px;
   display: flex;
-  
 }
 
 img {
@@ -141,13 +156,15 @@ img {
 .img-container {
   position: relative;
 }
-.fondo{
+
+.fondo {
   background-image: url(/media/fondologin.png);
   background-size: cover;
   border: 1px solid #03045e;
 }
-.resgriter{
+
+.resgriter {
   width: 40%;
   height: 40px;
   font-family: inherit;
-}
+}/*# sourceMappingURL=Login.p.css.map */

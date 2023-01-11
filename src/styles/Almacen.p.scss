@@ -6,7 +6,6 @@
     --background-color: rgb(15,17,27);
 }
 .box-shadow{
-    position: relative;
     box-sizing: 4px;
     border: none;
     border-radius: 4px;
@@ -29,7 +28,7 @@
 }
 .dinero{
     height: 10px;
-    width: 55px;
+    width: 55px ;
     position: absolute; 
     top: 20px; 
     right: 14px;
