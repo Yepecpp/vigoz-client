@@ -13,6 +13,7 @@ import { AuthProvider } from './contexts/Auth';
 import Almacenp from './pages/dashpages/Almacen.dash';
 import Gastot from './pages/dashpages/Gastos.dash';
 import Nominat from './pages/dashpages/Nomina.dash';
+import Registerp from './pages/Register.p';
 
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/" element={<Home Comp={Index} />} />
           <Route path="/About" element={<Home Comp={About}/>}/>
           <Route path="/Login" element={<Home Comp={Login} />} />
+          <Route path="/Register" element={<Home Comp={Registerp} />} />
           <Route path="/Dashboard" element={<Dashboard Comp={Indexdash} />} />
           <Route path="/Dashboard/Perfil" element={<Dashboard Comp={Perfil} />}/>
           <Route path="/Dashboard/Cliente" element={<Dashboard Comp={Clientedash} />}/>

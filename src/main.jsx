@@ -12,6 +12,7 @@ import './styles/Cliente.scss'
 import './styles/Almacen.p.scss'
 import './styles/Gastos.p.scss'
 import './styles/Nomina.p.scss'
+import './styles/Register.p.scss'
 //scss
 
 const Render = () => {
