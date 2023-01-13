@@ -1,7 +1,7 @@
 /* Body Component */
 function Slide() {
   return (
-    <>
+    <div className="contenedor_home">
       <div className="container_slide">
         <input type="radio" id="1" name="image-slide" hidden />
         <input type="radio" id="2" name="image-slide" hidden />
@@ -40,7 +40,7 @@ function Slide() {
           <p>Repairs</p>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -7,13 +7,15 @@ const Perfilc = () => {
   return (
     <div className="user-profile">
       <div className="contenedor_user_info">
+        <div className="photobutton">
         <div className="user-photo">
           <img src="/media/fotousuario.png" alt="" />
         </div>
-        <Button variant="contained" component="label">
+        <Button variant="contained" component="label" className="upload_photo">
             Upload
             <input hidden accept="image/*" multiple type="file" />
           </Button>
+          </div>
         <div className="user-info">
           <label htmlFor="" className="asd">Nombre completo</label>
           <div className="full-name">Jonathan Valdez</div>
