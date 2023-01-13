@@ -28,7 +28,7 @@ const Nominap = () => {
             <td>$100,000.</td>
             <td>$489.60</td>
             <td>$1094.00</td>
-            <tr>$98,416.4</tr>
+            <td>$98,416.4</td>
             <td>
               <button className="editar_info">Edit</button>
               <button className="delete_info">Delete</button>

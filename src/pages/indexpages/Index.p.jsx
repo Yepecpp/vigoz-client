@@ -3,9 +3,7 @@ import Slide from '../../components/Home.c';
 
 const Index = () => {
   return (
-    <main>
       <Slide />
-    </main>
   );
 };
 
