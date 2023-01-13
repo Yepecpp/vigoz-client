@@ -2,6 +2,7 @@
 @import './imports/Letters.scss';
 * {
   max-width: 100%;
+  font-family: 'Helvetica';
 }
 
 //Navbar
@@ -86,15 +87,12 @@ main {
 
 .container_slide {
   position: relative;
-  max-width: 2000px;
   width: 100%;
   border-radius: 6px;
   overflow: hidden;
 }
 
 .slide {
-  max-width: 1500px;
-  max-height: 550px;
   display: flex;
   transform: translate3d(0, 0, 0);
   transition: all 600ms;
@@ -286,11 +284,14 @@ main .container_TwoSquares {
   align-items: center;
   color: #dadada;
   position: absolute;
-  top: 190px;
+  top: 200px;
 }
 
 .contenedor_sbn_1 > h1 {
-  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5.5rem;
   font-weight: bolder;
 }
 
@@ -306,4 +307,5 @@ main .container_TwoSquares {
   align-items: center;
   justify-content: center;
   color: #273142;
+  padding-top: 10vh;
 }
