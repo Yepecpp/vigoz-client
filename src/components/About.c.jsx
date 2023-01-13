@@ -1,21 +1,34 @@
-import React from 'react'
-
+import React from 'react';
+import { BsShop } from 'react-icons/bs';
 
 const Aboutc = () => {
   return (
-    <div className="contenedor_sbn">
-      <img src="/media/placeholder.png" alt="" className="imagen_sbn"/>
-      <div className="texto_sbn">
-
-        <h3>Sobre nosotros</h3>
-
-        <p>Sobre Nosotros Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores assumenda blanditiis laudantium commodi. Laboriosam ratione tempore minima eveniet ea. Quidem quam molestias distinctio quis ratione quaerat vel sequi eius earum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat quia debitis rerum! Nostrum nesciunt amet commodi enim dolorum, quo necessitatibus quasi sapiente itaque. Impedit at sequi nam hic maxime maiores! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad, tempore iste, amet quo voluptates repellendus similique qui adipisci voluptate corrupti, fugit aut natus. Labore rerum tenetur odio, nam voluptatum perferendis.
-        Libero animi nobis fugiat tempora suscipit corporis vero dolore nam temporibus magnam, similique officia iste quisquam, tenetur quidem excepturi? Incidunt cupiditate dignissimos odio repellat sit provident soluta vel consectetur esse?
-        Id necessitatibus, saepe dolor sequi beatae dignissimos iste voluptates reprehenderit quidem minima veritatis repellat dolorem laborum, earum deleniti voluptas quasi excepturi! Saepe eaque asperiores amet quos consequatur architecto minima nulla! </p>
-
+    <div className="contenedor_sbn_all">
+      <div className="contenedor_sbn">
+        <div className="contenedor_sbn_1">
+          <h1>
+            <BsShop />
+          </h1>
+        </div>
+        <div className="contenedor_sbn_2">
+          <h1>Acerca de Nosotros</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi
+            dicta voluptatem rem. Delectus asperiores commodi fugit quisquam
+            eius blanditiis voluptas, odio veniam sequi, modi doloribus quia
+            rerum exercitationem quaerat incidunt beatae possimus, voluptatum
+            sit hic pariatur. Rem cupiditate omnis asperiores numquam ipsam
+            ullam impedit vero odit, dolore id obcaecati a aut eaque eum eius,
+            doloremque ea. Voluptas ducimus, nemo sint pariatur quaerat
+            blanditiis accusantium rerum nam neque voluptatum aut dicta vero
+            obcaecati soluta magni consequatur alias iusto eligendi. Amet cum
+            delectus omnis ipsam ex atque, animi doloremque nesciunt voluptas
+            vitae?
+          </p>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Aboutc
+export default Aboutc;
