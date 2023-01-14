@@ -5,7 +5,7 @@ const Registerc = () => {
     <div>
     <div className="container_complet">
         <div className="center">
-            <h2 className="text1">Join Me Now</h2>
+            <h2 className="text1">Sign Up</h2>
             <h3 className="text2">Enter email and password to continue</h3>
             <form className="form_contair_1">
                 <input className="text_3"
@@ -18,7 +18,7 @@ const Registerc = () => {
                 placeholder="Password"
                 />
                 <button className="btn">Create Account</button>
-                <hr /> <h2 className='rh'>continue with</h2><hr />
+                <hr className="hr1" /> <h2 className='rh'>continue with</h2><hr className="hr2" />
             </form>
         </div>
     </div>

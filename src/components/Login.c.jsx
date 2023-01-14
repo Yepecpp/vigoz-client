@@ -86,7 +86,9 @@ const Clogin = () => {
           />
           <p className="error">{error}</p>
           <button className="controle">Login</button>
-          <Link to="/Register"><button className='resgriter'>Create New</button></Link>
+          <h2 className="res">Not registered yet?</h2>
+          <Link to="/Register"><h2 class="resgister">Create an Account</h2></Link>
+          <h2 className="all">© 2023 Greg All rights reserved</h2>
         </form>
       </div>
       <div className="img-container">

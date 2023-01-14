@@ -48,20 +48,21 @@ body,
 }
 
 .controle {
-  margin-top: 15px;
-  background-color: #89cff0;
+  border: 0;
+  border-radius: 8px;
+  outline: none;
+  width: 70%;
+  height: 35px;
+  padding: 0 16px 20px 0;
+  background: #90caf9;
   color: #000000;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-  border: 10px;
-  border-radius: 15px;
-  padding: 0 16px;
-  width: 40%;
-  height: 40px;
   font-family: inherit;
+  font-size: 16px;
+  transition: 0.4s;
+  outline: #ffffff solid 2px;
+  text-align: center;
+  padding: 5px;
+  margin: 5px;
 }
 .login {
   height: 575px;
@@ -132,11 +133,9 @@ body,
   display: flex;
   
 }
-
 img {
   width: 680px;
 }
-
 .img-container {
   position: relative;
   top: -10px;
@@ -147,4 +146,28 @@ img {
   background-size: cover;
   border: 1px solid #03045e;
   width: auto;
+}
+.res{
+  font-family: monospace;
+  font-size: 11px;
+  position: absolute;
+  top: 645px;
+  left: 123px;
+  margin-top: 1px;
+}
+.resgister{
+  position: absolute;
+  left: 242px;
+  font-size: 11px;
+  text-decoration: none;
+  margin-top: 8px;
+}
+.all{
+  position: relative;
+  top: 70px;
+  left: -10px;
+  font-size: 14px;
+  margin-top: 60px;
+  color: #837f90;
+  opacity: 0.8;
 }
