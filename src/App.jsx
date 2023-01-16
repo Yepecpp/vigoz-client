@@ -12,7 +12,7 @@ import Clientedash from './pages/dashpages/Cliente.dash';
 import { AuthProvider } from './contexts/Auth';
 import Almacenp from './pages/dashpages/Almacen.dash';
 import Gastot from './pages/dashpages/Gastos.dash';
-import Nominat from './pages/dashpages/Nomina.dash';
+import Nomina from './pages/dashpages/Nomina.dash';
 import Registerp from './pages/Register.p';
 
 
@@ -30,7 +30,8 @@ const App = () => {
           <Route path="/Dashboard/Cliente" element={<Dashboard Comp={Clientedash} />}/>
           <Route path="/Dashboard/Almacen" element={<Dashboard Comp={Almacenp} />}/>
           <Route path="/Dashboard/Gastos" element={<Dashboard Comp={Gastot} />}/>
-          <Route path="/Dashboard/Nomina" element={<Dashboard Comp={Nominat} />}/>
+          <Route path="/Dashboard/Nomina" element={<Dashboard Comp={Nomina} />}/>
+          <Route path="/Dashboard/Nomina" element={<Dashboard Comp={Nomina} />}/>
           <Route path="*" element={<Home Comp={NoPage} />} />
           
         </Routes>
