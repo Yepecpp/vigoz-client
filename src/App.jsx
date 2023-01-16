@@ -30,8 +30,8 @@ const App = () => {
           <Route path="/Dashboard/Cliente" element={<Dashboard Comp={Clientedash} />}/>
           <Route path="/Dashboard/Almacen" element={<Dashboard Comp={Almacenp} />}/>
           <Route path="/Dashboard/Gastos" element={<Dashboard Comp={Gastot} />}/>
-          <Route path="/Dashboard/Nomina" element={<Dashboard Comp={Nomina} />}/>
-          <Route path="/Dashboard/Nomina" element={<Dashboard Comp={Nomina} />}/>
+          <Route path="/Dashboard/Nomina" element={<Dashboard Comp={Nomina} />}
+          />
           <Route path="*" element={<Home Comp={NoPage} />} />
           
         </Routes>
