@@ -17,10 +17,12 @@ body,
 }
 
 .wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: #90caf9;
   display: flex;
-  place-items: center;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande','Lucida Sans', Arial, sans-serif;
-  animation: rotate ls infinite alternate linear;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .button-login {
@@ -50,7 +52,6 @@ body,
 .controle {
   border: 0;
   border-radius: 8px;
-  outline: none;
   width: 70%;
   height: 35px;
   padding: 0 16px 20px 0;
@@ -64,17 +65,15 @@ body,
   padding: 5px;
   margin: 5px;
 }
+
 .login {
-  height: 575px;
-  width: 540px;
-  padding: 105px 30px 64px;
-  border-radius: 1.25rem;
-  background: #ffffff;
-  text-align: center;
+  width: 35vw;
+  height: 100vh;
+  background-color: #ffffff;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .login > h2 {
@@ -91,9 +90,10 @@ body,
 }
 
 .form-container {
-  width: 100%;
-  margin: 0;
-  gap: 16px;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .form input.control::placeholder {
@@ -108,7 +108,6 @@ body,
   background: #703eff;
   color: #f9f9f9;
   border: 0;
-  font-family: inherit;
   font-size: 1rem;
   font-weight: 600;
   text-align: center;
@@ -120,54 +119,33 @@ body,
   background-color: #fdfefe;
   color: #000000;
 }
-.wrapper {
-  padding: 15%;
-  font-size: 1.6rem;
-  margin: 0;
-  padding: 0 1rem;
-  vertical-align: middle;
-  margin-top: 100px;
-  margin-bottom: 100px;
-  margin-right: 150px;
-  margin-left: 0px;
-  display: flex;
-  
+
+.img-container{
+  padding-right: 13vw;
 }
+
 img {
-  width: 680px;
+  width: 37vw;
 }
-.img-container {
-  position: relative;
-  top: -10px;
-  left: 145px;
+
+.register{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.fondo{
-  background-image: url(/media/fondologin.png);
-  background-size: cover;
-  border: 1px solid #03045e;
-  width: auto;
+.msg_register{
+  font-size: 0.8rem;
+  padding-right: 0.8rem;
+  padding-bottom: 1rem;
 }
-.res{
-  font-family: monospace;
-  font-size: 11px;
-  position: absolute;
-  top: 662px;
-  left: 123px;
-  margin-top: 1px;
-}
-.resgister{
-  position: absolute;
-  left: 242px;
-  font-size: 11px;
+.link_resgister{
+  font-size: 0.8rem;
   text-decoration: none;
-  margin-top: 8px;
+}
+.link_resgister_2{
+  padding-bottom: 1.4rem;
 }
 .all{
-  position: relative;
-  top: 70px;
-  left: -10px;
-  font-size: 14px;
-  margin-top: 60px;
-  color: #837f90;
-  opacity: 0.8;
+  font-size: 1rem;
+  color: #aaa7bc;
 }

@@ -203,7 +203,7 @@ input[id='3']:checked ~ .pagination .pagination-item[for='3'] {
 }
 
 /* Design of the two squares */
-main .container_TwoSquares {
+.container_TwoSquares {
   width: 100%;
   height: auto;
   gap: 20px;
@@ -248,7 +248,7 @@ main .container_TwoSquares {
 }
 
 @media screen and (max-width: 720px) {
-  main .container_TwoSquares {
+  .container_TwoSquares {
     flex-wrap: wrap;
     margin: 25px 0px;
   }
