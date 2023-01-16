@@ -16,7 +16,7 @@ const Clogin = () => {
           signal: AbortSignal.signal,
         });
         if (response.status !== 200 || response.status >= 500) {
-          SetUser({ auth: false, token: null, User: {} });
+          SetUser({ auth: false, token: null, data: {} });
           localStorage.removeItem('auth-token');
           return;
         }
@@ -24,13 +24,13 @@ const Clogin = () => {
         SetUser({
           auth: true,
           token: response.data.token,
-          UserData: response.data.user,
+          data: response.data.user,
         });
         navigate('/Dashboard');
       } catch (error) {
         if (error.name === 'AbortError') return;
         if (error.response.status === 401) {
-          SetUser({ auth: false, token: null, User: {} });
+          SetUser({ auth: false, token: null, data: {} });
           localStorage.removeItem('auth-token');
           return;
         }

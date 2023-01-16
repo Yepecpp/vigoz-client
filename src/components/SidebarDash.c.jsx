@@ -40,12 +40,12 @@ const Navbar = () => {
             Gastos
           </Link>
         </li>
-        <li className="sidebar_ul_item">
+        {/*<li className="sidebar_ul_item">
           <FaTruck />
           <Link className="sidebar_ul_li_a" to="/Dashboard/Distribucion">
             Distribución
           </Link>
-        </li>
+        </li>*/}
         <li className="sidebar_ul_item">
           <FaUserFriends />
           <Link className="sidebar_ul_li_a" to="/Dashboard/Cliente">

@@ -1,9 +1,9 @@
 import React from 'react'
 import { Button} from '@mui/material';
-
-
+import {useAuthContext} from '../contexts/Auth'
 
 const Perfilc = () => {
+  const [user, SetUser] = useAuthContext()
   return (
     <div className="user-profile">
       <div className="contenedor_user_info">
@@ -18,11 +18,11 @@ const Perfilc = () => {
           </div>
         <div className="user-info">
           <label htmlFor="" className="asd">Nombre completo</label>
-          <div className="full-name">Jonathan Valdez</div>
+          <div className="full-name" >{user.data.login.name+user.data.login.last_name}</div>
           <label htmlFor="">Correo Electronico</label>
-          <div className="email">Jonathanvaldezmejia@gmail.com</div>
+          <div className="email" >{user.data.login.email}</div>
           <label htmlFor="">Usuario</label>
-          <div className="username">Jona1912</div>
+          <div className="username">{user.data.login.username}</div>
       </div>
       </div>
       <div className="form-container">
