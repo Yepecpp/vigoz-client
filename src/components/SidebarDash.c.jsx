@@ -7,8 +7,10 @@ import {
   FaBoxes,
   FaRegListAlt,
   FaTruck,
-  FaUserAlt,
+  FaUserFriends,
+  FaRegUser
 } from 'react-icons/fa';
+
 
 const Navbar = () => {
   return (
@@ -44,17 +46,17 @@ const Navbar = () => {
             Distribución
           </Link>
         </li>
-        <hr />
         <li className="sidebar_ul_item">
-          <FaTruck />
-          <Link className="sidebar_ul_li_a" to="/Dashboard/Perfil">
-            Perfil
-          </Link>
-        </li>
-        <li className="sidebar_ul_item">
-          <FaTruck />
+          <FaUserFriends />
           <Link className="sidebar_ul_li_a" to="/Dashboard/Cliente">
             Clientes
+          </Link>
+        </li>
+        <hr />
+        <li className="sidebar_ul_item">
+          <FaRegUser />
+          <Link className="sidebar_ul_li_a" to="/Dashboard/Perfil">
+            Perfil
           </Link>
         </li>
         <li className="sidebar_ul_item buttonli">
