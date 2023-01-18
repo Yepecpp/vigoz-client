@@ -1,29 +1,44 @@
-import React from 'react'
-import { Button} from '@mui/material';
-import {useAuthContext} from '../contexts/Auth'
-
+import React from 'react';
+import { Button } from '@mui/material';
+import { useAuthContext } from '../contexts/Auth';
+import { Link } from 'react-router-dom';
 const Perfilc = () => {
-  const [user, SetUser] = useAuthContext()
+  const [user, SetUser] = useAuthContext();
+  if (!user.auth)
+    return (
+      <div>
+        Loading...
+        <Link to="/login">Iniciar Seccion</Link>
+      </div>
+    );
   return (
     <div className="user-profile">
       <div className="contenedor_user_info">
         <div className="photobutton">
-        <div className="user-photo">
-          <img src="/media/fotousuario.png" alt="" />
-        </div>
-        <Button variant="contained" component="label" className="upload_photo">
+          <div className="user-photo">
+            <img src="/media/default_user.png" alt="" />
+          </div>
+          <Button
+            variant="contained"
+            component="label"
+            className="upload_photo"
+          >
             Upload
             <input hidden accept="image/*" multiple type="file" />
           </Button>
-          </div>
+        </div>
         <div className="user-info">
-          <label htmlFor="" className="asd">Nombre completo</label>
-          <div className="full-name" >{user.data.login.name+user.data.login.last_name}</div>
+          <label htmlFor="" className="asd">
+            Nombre completo
+          </label>
+          <div className="full-name">
+            {`${user.data.name} ${user.data.last_name}`}
+          </div>
           <label htmlFor="">Correo Electronico</label>
-          <div className="email" >{user.data.login.email}</div>
+          <div className="email">{user.data.login.email}</div>
           <label htmlFor="">Usuario</label>
           <div className="username">{user.data.login.username}</div>
-      </div>
+        </div>
       </div>
       <div className="form-container">
         <form>
@@ -58,8 +73,7 @@ const Perfilc = () => {
         </form>
       </div>
     </div>
-    
   );
-}
+};
 
 export default Perfilc;

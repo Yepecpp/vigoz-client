@@ -1,5 +1,5 @@
 /* Body Component */
-function Slide() {
+const Slide = () => {
   return (
     <div className="contenedor_home">
       <div className="container_slide">
@@ -9,31 +9,32 @@ function Slide() {
 
         <div className="slide">
           <div className="item-slide">
-            <img src="/media/hieloSlide.jpg" />
+            <img src="/media/Slider/hieloSlide.jpg" />
           </div>
           <div className="item-slide">
-            <img src="/media/Hielo-marino.jpg" />
+            <img src="/media/Slider/Hielo-marino.jpg" />
           </div>
           <div className="item-slide">
-            <img src="/media/poloSlide.jpg" />
+            <img src="/media/Slider/poloSlide.jpg" />
           </div>
         </div>
-
         <div className="pagination">
           <div className="pagination-item">
-            <img src="/media/hieloSlide.jpg" />
+            <img src="/media/Slider/hieloSlide.jpg" />
           </div>
           <div className="pagination-item">
-            <img src="/media/Hielo-marino.jpg" />
+            <img src="/media/Slider/Hielo-marino.jpg" />
           </div>
           <div className="pagination-item">
-            <img src="/media/poloSlide.jpg" />
+            <img src="/media/Slider/poloSlide.jpg" />
           </div>
         </div>
       </div>
-
       <div className="container_TwoSquares">
-        <div className="squares sq1">
+        <div
+          className="squares sq1"
+          style={{ backgroundImage: '/media/logo.png' }}
+        >
           <p>Shop</p>
         </div>
         <div className="squares sq2">
@@ -42,6 +43,6 @@ function Slide() {
       </div>
     </div>
   );
-}
+};
 
 export default Slide;

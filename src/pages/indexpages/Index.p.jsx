@@ -1,10 +1,8 @@
 import React from 'react';
-import Slide from '../../components/Home.c';
+import Slide from '../../components/Slider.c';
 
 const Index = () => {
-  return (
-      <Slide />
-  );
+  return <Slide />;
 };
 
 export default Index;
