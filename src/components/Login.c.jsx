@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useAuthContext } from '../contexts/Auth';
 import Axios from '../libs/axios';
@@ -85,10 +85,6 @@ const Clogin = () => {
           />
           <p className="error">{error}</p>
           <button className="controle">Login</button>
-          <div className="register">
-            <h2 className="msg_register">Not registered yet?</h2>
-            <h2 className="link_resgister_2" ><Link to="/Register" className="link_resgister">Create an Account</Link></h2>
-          </div>
           <h2 className="all">© 2023 Greg All rights reserved</h2>
         </form>
       </div>

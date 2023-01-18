@@ -40,6 +40,12 @@ const Navbar = () => {
             Gastos
           </Link>
         </li>
+        <li className="sidebar_ul_item">
+          <FaRegListAlt />
+          <Link className="sidebar_ul_li_a" to="/Dashboard/Usuarios">
+            Usuarios
+          </Link>
+        </li>
         {/*<li className="sidebar_ul_item">
           <FaTruck />
           <Link className="sidebar_ul_li_a" to="/Dashboard/Distribucion">
