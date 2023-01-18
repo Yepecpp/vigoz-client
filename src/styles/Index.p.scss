@@ -1,8 +1,5 @@
 @import './imports/Colors.scss';
 @import './imports/Letters.scss';
-* {
-  max-width: 100%;
-}
 
 //Navbar
 body {
@@ -81,6 +78,8 @@ button:hover {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  width: 100vw;
+  height: 100vh;
 }
 
 .container_slide {
@@ -201,14 +200,16 @@ input[id='3']:checked ~ .pagination .pagination-item[for='3'] {
 }
 
 /* Design of the two squares */
-.container_TwoSquares {
-  width: 100%;
+.container_Squares {
+  width: 90vw;
   height: auto;
   gap: 20px;
-  margin: 100px 0px;
-  display: flex;
+  margin: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+
   align-items: center;
-  justify-content: space-evenly;
 }
 
 .sq1 {
@@ -233,6 +234,7 @@ input[id='3']:checked ~ .pagination .pagination-item[for='3'] {
   font-size: 30px;
   font-weight: bolder;
   color: #000;
+  object-fit: cover;
   transition: all 300ms ease;
 }
 

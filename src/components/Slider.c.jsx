@@ -30,17 +30,6 @@ const Slide = () => {
           </div>
         </div>
       </div>
-      <div className="container_TwoSquares">
-        <div
-          className="squares sq1"
-          style={{ backgroundImage: '/media/logo.png' }}
-        >
-          <p>Shop</p>
-        </div>
-        <div className="squares sq2">
-          <p>Repairs</p>
-        </div>
-      </div>
     </div>
   );
 };
