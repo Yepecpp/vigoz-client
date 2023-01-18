@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Registerc = () => {
+const Usuariosc = () => {
   return (
     <div>
     <div className="container_complet">
@@ -25,4 +25,4 @@ const Registerc = () => {
 </div>
   )
 }
-export default Registerc
+export default Usuariosc
