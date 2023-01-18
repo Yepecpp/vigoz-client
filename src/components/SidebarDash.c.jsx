@@ -1,14 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { HiArchiveBoxArrowDown,  } from "react-icons/hi2";
+
 
 import {
+
   FaHouseUser,
   FaOutdent,
   FaBoxes,
   FaRegListAlt,
   FaTruck,
   FaUserFriends,
-  FaRegUser
+  FaRegUser,
+  FaUser
+  
 } from 'react-icons/fa';
 
 
@@ -29,7 +34,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li className="sidebar_ul_item">
-          <FaBoxes />
+          <HiArchiveBoxArrowDown />
           <Link className="sidebar_ul_li_a" to="/Dashboard/Almacen">
             Almacen
           </Link>
@@ -41,7 +46,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li className="sidebar_ul_item">
-          <FaRegListAlt />
+          <FaUser />
           <Link className="sidebar_ul_li_a" to="/Dashboard/Usuarios">
             Usuarios
           </Link>
