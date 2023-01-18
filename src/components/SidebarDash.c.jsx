@@ -7,9 +7,7 @@ import {
 
   FaHouseUser,
   FaOutdent,
-  FaBoxes,
   FaRegListAlt,
-  FaTruck,
   FaUserFriends,
   FaRegUser,
   FaUser
