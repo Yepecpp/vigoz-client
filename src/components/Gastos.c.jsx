@@ -4,7 +4,7 @@ const Gasto = () =>{
     return(
         <div className="Contenedor_complet">
             <h1 className="txt_lista">Lista de Gastos</h1>
-            <table id="gastos-table" class="display">
+            <table id="gastos-table" className="display">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -64,7 +64,7 @@ const Gasto = () =>{
                 </tr>
             </tbody>
             </table>
-            <button id="add-button" class="green-button">Agregar Gasto</button>
+            <button id="add-button" className="green-button">Agregar Gasto</button>
         </div>
     );
 }
