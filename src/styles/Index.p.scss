@@ -80,7 +80,6 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
   flex-direction: column;
 }
 
@@ -96,7 +95,7 @@ button:hover {
   transform: translate3d(0, 0, 0);
   transition: all 600ms;
   animation-name: autoplay;
-  animation-duration: 7s;
+  animation-duration: 10s;
   animation-direction: alternate;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
@@ -213,13 +212,11 @@ input[id='3']:checked ~ .pagination .pagination-item[for='3'] {
 }
 
 .sq1 {
-  background-image: url('/media/logo.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .sq2 {
-  background-image: url('/media/logo.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }

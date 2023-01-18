@@ -2,7 +2,7 @@ import React from 'react';
 import Footer from '../components/Footer.c';
 import Navbar from '../components/Navbar.c';
 import Proptypes from 'prop-types';
-import Slide from '../components/Home.c';
+import Slide from '../components/Slider.c';
 const Home = ({ Comp }) => {
   return (
     <>
