@@ -1,8 +1,9 @@
 import React from 'react'
+import Dashboardp from '../../components/Dashboard.c'
 
 const Indexdash = () => {
   return (
-    <div>Indexdash</div>
+    <Dashboardp />
   )
 }
 
