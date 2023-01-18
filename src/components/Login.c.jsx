@@ -63,7 +63,6 @@ const Clogin = () => {
     navigate('/Dashboard');
   };
   return (
-    <div className='fondo'>
     <div className="wrapper">
       <div className="login">
         <h2>Login</h2>
@@ -86,15 +85,16 @@ const Clogin = () => {
           />
           <p className="error">{error}</p>
           <button className="controle">Login</button>
-          <h2 className="res">Not registered yet?</h2>
-          <Link to="/Register"><h2 className="resgister">Create an Account</h2></Link>
+          <div className="register">
+            <h2 className="msg_register">Not registered yet?</h2>
+            <h2 className="link_resgister_2" ><Link to="/Register" className="link_resgister">Create an Account</Link></h2>
+          </div>
           <h2 className="all">© 2023 Greg All rights reserved</h2>
         </form>
       </div>
       <div className="img-container">
         <img src="/media/logopng.jpg" />
       </div>
-    </div>
     </div>
   );
 };
