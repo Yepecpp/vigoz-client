@@ -8,6 +8,10 @@ const Nominap = () => {
             </div>
             <div className="Sub">
                 <h3>Nomina del 2023</h3>
+                <div>
+        <label className="client_buscar">Search:</label>
+        <input type="text" name="buscar" className="input_buscar" />
+      </div>
                 <table>
       <thead>
         <tr>
