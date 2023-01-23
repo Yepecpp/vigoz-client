@@ -86,7 +86,7 @@ const Cliente = () => {
         </tbody>
       </table>
       {
-       isOpened? <div onClick={()=> SetisOpened(false)}>hey</div>: <div style={{opacity:0}}>hey</div>
+       isOpened? <div onClick={()=> SetisOpened(false)}>hey</div>: <div style={{opacity: 0}}>hey </div>
       }
     </div>
   );
