@@ -1,10 +1,10 @@
 import React from 'react';
-import Slide from '../../components/Slider.c';
+import Slider from '../../components/slider/Slider.c';
 import Squares from '../../components/Squares';
 const Index = () => {
   return (
     <>
-      <Slide />
+      <Slider />
       <div className="container_Squares">
         <Squares imageUrl="/media/Slider/Hielo-marino.jpg" name="Hielo" />
         <Squares
