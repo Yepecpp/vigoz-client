@@ -14,9 +14,8 @@ import Almacenp from './pages/dashpages/Almacen.dash';
 import Gastot from './pages/dashpages/Gastos.dash';
 import Nomina from './pages/dashpages/Nomina.dash';
 import Registerp from './pages/dashpages/Usuarios.p';
-import Usuariosp from './pages/dashpages/Usuarios.p';
+//import Usuariosp from './pages/dashpages/Usuarios.p';
 import Usuariosc from './components/Usuarios.c';
-
 
 const App = () => {
   return (
@@ -24,18 +23,35 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/" element={<Home Comp={Index} />} />
-          <Route path="/About" element={<Home Comp={About}/>}/>
+          <Route path="/About" element={<Home Comp={About} />} />
           <Route path="/Login" element={<Home Comp={Login} />} />
           <Route path="/Register" element={<Home Comp={Registerp} />} />
           <Route path="/Dashboard" element={<Dashboard Comp={Indexdash} />} />
-          <Route path="/Dashboard/Perfil" element={<Dashboard Comp={Perfil} />}/>
-          <Route path="/Dashboard/Cliente" element={<Dashboard Comp={Clientedash} />}/>
-          <Route path="/Dashboard/Almacen" element={<Dashboard Comp={Almacenp} />}/>
-          <Route path="/Dashboard/Gastos" element={<Dashboard Comp={Gastot} />}/>
-          <Route path="/Dashboard/Nomina" element={<Dashboard Comp={Nomina} />}/>
-          <Route path="/Dashboard/Usuarios" element={<Dashboard Comp={Usuariosc} />}/>
+          <Route
+            path="/Dashboard/Perfil"
+            element={<Dashboard Comp={Perfil} />}
+          />
+          <Route
+            path="/Dashboard/Cliente"
+            element={<Dashboard Comp={Clientedash} />}
+          />
+          <Route
+            path="/Dashboard/Almacen"
+            element={<Dashboard Comp={Almacenp} />}
+          />
+          <Route
+            path="/Dashboard/Gastos"
+            element={<Dashboard Comp={Gastot} />}
+          />
+          <Route
+            path="/Dashboard/Nomina"
+            element={<Dashboard Comp={Nomina} />}
+          />
+          <Route
+            path="/Dashboard/Usuarios"
+            element={<Dashboard Comp={Usuariosc} />}
+          />
           <Route path="*" element={<Home Comp={NoPage} />} />
-          
         </Routes>
       </Router>
     </AuthProvider>

@@ -1,4 +1,5 @@
 import { Line } from 'react-chartjs-2';
+import React from 'react';
 // no se usar chart yepee como hago eso pa que aparezca en almacen.jsx mmg pls
 const data = {
   labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio'],
@@ -22,9 +23,9 @@ const data = {
       pointHoverBorderWidth: 2,
       pointRadius: 1,
       pointHitRadius: 10,
-      data: [65, 59, 80, 81, 56, 55, 40]
-    }
-  ]
+      data: [65, 59, 80, 81, 56, 55, 40],
+    },
+  ],
 };
 
 class LineExample extends React.Component {
@@ -37,4 +38,5 @@ class LineExample extends React.Component {
     );
   }
 }
-console.log(data)
+export default LineExample;
+console.log(data);

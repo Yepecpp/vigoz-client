@@ -7,7 +7,7 @@ body,
   background-image: url();
   background-position: center;
   background-size: cover;
-  background-attachment:fixed;
+  background-attachment: fixed;
 }
 
 @keyframes rotate {
@@ -120,7 +120,7 @@ body,
   color: #000000;
 }
 
-.img-container{
+.img-container {
   padding-right: 13vw;
 }
 
@@ -128,24 +128,24 @@ img {
   width: 37vw;
 }
 
-.register{
+.register {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.msg_register{
+.msg_register {
   font-size: 0.8rem;
   padding-right: 0.8rem;
   padding-bottom: 1rem;
 }
-.link_resgister{
+.link_resgister {
   font-size: 0.8rem;
   text-decoration: none;
 }
-.link_resgister_2{
+.link_resgister_2 {
   padding-bottom: 1.4rem;
 }
-.all{
+.all {
   font-size: 1rem;
   color: #aaa7bc;
 }

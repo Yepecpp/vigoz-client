@@ -1,10 +1,8 @@
-import React from 'react'
+import React from 'react';
 import Perfilc from './../../components/Perfil.c';
 
 const Perfilp = () => {
-  return (
-    <Perfilc/>
-  )
-}
+  return <Perfilc />;
+};
 
-export default Perfilp
+export default Perfilp;

@@ -1,10 +1,8 @@
-import React from 'react'
-import Cliente from '../../components/Cliente.c'
+import React from 'react';
+import Cliente from '../../components/Cliente.c';
 
 const Clientedash = () => {
-  return (
-    <Cliente/>
-  )
-}
+  return <Cliente />;
+};
 
-export default Clientedash
+export default Clientedash;

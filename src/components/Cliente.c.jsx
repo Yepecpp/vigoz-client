@@ -3,7 +3,7 @@ import { Button, Box } from '@mui/material';
 
 const Cliente = () => {
   const [isOpened, SetisOpened] = useState(false);
-  const handleOnclick = (e) => {
+  const handleOnclick = () => {
     SetisOpened(true);
   };
 
@@ -48,32 +48,34 @@ const Cliente = () => {
           </Box>
         </tbody>
       </table>
-      {
-       isOpened?
-       <div className="add_client">
-        <div className="modal_content">
-          <span className="close" onClick={()=> SetisOpened(false)}>&times;</span>
-          <form className="form_cliente">
-            <label className="form_client_name">Name:</label>
-            <input type="text" className="client_name" name="name" />
-          <br />
-            <label className="form_client_address">Address:</label>
-            <input type="text" className="client_address" name="address" />
-          <br />
-            <label className="form_client_user">User:</label>
-            <input type="text" className="client_user" name="user" />
-          <br />
-            <label className="form_client_phone">Phone:</label>
-            <input type="text" className="client_phone" name="phone" />
-          <br />
-            <Button variant="contained" color="success">
-              Guardar
-            </Button>
-          </form>
-       </div>
-     </div>
-    : <div></div>
-      }
+      {isOpened ? (
+        <div className="add_client">
+          <div className="modal_content">
+            <span className="close" onClick={() => SetisOpened(false)}>
+              &times;
+            </span>
+            <form className="form_cliente">
+              <label className="form_client_name">Name:</label>
+              <input type="text" className="client_name" name="name" />
+              <br />
+              <label className="form_client_address">Address:</label>
+              <input type="text" className="client_address" name="address" />
+              <br />
+              <label className="form_client_user">User:</label>
+              <input type="text" className="client_user" name="user" />
+              <br />
+              <label className="form_client_phone">Phone:</label>
+              <input type="text" className="client_phone" name="phone" />
+              <br />
+              <Button variant="contained" color="success">
+                Guardar
+              </Button>
+            </form>
+          </div>
+        </div>
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 };

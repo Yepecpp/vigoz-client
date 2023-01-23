@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const Almacenc = () => {
-  return (
-    <div>Almacen</div>
-  )
-}
+  return <div>Almacen</div>;
+};
 
-export default Almacenc
+export default Almacenc;

@@ -1,10 +1,8 @@
-import React from 'react'
-import Dashboardp from '../../components/Dashboard.c'
+import React from 'react';
+import Dashboardp from '../../components/Dashboard.c';
 
 const Indexdash = () => {
-  return (
-    <Dashboardp />
-  )
-}
+  return <Dashboardp />;
+};
 
-export default Indexdash
+export default Indexdash;

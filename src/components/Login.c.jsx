@@ -5,6 +5,7 @@ import { useAuthContext } from '../contexts/Auth';
 import Axios from '../libs/axios';
 import axios from '../libs/axios';
 const Clogin = () => {
+  // eslint-disable-next-line no-unused-vars
   const [User, SetUser] = useAuthContext();
   const navigate = useNavigate();
   useEffect(() => {

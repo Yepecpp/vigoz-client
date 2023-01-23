@@ -1,19 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { HiArchiveBoxArrowDown,  } from "react-icons/hi2";
-
+import { HiArchiveBoxArrowDown } from 'react-icons/hi2';
 
 import {
-
   FaHouseUser,
   FaOutdent,
   FaRegListAlt,
   FaUserFriends,
   FaRegUser,
-  FaUser
-  
+  FaUser,
 } from 'react-icons/fa';
-
 
 const Navbar = () => {
   return (
@@ -69,9 +65,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li className="sidebar_ul_item buttonli">
-          <button className="sidebar_ul_li_button">
-            Salir
-          </button>
+          <button className="sidebar_ul_li_button">Salir</button>
         </li>
       </ul>
     </nav>

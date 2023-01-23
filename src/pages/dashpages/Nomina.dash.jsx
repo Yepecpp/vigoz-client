@@ -1,9 +1,7 @@
-import React from "react";
-import Nominap from "../../components/Nomina.c"
+import React from 'react';
+import Nominap from '../../components/Nomina.c';
 
-const Nominat = () =>{
-    return(
-        <Nominap/>
-    )
-}
-export default Nominat
+const Nominat = () => {
+  return <Nominap />;
+};
+export default Nominat;

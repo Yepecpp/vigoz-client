@@ -77,57 +77,56 @@ button:hover {
   width: 100vw;
   height: 90vh;
 }
-
+.slider {
+  width: 100%;
+  height: 100%;
+}
 .slide {
   width: 100%;
   height: 100%;
-  display: flex;
-  transform: translate3d(0, 0, 0);
-  transition: all 600ms;
-  animation-name: autoplay;
-  animation-duration: 10s;
-  animation-direction: alternate;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
 }
-
-.slideAofD {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  transform: translate3d(0, 0, 0);
-  transition: all ease 1600ms;
-  animation-play-state: paused;
-}
-
-.item-slide {
-  width: 100%;
-  position: relative;
-  display: flex;
-  flex-shrink: 0;
-  flex-grow: 0;
-  max-width: 100%;
-}
-
-.item-slide > img {
+.slide_image {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
+.slide.active {
+  opacity: 1;
+  transition-duration: 1s ease;
+}
+
+/*
+
+//nuevo
+.slider {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.slide {
+  opacity: 0;
+  transition-duration: 1s ease;
+}
+
+*/
+
 .pagination {
-  width: 100%;
   position: relative;
   top: -9vh;
-  gap: 0.7vw;
+  gap: 1.2vw;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .item-pagination {
-  width: 16px;
-  height: 16px;
+  width: 2rem;
+  height: 2rem;
   display: flex;
   cursor: pointer;
   overflow: hidden;
@@ -135,6 +134,8 @@ button:hover {
   border: 2px solid #fff;
   background: rgba(255, 255, 255, 0.5);
   transition: all 300ms;
+  cursor: pointer;
+  user-select: none;
 }
 
 .item-pagination:hover {
@@ -146,7 +147,7 @@ button:hover {
   max-width: none;
   height: 100%;
   transform: scale(1);
-  opacity: 0;
+  opacity: 0.5;
   transition: all 300ms;
 }
 

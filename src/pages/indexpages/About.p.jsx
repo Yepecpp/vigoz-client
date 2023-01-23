@@ -1,10 +1,8 @@
-import React from 'react'
-import About from '../../components/About.c'
+import React from 'react';
+import About from '../../components/About.c';
 
 const Aboutp = () => {
-  return (
-    <About/>
-  )
-}
+  return <About />;
+};
 
-export default Aboutp
+export default Aboutp;
