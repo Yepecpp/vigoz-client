@@ -171,7 +171,7 @@ button:hover {
 }
 
 /* Design of the two squares */
-.container_Squares {
+/* .container_Squares {
   width: 90vw;
   height: auto;
   gap: 20px;
@@ -214,6 +214,42 @@ button:hover {
   background-color: #111;
   color: #fff;
   transform: scale(1.1);
+} */
+
+.container_Squares {
+  width: 100vw;
+  height: 60vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.squares {
+  width: 70%;
+  height: 80%;
+  border-radius: 30px;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    transform: scale(1.1);
+    transition: ease 0.5s;
+  }
+}
+
+.squares > p {
+  color: #000;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bolder;
+  transition: ease 0.1s;
+}
+
+.squares:hover > p {
+  color: #fff;
+  transition: ease 0.1s;
 }
 
 @media screen and (max-width: 720px) {
