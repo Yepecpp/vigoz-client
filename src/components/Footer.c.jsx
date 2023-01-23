@@ -15,36 +15,34 @@ function Footeri() {
         <div className="contenedor_footer">
           <h3 className="footer_h3">Hielo Vigoz</h3>
           <p className="footer_descripcion">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
-            temporibus expedita officiis blanditiis at architecto quo cumque
-            fuga quis, perspiciatis libero, ab, quasi quaerat illum dolore ad
-            consequatur iusto facilis.
+            Dirección: Calle Francisco Henríquez y Carvajal #140, sector San Carlos 
+            Fundación de empresa: 15 de diciembre del año 2015 
+            RNC: 1-3209235-1
+            Teléfono y Ws: 809-221-0444
+            Precio del hielo por unidad: 35
+            Horario laboral con delivery: de lunes a Sábado de 7:30 am a 4:00pm y los domingos de 9:00 am a 1:00 pm
           </p>
           <ul className="socials">
             <li>
-              <Link to="/">
+              
+              <a href="https://es-la.facebook.com/login/device-based/regular/login/?login_attempt=1" target="_blank">
                 <FaFacebook />
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="/">
+              <a href="https://twitter.com/?lang=es" target="_blank">
                 <FaTwitter />
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="/">
+              <a href="https://www.youtube.com/" target="_blank">
                 <FaYoutube />
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="/">
-                <FaGooglePlusG />
-              </Link>
-            </li>
-            <li>
-              <Link to="/">
+              <a href="https://github.com/Yepecpp" target="_blank">
                 <FaGithub />
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
