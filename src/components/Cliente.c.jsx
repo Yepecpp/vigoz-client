@@ -9,21 +9,6 @@ const Cliente = () => {
 
   return (
     <div className="contenedor_cliente">
-      {/*<form className="form_cliente">
-      <label className="form_client_name">Name:</label>
-      <input type="text" className="client_name" name="name" />
-      <br />
-      <label className="form_client_address">Address:</label>
-      <input type="text" className="client_address" name="address" />
-      <br />
-      <label className="form_client_user">User:</label>
-      <input type="text" className="client_user" name="user" />
-      <br />
-      <label className="form_client_phone">Phone:</label>
-      <input type="text" className="client_phone" name="phone" />
-      <br />
-      <input type="submit" value="Submit" className="client_submit"/>
-      </form>*/}
       <div>
         <label className="client_buscar">Search:</label>
         <input type="text" name="buscar" className="input_buscar" />
@@ -61,32 +46,33 @@ const Cliente = () => {
               Agregar
             </Button>
           </Box>
-          <div className="add_client">
-            <div className="modal_content">
-              <span className="close">&times;</span>
-              <form className="form_cliente">
-                <label className="form_client_name">Name:</label>
-                <input type="text" className="client_name" name="name" />
-                <br />
-                <label className="form_client_address">Address:</label>
-                <input type="text" className="client_address" name="address" />
-                <br />
-                <label className="form_client_user">User:</label>
-                <input type="text" className="client_user" name="user" />
-                <br />
-                <label className="form_client_phone">Phone:</label>
-                <input type="text" className="client_phone" name="phone" />
-                <br />
-                <Button variant="contained" color="success">
-                  Success
-                </Button>
-              </form>
-            </div>
-          </div>
         </tbody>
       </table>
       {
-       isOpened? <div onClick={()=> SetisOpened(false)}>hey</div>: <div style={{opacity:0}}>hey</div>
+       isOpened?
+       <div className="add_client">
+        <div className="modal_content">
+          <span className="close" onClick={()=> SetisOpened(false)}>&times;</span>
+          <form className="form_cliente">
+            <label className="form_client_name">Name:</label>
+            <input type="text" className="client_name" name="name" />
+          <br />
+            <label className="form_client_address">Address:</label>
+            <input type="text" className="client_address" name="address" />
+          <br />
+            <label className="form_client_user">User:</label>
+            <input type="text" className="client_user" name="user" />
+          <br />
+            <label className="form_client_phone">Phone:</label>
+            <input type="text" className="client_phone" name="phone" />
+          <br />
+            <Button variant="contained" color="success">
+              Guardar
+            </Button>
+          </form>
+       </div>
+     </div>
+    : <div></div>
       }
     </div>
   );
