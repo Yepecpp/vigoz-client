@@ -25,8 +25,8 @@ const Cliente = () => {
   return (
     <div className="contenedor_cliente">
       <div>
-        <label className="client_buscar">Search:</label>
-        <input type="text" name="buscar" className="input_buscar" />
+        <label className="buscar client">Search:</label>
+        <input type="text" name="buscar" className="input buscar" />
       </div>
       <table>
         <thead>

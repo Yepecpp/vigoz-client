@@ -1,48 +1,15 @@
 import React from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useNavigate, Link, useLocation } from 'react-router-dom';
+import { useState } from 'react';
 import { useAuthContext } from '../contexts/Auth';
-import Axios from '../libs/axios';
-import axios from '../libs/axios';
+import { AxiosClient } from '../libs/axios';
 const Clogin = () => {
-  // eslint-disable-next-line no-unused-vars
-  const [User, SetUser] = useAuthContext();
+  const axios = AxiosClient();
+  //eslint-disable-next-line
   const navigate = useNavigate();
-  useEffect(() => {
-    const AbortSignal = new AbortController();
-    const doCheck = async () => {
-      if (!localStorage.getItem('auth-token')) return;
-      try {
-        const response = await axios.get('/auth', {
-          signal: AbortSignal.signal,
-        });
-        if (response.status !== 200 || response.status >= 500) {
-          SetUser({ auth: false, token: null, data: {} });
-          localStorage.removeItem('auth-token');
-          return;
-        }
-        localStorage.setItem('auth-token', response.data.token);
-        SetUser({
-          auth: true,
-          token: response.data.token,
-          data: response.data.user,
-        });
-        navigate('/Dashboard');
-      } catch (error) {
-        if (error.name === 'AbortError') return;
-        if (error.response.status === 401) {
-          SetUser({ auth: false, token: null, data: {} });
-          localStorage.removeItem('auth-token');
-          return;
-        }
-      }
-    };
-    doCheck();
-    return () => {
-      AbortSignal.abort();
-    };
-  }, []);
-
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/';
+  const [auth, Setauth] = useAuthContext();
   const [user, setUser] = useState({
     username: '',
     password: '',
@@ -50,18 +17,28 @@ const Clogin = () => {
   const [error, setError] = useState('Enter Your Credeintials');
   const Login = async (e) => {
     e.preventDefault();
-    const response = await Axios.post('/auth/login', { login: user });
+    const response = await axios.post('/auth/login', { login: user });
     if (response.status !== 200) {
       setError(response.data.msg);
+      Setauth({
+        isAuth: false,
+        token: null,
+        data: null,
+        isEmp: false,
+        employee: null,
+      });
+      localStorage.removeItem('auth-token');
       return;
     }
-    SetUser({
-      auth: true,
+    Setauth({
+      isAuth: true,
       token: response.data.token,
-      UserData: response.data.user,
+      data: response.data.user,
+      isEmp: response.data.is_employee,
+      employee: response.data?.employee,
     });
     localStorage.setItem('auth-token', response.data.token);
-    navigate('/Dashboard');
+    navigate(from, { replace: true });
   };
   return (
     <div className="wrapper">
@@ -94,7 +71,7 @@ const Clogin = () => {
               </Link>
             </h2>
           </div>
-          <h2 className="all">© 2023 Greg All rights reserved</h2>
+          <h2 className="all">Greg© 2023 All rights reserved</h2>
         </form>
       </div>
       <div className="img-container">

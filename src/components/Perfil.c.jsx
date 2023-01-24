@@ -3,14 +3,7 @@ import { Button } from '@mui/material';
 import { useAuthContext } from '../contexts/Auth';
 import { Link } from 'react-router-dom';
 const Perfilc = () => {
-  const [user] = useAuthContext();
-  if (!user.auth)
-    return (
-      <div>
-        Loading...
-        <Link to="/login">Iniciar Seccion</Link>
-      </div>
-    );
+  const [auth, Setauth] = useAuthContext();
   return (
     <div className="user-profile">
       <div className="contenedor_user_info">
@@ -32,12 +25,12 @@ const Perfilc = () => {
             Nombre completo
           </label>
           <div className="full-name">
-            {`${user.data.name} ${user.data.last_name}`}
+            {`${auth.data.name} ${auth.data.last_name}`}
           </div>
           <label htmlFor="">Correo Electronico</label>
-          <div className="email">{user.data.login.email}</div>
+          <div className="email">{auth.data.login.email}</div>
           <label htmlFor="">Usuario</label>
-          <div className="username">{user.data.login.username}</div>
+          <div className="username">{auth.data.login.username}</div>
         </div>
       </div>
       <div className="form-container">
@@ -46,15 +39,30 @@ const Perfilc = () => {
             <h3>Personal Data</h3>
             <div className="form-row">
               <label htmlFor="full-name">Full Name</label>
-              <input type="text" id="full-name" name="full-name" />
+              <input
+                type="text"
+                id="full-name"
+                name="full-name"
+                value={auth.data.name}
+              />
             </div>
             <div className="form-row">
               <label htmlFor="email">Email</label>
-              <input type="email" id="email" name="email" />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={auth.data.login.email}
+              />
             </div>
             <div className="form-row">
               <label htmlFor="phone-number">Phone Number</label>
-              <input type="number" id="phone-number" name="phone-number" />
+              <input
+                type="number"
+                id="phone-number"
+                name="phone-number"
+                value={auth.data.phone}
+              />
             </div>
             <Button variant="outlined">Save Changes</Button>
           </div>
@@ -62,11 +70,21 @@ const Perfilc = () => {
             <h3>Account Data</h3>
             <div className="form-row">
               <label htmlFor="username">Username</label>
-              <input type="text" id="username" name="username" />
+              <input
+                type="text"
+                id="username"
+                name="username"
+                value={auth.data.login.username}
+              />
             </div>
             <div className="form-row">
               <label htmlFor="password">Password</label>
-              <input type="password" id="password" name="password" />
+              <input
+                type="password"
+                id="password"
+                name="password"
+                value={auth.data.login?.password}
+              />
             </div>
             <Button variant="outlined">Save Changes</Button>
           </div>

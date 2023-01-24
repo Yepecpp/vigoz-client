@@ -9,6 +9,7 @@ import {
   FaUserFriends,
   FaRegUser,
   FaUser,
+  FaTruck,
 } from 'react-icons/fa';
 
 const Navbar = () => {
@@ -23,13 +24,13 @@ const Navbar = () => {
         </li>
         <li className="sidebar_ul_item">
           <FaOutdent />
-          <Link className="sidebar_ul_li_a" to="/Dashboard/Nomina">
+          <Link className="sidebar_ul_li_a" to="/Dashboard/Nominas">
             Nomina
           </Link>
         </li>
         <li className="sidebar_ul_item">
           <HiArchiveBoxArrowDown />
-          <Link className="sidebar_ul_li_a" to="/Dashboard/Almacen">
+          <Link className="sidebar_ul_li_a" to="/Dashboard/Almacenes">
             Almacen
           </Link>
         </li>
@@ -45,15 +46,15 @@ const Navbar = () => {
             Usuarios
           </Link>
         </li>
-        {/*<li className="sidebar_ul_item">
+        <li className="sidebar_ul_item">
           <FaTruck />
           <Link className="sidebar_ul_li_a" to="/Dashboard/Distribucion">
             Distribución
           </Link>
-        </li>*/}
+        </li>
         <li className="sidebar_ul_item">
           <FaUserFriends />
-          <Link className="sidebar_ul_li_a" to="/Dashboard/Cliente">
+          <Link className="sidebar_ul_li_a" to="/Dashboard/Clientes">
             Clientes
           </Link>
         </li>
@@ -65,7 +66,11 @@ const Navbar = () => {
           </Link>
         </li>
         <li className="sidebar_ul_item buttonli">
-          <button className="sidebar_ul_li_button">Salir</button>
+          <button className="sidebar_ul_li_button">
+            <Link className="sidebar_ul_li_a" to="/">
+              Salir
+            </Link>
+          </button>
         </li>
       </ul>
     </nav>

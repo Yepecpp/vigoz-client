@@ -1,4 +1,4 @@
-.form_cliente {
+.form .client {
   margin: 1rem;
   label {
     display: block;
@@ -75,13 +75,13 @@ table {
   }
 }
 
-.client_buscar {
+.client.buscar {
   margin-left: 1em;
   margin-top: 1em;
   display: block;
 }
 
-.input_buscar {
+.input.buscar {
   display: block;
   width: 50%;
   margin: 16px;
