@@ -1,7 +1,8 @@
 import React from 'react';
+import Dashboardp from '../../components/Dashboard.c';
 
-function Indexdash() {
-  return <div>Indexdash</div>;
-}
+const Indexdash = () => {
+  return <Dashboardp />;
+};
 
 export default Indexdash;

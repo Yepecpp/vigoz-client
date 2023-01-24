@@ -1,75 +1,76 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { HiArchiveBoxArrowDown } from 'react-icons/hi2';
+
 import {
   FaHouseUser,
   FaOutdent,
-  FaBoxes,
   FaRegListAlt,
+  FaUserFriends,
+  FaRegUser,
+  FaUser,
   FaTruck,
-  FaUserAlt,
-  FaRegBell,
-  FaSlidersH,
-  FaWindowClose,
 } from 'react-icons/fa';
 
 const Navbar = () => {
   return (
-    <nav className="navbar">
-      <ul className="nav_ul">
-        <li className="nav_ul_item">
+    <nav className="sidebar">
+      <ul className="sidebar_ul">
+        <li className="sidebar_ul_item">
           <FaHouseUser />
-          <Link className="ul_li_a" to="/Dashboard/">
+          <Link className="sidebar_ul_li_a" to="/Dashboard/">
             Dashboard
           </Link>
         </li>
-        <li className="nav_ul_item">
+        <li className="sidebar_ul_item">
           <FaOutdent />
-          <Link className="ul_li_a" to="/Dashboard/Nomina">
+          <Link className="sidebar_ul_li_a" to="/Dashboard/Nominas">
             Nomina
           </Link>
         </li>
-        <li className="nav_ul_item">
-          <FaBoxes />
-          <Link className="ul_li_a" to="/Dashboard/Almacen">
+        <li className="sidebar_ul_item">
+          <HiArchiveBoxArrowDown />
+          <Link className="sidebar_ul_li_a" to="/Dashboard/Almacenes">
             Almacen
           </Link>
         </li>
-        <li className="nav_ul_item">
+        <li className="sidebar_ul_item">
           <FaRegListAlt />
-          <Link className="ul_li_a" to="/Dashboard/Gastos">
+          <Link className="sidebar_ul_li_a" to="/Dashboard/Gastos">
             Gastos
           </Link>
         </li>
-        <li className="nav_ul_item">
+        <li className="sidebar_ul_item">
+          <FaUser />
+          <Link className="sidebar_ul_li_a" to="/Dashboard/Usuarios">
+            Usuarios
+          </Link>
+        </li>
+        <li className="sidebar_ul_item">
           <FaTruck />
-          <Link className="ul_li_a" to="/Dashboard/Distribucion">
+          <Link className="sidebar_ul_li_a" to="/Dashboard/Distribucion">
             Distribución
           </Link>
         </li>
+        <li className="sidebar_ul_item">
+          <FaUserFriends />
+          <Link className="sidebar_ul_li_a" to="/Dashboard/Clientes">
+            Clientes
+          </Link>
+        </li>
         <hr />
-        <li className="nav_ul_item">
-          <FaUserAlt />
-          <Link className="ul_li_a" to="/Dashboard/Perfil">
+        <li className="sidebar_ul_item">
+          <FaRegUser />
+          <Link className="sidebar_ul_li_a" to="/Dashboard/Perfil">
             Perfil
           </Link>
         </li>
-        <li className="nav_ul_item">
-          <FaRegBell />
-          <Link className="ul_li_a" to="/Dashboard/Notificaciones">
-            Notificaciones
-          </Link>
-        </li>
-        <li className="nav_ul_item">
-          <FaSlidersH />
-          <Link className="ul_li_a" to="/Dashboard/Configuraciones">
-            Configuraciones
-          </Link>
-        </li>
-        <li className="nav_ul_item">
-          <FaWindowClose />
-          <Link className="ul_li_a" to="/Dashboard/Salir">
-            Salir
-          </Link>
+        <li className="sidebar_ul_item buttonli">
+          <button className="sidebar_ul_li_button">
+            <Link className="sidebar_ul_li_a" to="/">
+              Salir
+            </Link>
+          </button>
         </li>
       </ul>
     </nav>

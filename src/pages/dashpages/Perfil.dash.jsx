@@ -1,7 +1,8 @@
 import React from 'react';
+import Perfilc from './../../components/Perfil.c';
 
-function Perfil() {
-  return <div>Perfil</div>;
-}
+const Perfilp = () => {
+  return <Perfilc />;
+};
 
-export default Perfil;
+export default Perfilp;

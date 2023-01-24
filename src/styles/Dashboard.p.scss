@@ -1,17 +1,23 @@
-@import './Colors.scss';
-@import './Letters.scss';
+@import './imports/Colors.scss';
+@import './imports/Letters.scss';
+
+html,
+body {
+  height: 100%;
+}
+
+//Footer
 
 .footerdash {
   background-color: #111;
   height: auto;
-  width: 99vw;
+  width: 100vw;
   font-family: 'Open Sans', sans-serif;
   padding-top: 40px;
   color: #fff;
 }
 
 .contenedor_footer {
-  display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -60,7 +66,7 @@
 
 .footer_bajo {
   background-color: #000;
-  width: 99vw;
+  width: 100vw;
   padding: 20px 0;
   text-align: center;
 }
@@ -78,9 +84,6 @@
 }
 
 // navbar
-@import './Colors.scss';
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-
 body {
   padding: 0;
   margin: 0;
@@ -88,14 +91,16 @@ body {
 
 .contenedor_logo {
   width: 100%;
-  height: calc(100vh - 90vh);
+  height: 10vh;
   font-family: 'Open Sans', sans-serif;
   background-color: #e1e1e1;
 }
 
 .logo {
+  display: inline-block;
   margin: 0;
-  padding-top: 20px;
+  padding: 10px 0 0 100px;
+  padding-top: 10px;
   padding-left: 100px;
   cursor: pointer;
 }
@@ -106,7 +111,7 @@ body {
   color: #000;
 }
 
-.nav_ul_item {
+.sidebar_ul_item {
   list-style-type: none;
   padding-bottom: 20px;
   font-family: 'Open Sans', sans-serif;
@@ -114,39 +119,48 @@ body {
   font-size: 1em;
 }
 
-.nav_ul_item .ul_li_a {
+.sidebar_ul_item .sidebar_ul_li_a {
   text-decoration: none;
   margin-left: 10px;
   color: #5a5a5f;
 }
 
-.ul_li_a:link,
-.ul_li_a:visited,
-.ul_li_a:active {
+.sidebar_ul_li_button {
+  width: 8em;
+  font-size: 1em;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+  border-radius: 50px;
+  padding: 15px;
+  background-color: #9e9e9e;
+}
+
+.sidebar_ul_li_a:link,
+.sidebar_ul_li_a:visited,
+.sidebar_ul_li_a:active {
   text-decoration: none;
 }
 
-.ul_li_a:hover {
+.sidebar_ul_li_a:hover {
   color: #000;
 }
+
 //navbar should have 1/5 of the screen and main should have 4/5 of the screen
 .dashwrapper {
   display: flex;
   width: 100%;
-  height: 100%;
-  background-color: #e1e1e1;
-  .navbar {
-    display: flex;
-    width: 16vw;
-    height: 90vh;
+  height: auto;
+  .sidebar {
+    width: 13vw;
+    height: inherit;
     background-color: #e1e1e1;
+    padding-right: 10px;
     position: relative;
   }
   main {
     width: 84vw;
     height: 90vh;
-    background-color: #e1e1e1;
     position: relative;
-    margin: 0;
   }
 }
