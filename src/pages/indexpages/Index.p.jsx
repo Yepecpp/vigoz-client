@@ -16,8 +16,8 @@ const SquaresData = [
     name: 'Hielo Azul',
   },
   {
-    imageUrl: 'img1.jpg',
-    name: 'Hielo Azul',
+    imageUrl: 'slide1.jpg',
+    name: 'Hielo verde',
   },
 ];
 const Index = () => {

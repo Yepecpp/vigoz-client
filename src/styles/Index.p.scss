@@ -218,11 +218,12 @@ button:hover {
 
 .container_Squares {
   width: 100vw;
-  height: 60vh;
+  height: 70vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
   align-items: center;
+  background-color: #e7e7e7;
 }
 
 .squares {
@@ -253,9 +254,16 @@ button:hover {
 }
 
 @media screen and (max-width: 720px) {
-  .container_TwoSquares {
-    flex-wrap: wrap;
-    margin: 25px 0px;
+  .container_Squares {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    padding: 5vh 0;
+    gap: 2vh;
+  }
+
+  .squares > p {
+    font-size: 1.5rem;
   }
 }
 
