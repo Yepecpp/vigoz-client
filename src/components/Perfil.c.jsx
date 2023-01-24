@@ -1,9 +1,8 @@
 import React from 'react';
 import { Button } from '@mui/material';
 import { useAuthContext } from '../contexts/Auth';
-import { Link } from 'react-router-dom';
 const Perfilc = () => {
-  const [auth, Setauth] = useAuthContext();
+  const [auth] = useAuthContext();
   return (
     <div className="user-profile">
       <div className="contenedor_user_info">

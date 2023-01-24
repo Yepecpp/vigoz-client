@@ -29,7 +29,7 @@ const Index = () => {
           return (
             <Squares
               key={index}
-              imageUrl={'/media/Slider/' + square.imageUrl}
+              imageUrl={'/media/slider/' + square.imageUrl}
               name={square.name}
             />
           );

@@ -12,7 +12,6 @@ function RequireAuth({ allowRoles = [], allowDep = [] }) {
     axios
       .get('/auth')
       .then((res) => {
-        console.log(res);
         Setauth(
           res.status === 200
             ? {

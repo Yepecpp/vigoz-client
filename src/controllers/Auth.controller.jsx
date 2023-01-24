@@ -1,5 +1,3 @@
-import { useAuthContext } from '../contexts/Auth';
-import { AxiosClient } from '../libs/axios';
 /*const doCheck = async () => {
   if (!localStorage.getItem('auth-token')) return;
   try {
