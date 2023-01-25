@@ -1,82 +1,140 @@
-import { useState } from 'react';
-import { Button } from '@mui/material';
+import { AxiosClient } from '../../libs/axios';
 import IdentityP from './common/Identity.popup';
 import AddressP from './common/Address.popup';
-import { AxiosClient } from '../../libs/axios';
-function Client({ SetisOpened }) {
-  //eslint-disable-next-line
-  const axios = AxiosClient();
-  const [client, Setclient] = useState();
-  const setAdress = (address) => {
-    Setclient({ ...client, address: address });
-  };
-  const setIdentity = (identity) => {
-    Setclient({
+import { Button } from '@mui/material';
+import { Formik, useFormik, Form, Field, ErrorMessage } from 'formik';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+function Client({ SetisOpened, useClient }) {
+  const queryClient = useQueryClient();
+  const [client] = useClient();
+  const clientMutation = useMutation({
+    mutationFn: async (client) => {
+      const axios = AxiosClient();
+      const response = await axios.post('/clients', { client: client });
+      return response.data;
+    },
+    onSuccess: (values) => {
+      queryClient.invalidateQueries(['clients', values.id]);
+    },
+  });
+  /*
+   name: '',
+      user: '',
+      rnc: '',
+      phone: '',
+      address: {
+        street1: '',
+        street2: '',
+        city: '',
+        country: '',
+      },
+      identity: {
+        type: 'fisical',
+        identity: {
+          type: 'id',
+          number: '',
+          expiration: new Date(),
+          state: 'active',
+        },
+      },*/
+  const Formikh = useFormik({
+    initialValues: {
       ...client,
-      identity: identity,
-    });
-  };
-  const SaveClient = async (e) => {
-    e.preventDefault();
-    const response = await axios.post('/clients', { client: client });
-    console.log(response);
-  };
-  return (
-    <div className="popup client">
-      <h1>Client data:</h1>
-      {client?.id ? (
-        <h2>Editing client: {client?.name}</h2>
-      ) : (
-        <h2>Creating new client</h2>
-      )}
-      <span className="close" onClick={() => SetisOpened(false)}>
-        &times;
-      </span>
+    },
+    onSubmit: async (values, { resetForm }) => {
+      clientMutation.mutate(values);
+      if (clientMutation.isSuccess) {
+        resetForm();
+        SetisOpened(false);
+      }
+    },
+  });
 
-      <form className="form client">
-        <label className="label_cliente">Name:</label>
-        <input
+  return (
+    <Formik>
+      <Form onSubmit={Formikh.handleSubmit}>
+        {Formikh.values?.id ? (
+          <h2>Editing client: {Formikh.values?.name}</h2>
+        ) : (
+          <h2>Creating new client</h2>
+        )}
+        <span className="close" onClick={() => SetisOpened(false)}>
+          &times;
+        </span>
+
+        <label htmlFor="name">Name</label>
+        <Field
           type="text"
+          id="name"
           name="name"
-          className="input cliente"
-          value={client?.name}
-          onChange={(e) => Setclient({ ...client, name: e.target.value })}
+          placeholder="Write your name"
+          value={Formikh.values?.name}
+          onChange={Formikh.handleChange}
         />
-        <label className="label cliente">User ID:</label>
-        <input
-          type="text"
-          name="userId"
-          className="input cliente"
-          value={client?.user}
-          onChange={(e) => Setclient({ ...client, user: e.target.value })}
+        <ErrorMessage
+          name="name"
+          component={() => <div className="error">{Formikh.errors?.name}</div>}
         />
-        <label className="label cliente">RNC:</label>
-        <input
+        {/* No se te escucha */}
+        <label htmlFor="user">User</label>
+        <Field
           type="text"
+          id="user"
+          name="user"
+          placeholder="Write your user"
+          value={Formikh.values?.user}
+          onChange={Formikh.handleChange}
+        />
+        <ErrorMessage
+          name="userid"
+          component={() => <div className="error">{Formikh.errors?.user}</div>}
+        />
+
+        <label htmlFor="rnc">RNC</label>
+        <Field
+          type="text"
+          id="rnc"
           name="rnc"
-          className="input cliente"
-          value={client?.rnc}
-          onChange={(e) => Setclient({ ...client, rnc: e.target.value })}
+          placeholder="Write your RNC"
+          value={Formikh.values?.rnc}
+          onChange={Formikh.handleChange}
         />
-        <label className="label cliente">Phone:</label>
-        <input
+        <ErrorMessage
+          name="rnc"
+          component={() => <div className="error">{Formikh.errors?.rnc}</div>}
+        />
+
+        <label htmlFor="phone">Phone</label>
+        <Field
           type="text"
+          id="phone"
           name="phone"
-          className="input cliente"
-          value={client?.phone}
-          onChange={(e) => Setclient({ ...client, phone: e.target.value })}
+          placeholder="(849)865-8925"
+          value={Formikh.values?.phone}
+          onChange={Formikh.handleChange}
         />
-        <AddressP SetAddress={setAdress} preAddress={client?.address} />
-        <IdentityP Identity={client?.identity} SetIdentity={setIdentity} />
-        <Button
-          variant="contained"
-          color="success"
-          onClick={(e) => SaveClient(e)}
-        >
+        <ErrorMessage
+          name="phone"
+          component={() => <div className="error">{Formikh.errors?.phone}</div>}
+        />
+
+        <IdentityP
+          identity={Formikh.values?.identity}
+          name="identity."
+          handleChange={Formikh.handleChange}
+          errors={Formikh?.errors?.identity}
+        />
+        <AddressP
+          address={Formikh.values?.address}
+          name="address."
+          handleChange={Formikh.handleChange}
+          errors={Formikh.errors?.address}
+        />
+        <Button type="submit" variant="contained" color="success">
           Guardar
         </Button>
-      </form>
-    </div>
+      </Form>
+    </Formik>
   );
 }
 export default Client;

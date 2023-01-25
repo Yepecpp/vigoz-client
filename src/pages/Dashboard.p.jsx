@@ -1,11 +1,11 @@
 import React from 'react';
 import Sidebar from '../components/SidebarDash.c';
-import Header from '../components/Header.dash.c';
+import Navbar from '../components/Navbar.c';
 //import Cookies from 'universal-cookie'
 const Dashboard = ({ Comp }) => {
   return (
     <>
-      <Header />
+      <Navbar />
       <div className="dashwrapper">
         <Sidebar />
         <main>

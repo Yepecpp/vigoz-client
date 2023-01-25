@@ -1,43 +1,56 @@
-import { useState, useEffect } from 'react';
-function Address({ preAddress, SetAddress }) {
-  const [address, Setaddress] = useState(preAddress);
-  useEffect(() => {
-    SetAddress(address);
-  }, [address]);
+import { Field, ErrorMessage } from 'formik';
+
+function Address({ name, handleChange, errors, address }) {
   return (
     <div className="popup_address">
       <h1>Address</h1>
-      <label className="label_address">Street 1:</label>
-      <input
+      <label className="label address">Street 1:</label>
+      <Field
         type="text"
-        name="street1"
+        name={name + 'street1'}
         className="input address"
         value={address?.street1}
-        onChange={(e) => Setaddress({ ...address, street1: e.target.value })}
+        onChange={handleChange}
       />
-      <label className="label_address">Street 2:</label>
-      <input
+      <ErrorMessage
+        name={name + 'street1'}
+        component={() => <div className="error">{errors.street1}</div>}
+      />
+      <label className="label address">Street 2:</label>
+      <Field
         type="text"
-        name="street2"
+        name={name + 'street2'}
         className="input address"
         value={address?.street2}
-        onChange={(e) => Setaddress({ ...address, street2: e.target.value })}
+        onChange={handleChange}
       />
-      <label className="label_address">City:</label>
-      <input
+      <ErrorMessage
+        name={name + 'street2'}
+        component={() => <div className="error">{errors.street2}</div>}
+      />
+      <label className="label address">City:</label>
+      <Field
         type="text"
-        name="city"
+        name={name + 'city'}
         className="input address"
         value={address?.city}
-        onChange={(e) => Setaddress({ ...address, city: e.target.value })}
+        onChange={handleChange}
       />
-      <label className="label_address">Zip:</label>
-      <input
+      <ErrorMessage
+        name={name + 'city'}
+        component={() => <div className="error">{errors.city}</div>}
+      />
+      <label className="label address">Zip:</label>
+      <Field
         type="text"
-        name="zip"
+        name={name + 'zip'}
         className="input address"
         value={address?.zip}
-        onChange={(e) => Setaddress({ ...address, zip: e.target.value })}
+        onChange={handleChange}
+      />
+      <ErrorMessage
+        name={name + 'zip'}
+        component={() => <div className="error">{errors.zip}</div>}
       />
     </div>
   );

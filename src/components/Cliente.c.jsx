@@ -1,20 +1,17 @@
 import React, { useState } from 'react';
-import { Button, Box } from '@mui/material';
+import { AxiosClient } from '../libs/axios';
+import { Box, Button } from '@mui/material';
 import ClientP from './popups/Client.popup';
+import Udatagrid from './datagrid/Udatagrid.c.jsx';
+import { useQuery } from '@tanstack/react-query';
+import moment from 'moment';
 /*id: z.string().optional(),
   name: z.string(),
-  address: addressZod || z.string(),
+  address: addressZod
   user: userZod.or(z.string()),
   identity: z.object({
     type: z.enum(['Fisical', 'Company']).default('Company'), //could be a normal civilian or a company
-    identity:
-      identityZod ||
-      z.object({
-        name: z.string(),
-        address: addressZod,
-        phone: z.string(),
-        email: z.string(),
-      }),
+    identity: identityZod
   }),
   rnc: z.string(),
   phone: z.string(),
@@ -22,45 +19,72 @@ import ClientP from './popups/Client.popup';
   updatedAt: z.string().optional(),*/
 const Cliente = () => {
   const [isOpened, SetisOpened] = useState(false);
+  const [client, SetClient] = useState({});
+  const clientsQuery = useQuery({
+    queryKey: ['clients'],
+    queryFn: async () => {
+      const axios = AxiosClient();
+      const response = await axios.get('/clients');
+      response.data.clients.forEach((client) => {
+        client.user = client.user ? client.user.name : 'No user';
+        client.createdAt = new Date(client.createdAt).toLocaleString();
+        client.updatedAt = new Date(client.updatedAt).toLocaleString();
+        client.identity.expiration = moment(client.identity.expiration).format(
+          'YYYY-MM-DD'
+        );
+      });
+      return response.data;
+    },
+  });
+  const GridProps = {
+    columns: [
+      { field: ['id'], headerName: 'ID', width: 70 },
+      { field: ['name'], headerName: 'Name', width: 130 },
+      { field: ['address']['street1'], headerName: 'street', width: 130 },
+      { field: ['user'], headerName: 'User', width: 130 },
+      { field: ['identity'], headerName: 'Identity', width: 130 },
+      { field: ['rnc'], headerName: 'RNC', width: 130 },
+      { field: ['phone'], headerName: 'Phone', width: 130 },
+      { field: ['createdAt'], headerName: 'Created At', width: 130 },
+      { field: ['updatedAt'], headerName: 'Updated At', width: 130 },
+    ],
+    rows: clientsQuery.data?.clients,
+    onRowClick: (e) => {
+      SetClient(e.row);
+      SetisOpened(true);
+    },
+  };
+  //
   return (
     <div className="contenedor_cliente">
       <div>
         <label className="buscar client">Search:</label>
         <input type="text" name="buscar" className="input buscar" />
       </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Id</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Id</td>
-            <td>Name</td>
-            <td>Adress</td>
-            <td>User</td>
-            <td>Phone</td>
-            <td>
-              <button className="editar_info">Edit</button>
-              <button className="delete_info">Delete</button>
-            </td>
-          </tr>
-          <Box mt={2} ml={2}>
-            <Button
-              variant="contained"
-              size="medium"
-              className="open_client"
-              onClick={() => {
-                SetisOpened(true);
-              }}
-            >
-              Agregar
-            </Button>
-          </Box>
-        </tbody>
-      </table>
-      {isOpened ? <ClientP SetisOpened={SetisOpened} /> : null}
+      {clientsQuery.status === 'loading' ? (
+        <div>loading</div>
+      ) : clientsQuery.status === 'error' ? (
+        <div>error</div>
+      ) : (
+        <Udatagrid data={GridProps} name="Clientes" />
+      )}
+      <Box mt={2} ml={2}>
+        <Button
+          variant="contained"
+          size="medium"
+          className="open_client"
+          onClick={() => {
+            SetisOpened(true);
+          }}
+          visibility={`${!isOpened}`}
+        />
+      </Box>
+      {isOpened ? (
+        <ClientP
+          SetisOpened={SetisOpened}
+          useClient={() => [client, SetClient]}
+        />
+      ) : null}
     </div>
   );
 };

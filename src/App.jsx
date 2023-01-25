@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Layout from './components/routes/Layout.c';
 import RequireAuth from './components/routes/RequireAuth.c';
 import Dashboard from './pages/Dashboard.p';
 import Indexdash from './pages/dashpages/Index.dash';
