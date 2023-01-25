@@ -15,10 +15,13 @@ function Footeri() {
           <h3 className="footer_h3">Hielo Vigoz</h3>
           <p className="footer_descripcion">
             Dirección: Calle Francisco Henríquez y Carvajal #140, sector San
-            Carlos Fundación de empresa: 15 de diciembre del año 2015 RNC:
-            1-3209235-1 Teléfono y Ws: 809-221-0444 Precio del hielo por unidad:
-            35 Horario laboral con delivery: de lunes a Sábado de 7:30 am a
-            4:00pm y los domingos de 9:00 am a 1:00 pm
+            Carlos <br />
+            Fundación de empresa: 15 de diciembre del año 2015 <br />
+            RNC: 1-3209235-1 <br />
+            Teléfono y Ws: 809-221-0444 <br />
+            Precio del hielo por unidad: 35 <br />
+            Horario laboral con delivery: de lunes a Sábado de 7:30 am a 4:00pm
+            y los domingos de 9:00 am a 1:00 pm
           </p>
           <ul className="socials">
             <li>
