@@ -1,98 +1,95 @@
-import { useState, useEffect } from 'react';
+import { Field, ErrorMessage } from 'formik';
 
-function Identity({ Identity, SetIdentity }) {
-  const [identity, Setidentity] = useState(Identity);
-  useEffect(() => {
-    SetIdentity(identity);
-  }, [identity]);
-
+function Identity(name, handleChange, errors, identity) {
   return (
     <div className="popup_identity">
       <h1>Identity</h1>
-      <label className="label identity">Type:</label>
-      <select
+      <label className="label identity">Type algo:</label>
+      <Field
+        as="select"
+        name={name + 'algo'}
         className="input identity"
-        value={identity?.type}
-        onChange={(e) =>
-          Setidentity({
-            ...identity,
-            type: e.target.value,
-          })
-        }
+        value={identity?.algo}
+        onChange={handleChange}
       >
         <option value="placeholder">Select</option>
         <option value="Fisical">Fisical</option>
         <option value="Juridical">Juridical</option>
-      </select>
+      </Field>
+      <ErrorMessage
+        name={name + 'algo'}
+        component={() => <div className="error">{errors.algo}</div>}
+      />
 
-      <label className="label identity">Type:</label>
-      <select
+      <label className="label identity">Type Document:</label>
+      <Field
+        name={name + 'document'}
         className="input identity"
-        value={identity?.identity?.type}
-        onChange={(e) =>
-          Setidentity({
-            ...identity,
-            identity: { ...identity?.identity, type: e.target.value },
-          })
-        }
+        value={identity?.document}
+        onChange={handleChange}
       >
         <option value="placeholder">Select</option>
         <option value="id">ID</option>
         <option value="passport">Passport</option>
-      </select>
+      </Field>
+      <ErrorMessage
+        name={name + 'document'}
+        component={() => <div className="error">{errors.document}</div>}
+      />
+
       <label className="label identity">Number:</label>
-      <input
+      <Field
         type="text"
         name="number"
         className="input cliente"
-        value={identity?.identity?.number}
-        onChange={(e) =>
-          Setidentity({
-            ...identity,
-            identity: { ...identity?.identity, number: e.target.value },
-          })
-        }
+        value={identity?.number}
+        onChange={handleChange}
       />
+      <ErrorMessage
+        name={name + 'number'}
+        component={() => <div className="error">{errors.number}</div>}
+      />
+
       <label className="label identity">Expiration:</label>
-      <input
+      <Field
         type="date"
         name="expiration"
         className="inputdate identity"
-        value={identity?.identity?.expiration}
-        onChange={(e) =>
-          Setidentity({
-            ...identity,
-            identity: { ...identity?.identity, expiration: e.target.value },
-          })
-        }
+        value={identity?.expiration}
+        onChange={handleChange}
       />
+      <ErrorMessage
+        name={name + 'expiration'}
+        component={() => <div className="error">{errors.expiration}</div>}
+      />
+
       <label className="label identity">Country:</label>
-      <input
+      <Field
         type="text"
         name="country"
         className="input cliente"
-        value={identity?.identity?.country}
-        onChange={(e) =>
-          Setidentity({
-            ...identity,
-            identity: { ...identity?.identity, country: e.target.value },
-          })
-        }
+        value={identity?.country}
+        onChange={handleChange}
       />
+      <ErrorMessage
+        name={name + 'country'}
+        component={() => <div className="error">{errors.country}</div>}
+      />
+
       <label className="label identity">State:</label>
-      <select
+      <Field
+        name={name + 'state'}
         className="input identity"
-        value={identity?.identity?.state}
-        onChange={(e) =>
-          Setidentity({
-            ...identity,
-            identity: { ...identity?.identity, state: e.target.value },
-          })
-        }
+        value={identity?.state}
+        onChange={handleChange}
       >
         <option value="active">Active</option>
         <option value="inactive">Inactive</option>
-      </select>
+      </Field>
+      <ErrorMessage
+        name={name + 'state'}
+        component={() => <div className="error">{errors.state}</div>}
+      />
     </div>
   );
 }
