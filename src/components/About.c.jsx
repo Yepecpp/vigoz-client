@@ -3,30 +3,23 @@ import { GiIcebergs } from 'react-icons/gi';
 
 const Aboutc = () => {
   return (
-    <div className="contenedor_sbn_all">
+    <div
+      className="contenedor_sbn_all"
+      style={{ backgroundImage: 'url(/media/slider/slide2.jpeg)' }}
+    >
       <div className="contenedor_sbn">
-        <div className="contenedor_sbn_1">
-          <h1>
-            <GiIcebergs />
-          </h1>
-        </div>
-        <div className="contenedor_sbn_2">
-          <div className="contenedor_sbn_2_1">
-            <h1>Acerca de Nosotros</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Excepturi dicta voluptatem rem. Delectus asperiores commodi fugit
-              quisquam eius blanditiis voluptas, odio veniam sequi, modi
-              doloribus quia rerum exercitationem quaerat incidunt beatae
-              possimus, voluptatum sit hic pariatur. Rem cupiditate omnis
-              asperiores numquam ipsam ullam impedit vero odit, dolore id
-              obcaecati a aut eaque eum eius, doloremque ea. Voluptas ducimus,
-              nemo sint pariatur quaerat blanditiis accusantium rerum nam neque
-              voluptatum aut dicta vero obcaecati soluta magni consequatur alias
-              iusto eligendi. Amet cum delectus omnis ipsam ex atque, animi
-              doloremque nesciunt voluptas vitae?
-            </p>
-          </div>
+        <GiIcebergs />
+        <h1>Acerca de Nosotros</h1>
+        <div className="wrapper-about">
+          <p>
+            Hielo vigoz es una empresa que se dedica a la venta de hielo en
+            diferentes tamaños y formas, con el fin de satisfacer las
+            necesidades de nuestros clientes, ofreciendo un servicio de calidad
+            y profesionalismo. Fue fundada el 15 de diciembre del año 2015, con
+            el fin de progresar el negocio familiar de venta de hielo, y así
+            poder llevar la costumbre familiar de la fabrica de hielo a un nivel
+            que el baron nunca se imaginó.
+          </p>
         </div>
       </div>
     </div>

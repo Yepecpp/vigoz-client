@@ -33,22 +33,25 @@ function Navbar() {
         </nav>
         {auth?.isAuth ? (
           <>
-            <h1>Bienvenido: {auth.data.name}</h1>
             <button
               className="a_button"
               onClick={() => {
                 LogOut(Setauth);
               }}
             >
-              Log Out
+              <p>Log Out</p>
             </button>
             <Link className="index_li_a" to="/Dashboard">
-              <button className="a_button">Dashboard</button>
+              <button className="a_button">
+                <p>Dashboard</p>
+              </button>
             </Link>
           </>
         ) : (
           <Link className="index_li_a" to="/Login">
-            <button className="a_button">Login</button>
+            <button className="a_button">
+              <p>Login</p>
+            </button>
           </Link>
         )}
       </>

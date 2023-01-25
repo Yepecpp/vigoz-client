@@ -2,7 +2,7 @@
 @import './imports/Letters.scss';
 
 * {
-  font-family: Helvetica, sans-serif;
+  font-family: 'Rubik', sans-serif;
 }
 
 //Navbar
@@ -24,11 +24,11 @@ body {
 }
 
 .index_header {
-  height: 80px;
+  width: 100vw;
+  height: 10vh;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
+  justify-content: space-around;
   background-color: #e1e1e1;
 }
 
@@ -42,25 +42,52 @@ body {
 
 .index_nav_ul li {
   display: inline-block;
-  padding: 0px 20px;
+  padding: 0 1.5rem;
 }
 
 .index_nav_ul li a {
   transition: all 0.3s ease 0s;
 }
 
+.index_li_a {
+  font-size: 1.2rem;
+}
+.a_button > p {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
 .index_nav_ul li a:hover {
   color: $color-5;
 }
+.h1_a {
+  font-size: 2.5rem;
+}
+
+@media screen and (max-width: 780px) {
+  .h1_a {
+    font-size: 1.5rem;
+  }
+
+  .a_button {
+    font-size: 0.2rem;
+  }
+
+  .index_li_a {
+    font-size: 1rem;
+  }
+}
 
 .a_button {
-  padding: 9px 25px;
+  padding: 1rem 2rem;
   background-color: #000;
   color: #fff;
   border: none;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease 0s;
+  font-size: 1rem;
 }
 
 button:hover {
@@ -273,22 +300,24 @@ button:hover {
 
 //Sobre Nosotros
 
-.contenedor_sbn_all {
+/* .contenedor_sbn_all {
   width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('/media/placeholder.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .contenedor_sbn {
-  width: 60vw;
-  height: 85vh;
+  width: 30vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
 }
 
 .contenedor_sbn_1 {
@@ -325,4 +354,34 @@ button:hover {
   justify-content: center;
   color: #273142;
   padding-top: 10vh;
+} */
+
+.contenedor_sbn_all {
+  font-family: 'Rubik', sans-serif;
+  font-size: large;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  .contenedor_sbn {
+    width: 60vw;
+    height: 50vh;
+    background-color: #888888;
+    border-radius: 30px;
+    padding: 3vh 3vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .wrapper-about {
+      font-weight: 400;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 }

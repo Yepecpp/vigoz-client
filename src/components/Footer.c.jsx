@@ -64,7 +64,8 @@ function Footeri() {
         </div>
         <div className="footer_bajo">
           <p>
-            copyrigth &copy; 2022 Hielo Vigoz. designed by <span>Jona</span>
+            copyrigth &copy; 2022 Hielo Vigoz. designed by{' '}
+            <span>Team Alex Omega Mujeres</span>
           </p>
         </div>
       </footer>

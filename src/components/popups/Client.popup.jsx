@@ -53,7 +53,7 @@ function Client({ SetisOpened, useClient }) {
 
   return (
     <Formik>
-      <Form onSubmit={Formikh.handleSubmit}>
+      <Form onSubmit={Formikh.handleSubmit} className="container_form">
         {Formikh.values?.id ? (
           <h2>Editing client: {Formikh.values?.name}</h2>
         ) : (
