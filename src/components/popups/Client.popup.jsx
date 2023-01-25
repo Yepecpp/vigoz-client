@@ -10,6 +10,7 @@ function Client({ SetisOpened, useClient }) {
   const clientMutation = useMutation({
     mutationFn: async (client) => {
       const axios = AxiosClient();
+      if (client.user === '') delete client.user;
       const response = await axios.post('/clients', { client: client });
       return response.data;
     },
