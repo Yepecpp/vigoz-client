@@ -4,7 +4,7 @@ function Address({ name, handleChange, errors, address }) {
   return (
     <div className="popup_address">
       <h1>Address</h1>
-      <label className="label_address">Street 1:</label>
+      <label className="label address">Street 1:</label>
       <Field
         type="text"
         name={name + 'street1'}
@@ -16,7 +16,7 @@ function Address({ name, handleChange, errors, address }) {
         name={name + 'street1'}
         component={() => <div className="error">{errors.street1}</div>}
       />
-      <label className="label_address">Street 2:</label>
+      <label className="label address">Street 2:</label>
       <Field
         type="text"
         name={name + 'street2'}
@@ -28,7 +28,7 @@ function Address({ name, handleChange, errors, address }) {
         name={name + 'street2'}
         component={() => <div className="error">{errors.street2}</div>}
       />
-      <label className="label_address">City:</label>
+      <label className="label address">City:</label>
       <Field
         type="text"
         name={name + 'city'}
@@ -40,7 +40,7 @@ function Address({ name, handleChange, errors, address }) {
         name={name + 'city'}
         component={() => <div className="error">{errors.city}</div>}
       />
-      <label className="label_address">Zip:</label>
+      <label className="label address">Zip:</label>
       <Field
         type="text"
         name={name + 'zip'}

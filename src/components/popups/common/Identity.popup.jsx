@@ -1,97 +1,105 @@
 import { Field, ErrorMessage } from 'formik';
-
+import PropTypes from 'prop-types';
 function Identity(name, handleChange, errors, identity) {
   return (
     <div className="popup_identity">
       <h1>Identity</h1>
-      <label className="label identity">Type algo:</label>
-      <Field
-        as="select"
-        name={name + 'algo'}
+      <label className="label identity">Type:</label>
+      <select
+        name={name + 'type'}
         className="input identity"
-        value={identity?.algo}
+        value={identity?.identity?.type}
         onChange={handleChange}
       >
         <option value="placeholder">Select</option>
         <option value="Fisical">Fisical</option>
         <option value="Juridical">Juridical</option>
-      </Field>
+      </select>
       <ErrorMessage
-        name={name + 'algo'}
-        component={() => <div className="error">{errors.algo}</div>}
+        name={name + 'type'}
+        component={() => <div className="error">{errors?.type}</div>}
       />
 
-      <label className="label identity">Type Document:</label>
-      <Field
-        name={name + 'document'}
+      <label className="label identity">Type:</label>
+      <select
+        name={name + name + 'type'}
         className="input identity"
-        value={identity?.document}
+        value={identity?.identity?.type}
         onChange={handleChange}
       >
         <option value="placeholder">Select</option>
         <option value="id">ID</option>
         <option value="passport">Passport</option>
-      </Field>
+      </select>
       <ErrorMessage
-        name={name + 'document'}
-        component={() => <div className="error">{errors.document}</div>}
+        name={name + name + 'type'}
+        component={() => <div className="error">{errors?.identity?.type}</div>}
       />
-
       <label className="label identity">Number:</label>
       <Field
         type="text"
-        name="number"
+        name={name + name + 'number'}
         className="input cliente"
-        value={identity?.number}
+        value={identity?.identity?.number}
         onChange={handleChange}
       />
       <ErrorMessage
-        name={name + 'number'}
-        component={() => <div className="error">{errors.number}</div>}
+        name={name + name + 'number'}
+        component={() => (
+          <div className="error">{errors?.identity?.number}</div>
+        )}
       />
 
       <label className="label identity">Expiration:</label>
       <Field
         type="date"
-        name="expiration"
+        name={name + name + 'expiration'}
         className="inputdate identity"
-        value={identity?.expiration}
+        value={identity?.identity?.expiration}
         onChange={handleChange}
       />
       <ErrorMessage
-        name={name + 'expiration'}
-        component={() => <div className="error">{errors.expiration}</div>}
+        name={name + name + 'expiration'}
+        component={() => (
+          <div className="error">{errors?.identity?.expiration}</div>
+        )}
       />
 
       <label className="label identity">Country:</label>
       <Field
         type="text"
-        name="country"
+        name={name + name + 'country'}
         className="input cliente"
-        value={identity?.country}
+        value={identity?.identity?.country}
         onChange={handleChange}
       />
       <ErrorMessage
-        name={name + 'country'}
-        component={() => <div className="error">{errors.country}</div>}
+        name={name + name + 'country'}
+        component={() => (
+          <div className="error">{errors?.identity?.country}</div>
+        )}
       />
-
       <label className="label identity">State:</label>
-      <Field
-        name={name + 'state'}
+      <select
+        name={name + name + 'state'}
         className="input identity"
-        value={identity?.state}
+        value={identity?.identity?.state}
         onChange={handleChange}
       >
         <option value="active">Active</option>
         <option value="inactive">Inactive</option>
-      </Field>
+      </select>
       <ErrorMessage
-        name={name + 'state'}
-        component={() => <div className="error">{errors.state}</div>}
+        name={name + name + 'state'}
+        component={() => <div className="error">{errors?.identity?.state}</div>}
       />
     </div>
   );
 }
-
+Identity.propTypes = {
+  name: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  errors: PropTypes.object,
+  identity: PropTypes.object.isRequired,
+};
 export default Identity;
