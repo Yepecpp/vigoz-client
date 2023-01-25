@@ -3,20 +3,22 @@ import IdentityP from './common/Identity.popup';
 import AddressP from './common/Address.popup';
 import { Button } from '@mui/material';
 import { Formik, useFormik, Form, Field, ErrorMessage } from 'formik';
-
-function Client({ SetisOpened }) {
-  //eslint-disable-next-line
-  const axios = AxiosClient();
-
-  const SaveClient = async (client) => {
-    client.preventDefault();
-    const response = await axios.post('/clients', { client: client });
-    console.log(response);
-  };
-
-  const Formikh = useFormik({
-    initialValues: {
-      name: '',
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+function Client({ SetisOpened, useClient }) {
+  const queryClient = useQueryClient();
+  const [client] = useClient();
+  const clientMutation = useMutation({
+    mutationFn: async (client) => {
+      const axios = AxiosClient();
+      const response = await axios.post('/clients', { client: client });
+      return response.data;
+    },
+    onSuccess: (values) => {
+      queryClient.invalidateQueries(['clients', values.id]);
+    },
+  });
+  /*
+   name: '',
       user: '',
       rnc: '',
       phone: '',
@@ -34,12 +36,17 @@ function Client({ SetisOpened }) {
           expiration: new Date(),
           state: 'active',
         },
-      },
+      },*/
+  const Formikh = useFormik({
+    initialValues: {
+      ...client,
     },
-    onSubmit: (values, { resetForm }) => {
-      resetForm();
-      SaveClient(values);
-      console.log('Form Send');
+    onSubmit: async (values, { resetForm }) => {
+      clientMutation.mutate(values);
+      if (clientMutation.isSuccess) {
+        resetForm();
+        SetisOpened(false);
+      }
     },
   });
 
@@ -123,7 +130,7 @@ function Client({ SetisOpened }) {
           handleChange={Formikh.handleChange}
           errors={Formikh.errors?.address}
         />
-        <Button variant="contained" color="success">
+        <Button type="submit" variant="contained" color="success">
           Guardar
         </Button>
       </Form>

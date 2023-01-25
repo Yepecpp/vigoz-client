@@ -1,6 +1,6 @@
 import { Field, ErrorMessage } from 'formik';
 import PropTypes from 'prop-types';
-function Identity(name, handleChange, errors, identity) {
+function Identity({ name, handleChange, errors, identity }) {
   return (
     <div className="popup_identity">
       <h1>Identity</h1>
@@ -13,7 +13,7 @@ function Identity(name, handleChange, errors, identity) {
       >
         <option value="placeholder">Select</option>
         <option value="Fisical">Fisical</option>
-        <option value="Juridical">Juridical</option>
+        <option value="Company">Company</option>
       </select>
       <ErrorMessage
         name={name + 'type'}
@@ -86,6 +86,7 @@ function Identity(name, handleChange, errors, identity) {
         value={identity?.identity?.state}
         onChange={handleChange}
       >
+        <option value="placeholder">Select</option>
         <option value="active">Active</option>
         <option value="inactive">Inactive</option>
       </select>
@@ -100,6 +101,6 @@ Identity.propTypes = {
   name: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
   errors: PropTypes.object,
-  identity: PropTypes.object.isRequired,
+  identity: PropTypes.object,
 };
 export default Identity;

@@ -4,7 +4,7 @@ const Udatagrid = ({ data, name }) => {
   return (
     <Box style={{ height: '70vh' }}>
       <Typography variant="h4">{name}</Typography>
-      <DataGrid {...data} />
+      <DataGrid {...data} treeData getTreeDataPath={(row) => row.path} />
     </Box>
   );
 };

@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { AxiosClient } from '../libs/axios';
 import { Box, Button } from '@mui/material';
 import ClientP from './popups/Client.popup';
 import Udatagrid from './datagrid/Udatagrid.c.jsx';
+import { useQuery } from '@tanstack/react-query';
+import moment from 'moment';
 /*id: z.string().optional(),
   name: z.string(),
   address: addressZod
@@ -16,19 +19,40 @@ import Udatagrid from './datagrid/Udatagrid.c.jsx';
   updatedAt: z.string().optional(),*/
 const Cliente = () => {
   const [isOpened, SetisOpened] = useState(false);
+  const [client, SetClient] = useState({});
+  const clientsQuery = useQuery({
+    queryKey: ['clients'],
+    queryFn: async () => {
+      const axios = AxiosClient();
+      const response = await axios.get('/clients');
+      response.data.clients.forEach((client) => {
+        client.user = client.user ? client.user.name : 'No user';
+        client.createdAt = new Date(client.createdAt).toLocaleString();
+        client.updatedAt = new Date(client.updatedAt).toLocaleString();
+        client.identity.expiration = moment(client.identity.expiration).format(
+          'YYYY-MM-DD'
+        );
+      });
+      return response.data;
+    },
+  });
   const GridProps = {
     columns: [
-      { field: 'id', headerName: 'ID', width: 70 },
-      { field: 'name', headerName: 'Name', width: 130 },
-      { field: 'address', headerName: 'Address', width: 130 },
-      { field: 'user', headerName: 'User', width: 130 },
-      { field: 'identity', headerName: 'Identity', width: 130 },
-      { field: 'rnc', headerName: 'RNC', width: 130 },
-      { field: 'phone', headerName: 'Phone', width: 130 },
-      { field: 'createdAt', headerName: 'Created At', width: 130 },
-      { field: 'updatedAt', headerName: 'Updated At', width: 130 },
+      { field: ['id'], headerName: 'ID', width: 70 },
+      { field: ['name'], headerName: 'Name', width: 130 },
+      { field: ['address']['street1'], headerName: 'street', width: 130 },
+      { field: ['user'], headerName: 'User', width: 130 },
+      { field: ['identity'], headerName: 'Identity', width: 130 },
+      { field: ['rnc'], headerName: 'RNC', width: 130 },
+      { field: ['phone'], headerName: 'Phone', width: 130 },
+      { field: ['createdAt'], headerName: 'Created At', width: 130 },
+      { field: ['updatedAt'], headerName: 'Updated At', width: 130 },
     ],
-    rows: [],
+    rows: clientsQuery.data?.clients,
+    onRowClick: (e) => {
+      SetClient(e.row);
+      SetisOpened(true);
+    },
   };
   //
   return (
@@ -37,7 +61,13 @@ const Cliente = () => {
         <label className="buscar client">Search:</label>
         <input type="text" name="buscar" className="input buscar" />
       </div>
-      <Udatagrid data={GridProps} name="Clientes" />
+      {clientsQuery.status === 'loading' ? (
+        <div>loading</div>
+      ) : clientsQuery.status === 'error' ? (
+        <div>error</div>
+      ) : (
+        <Udatagrid data={GridProps} name="Clientes" />
+      )}
       <Box mt={2} ml={2}>
         <Button
           variant="contained"
@@ -49,7 +79,12 @@ const Cliente = () => {
           visibility={`${!isOpened}`}
         />
       </Box>
-      {isOpened ? <ClientP SetisOpened={SetisOpened} /> : null}
+      {isOpened ? (
+        <ClientP
+          SetisOpened={SetisOpened}
+          useClient={() => [client, SetClient]}
+        />
+      ) : null}
     </div>
   );
 };
