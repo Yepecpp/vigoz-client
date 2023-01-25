@@ -1,6 +1,10 @@
 @import './imports/Colors.scss';
 @import './imports/Letters.scss';
 
+* {
+  font-family: Helvetica, sans-serif;
+}
+
 //Navbar
 body {
   margin: 0;
@@ -25,7 +29,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-  background-color: #f2f2f2;
+  background-color: #e1e1e1;
 }
 
 .index_logo .h1_a {

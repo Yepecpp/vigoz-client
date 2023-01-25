@@ -3,7 +3,8 @@ import React from 'react';
 const Usuariosc = () => {
   return (
     <div>
-      <div className="container_complet">
+      <h1>Componente de Usuario</h1>
+      {/*       <div className="container_complet">
         <div className="center">
           <h2 className="text1">Sign Up</h2>
           <h3 className="text2">Enter email and password to continue</h3>
@@ -20,7 +21,7 @@ const Usuariosc = () => {
             <hr className="hr2" />
           </form>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
