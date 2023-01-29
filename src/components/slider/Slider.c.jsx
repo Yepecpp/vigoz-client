@@ -1,10 +1,10 @@
 import { useState } from 'react';
 const SliderData = [
+  'cuboHielo.jpg',
+  'Hielo-marino.jpg',
   'hieloSlide.jpg',
+  'poloSlide.jpg',
   'slide1.jpg',
-  'slide2.jpeg',
-  'slide3.jpeg',
-  'slide4.jpeg',
 ];
 import Pagination from './Pagination.c';
 // Path to images
