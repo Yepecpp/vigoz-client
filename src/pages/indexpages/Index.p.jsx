@@ -1,4 +1,3 @@
-import React from 'react';
 import Slider from '../../components/slider/Slider.c';
 import Squares from '../../components/squares/Squares.c';
 
