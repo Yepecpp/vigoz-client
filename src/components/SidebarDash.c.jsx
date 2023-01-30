@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { HiArchiveBoxArrowDown } from 'react-icons/hi2';
-
+import { IoMdExit } from 'react-icons/io';
 import {
   FaHouseUser,
   FaOutdent,
@@ -14,63 +14,61 @@ import {
 
 const Navbar = () => {
   return (
-    <nav className="sidebar">
-      <ul className="sidebar_ul">
-        <li className="sidebar_ul_item">
+    <nav className="container_sidebar">
+      <ul className="list_sidebar">
+        <li className="item_sidebar">
+          <Link className="link_sidebar" to="/Dashboard/">
           <FaHouseUser />
-          <Link className="sidebar_ul_li_a" to="/Dashboard/">
-            Dashboard
+            <p className='itemText_sidebar'>Dashboard</p>
           </Link>
         </li>
-        <li className="sidebar_ul_item">
+        <li className="item_sidebar">
+          <Link className="link_sidebar" to="/Dashboard/Nominas">
           <FaOutdent />
-          <Link className="sidebar_ul_li_a" to="/Dashboard/Nominas">
-            Nomina
+            <p className='itemText_sidebar'>Nomina</p>
           </Link>
         </li>
-        <li className="sidebar_ul_item">
+        <li className="item_sidebar">
+          <Link className="link_sidebar" to="/Dashboard/Almacenes">
           <HiArchiveBoxArrowDown />
-          <Link className="sidebar_ul_li_a" to="/Dashboard/Almacenes">
-            Almacen
+            <p className='itemText_sidebar'>Almacen</p>
           </Link>
         </li>
-        <li className="sidebar_ul_item">
+        <li className="item_sidebar">
+          <Link className="link_sidebar" to="/Dashboard/Gastos">
           <FaRegListAlt />
-          <Link className="sidebar_ul_li_a" to="/Dashboard/Gastos">
-            Gastos
+            <p className='itemText_sidebar'>Gastos</p>
           </Link>
         </li>
-        <li className="sidebar_ul_item">
+        <li className="item_sidebar">
+          <Link className="link_sidebar" to="/Dashboard/Usuarios">
           <FaUser />
-          <Link className="sidebar_ul_li_a" to="/Dashboard/Usuarios">
-            Usuarios
+            <p className='itemText_sidebar'>Usuarios</p>
           </Link>
         </li>
-        <li className="sidebar_ul_item">
+        <li className="item_sidebar">
+          <Link className="link_sidebar" to="/Dashboard/Distribucion">
           <FaTruck />
-          <Link className="sidebar_ul_li_a" to="/Dashboard/Distribucion">
-            Distribución
+            <p className='itemText_sidebar'>Distribución</p>
           </Link>
         </li>
-        <li className="sidebar_ul_item">
+        <li className="item_sidebar">
+          <Link className="link_sidebar" to="/Dashboard/Clientes">
           <FaUserFriends />
-          <Link className="sidebar_ul_li_a" to="/Dashboard/Clientes">
-            Clientes
+            <p className='itemText_sidebar'>Clientes</p>
           </Link>
         </li>
-        <hr />
-        <li className="sidebar_ul_item">
+        <li className="item_sidebar">
+          <Link className="link_sidebar" to="/Dashboard/Perfil">
           <FaRegUser />
-          <Link className="sidebar_ul_li_a" to="/Dashboard/Perfil">
-            Perfil
+            <p className='itemText_sidebar'>Perfil</p>
           </Link>
         </li>
-        <li className="sidebar_ul_item buttonli">
-          <button className="sidebar_ul_li_button">
-            <Link className="sidebar_ul_li_a" to="/">
-              Salir
-            </Link>
-          </button>
+        <li className="item_sidebar" id='exit_sidebar'>
+          <Link className="link_sidebar" to="/">
+          <IoMdExit />
+            <p className='itemText_sidebar'>Salir</p>
+          </Link>
         </li>
       </ul>
     </nav>

@@ -61,13 +61,7 @@ const Cliente = () => {
         <label className="buscar client">Search:</label>
         <input type="text" name="buscar" className="input buscar" />
       </div>
-      {clientsQuery.status === 'loading' ? (
-        <div>loading</div>
-      ) : clientsQuery.status === 'error' ? (
-        <div>error</div>
-      ) : (
-        <Udatagrid data={GridProps} name="Clientes" />
-      )}
+
       <Box mt={2} ml={2}>
         <Button
           variant="contained"
@@ -77,8 +71,20 @@ const Cliente = () => {
             SetisOpened(true);
           }}
           visibility={`${!isOpened}`}
-        />
+        >Agregar</Button>
       </Box>
+
+      {clientsQuery.status === 'loading' ? (
+        <div>loading</div>
+      ) : clientsQuery.status === 'error' ? (
+        <div>error</div>
+      ) : (
+        <Udatagrid data={GridProps} name="Clientes" />
+      )}
+
+<div>hd</div>
+      <div>hd</div>
+
       {isOpened ? (
         <ClientP
           SetisOpened={SetisOpened}

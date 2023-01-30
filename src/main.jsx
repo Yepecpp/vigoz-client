@@ -14,6 +14,8 @@ import './styles/Almacen.p.scss';
 import './styles/Gastos.p.scss';
 import './styles/Nomina.p.scss';
 import './styles/Register.p.scss';
+import './styles/Popup.scss';
+
 const queryClient = new QueryClient();
 const Render = () => {
   ReactDOM.createRoot(document.getElementById('root')).render(
