@@ -39,9 +39,9 @@ function Navbar() {
           />
         </div>
 
-        <Link to="/" className="link_logo_media" onClick={handleChange}>
+        {/*         <Link to="/" className="link_logo_media" onClick={handleChange}>
           <p className="navbar_logo_media">Hielo Vigoz</p>
-        </Link>
+        </Link> */}
 
         <ul className="navbar_buttons_media">
           <li className="navbar_button_media">
