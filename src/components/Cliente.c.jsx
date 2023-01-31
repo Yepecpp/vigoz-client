@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { AxiosClient } from '../libs/axios';
-import { Box, Button } from '@mui/material';
+import { Button } from '@mui/material';
 import ClientP from './popups/Client.popup';
 import Udatagrid from './datagrid/Udatagrid.c.jsx';
 import { useQuery } from '@tanstack/react-query';
@@ -56,34 +56,33 @@ const Cliente = () => {
   };
   //
   return (
-    <div className="contenedor_cliente">
-      <div>
-        <label className="buscar client">Search:</label>
-        <input type="text" name="buscar" className="input buscar" />
-      </div>
+    <div className="container_formClient">
+      <div className="controls_clientForm">
+        <div className='container_search_client'>
+          <label className="text_client">Search:</label>
+          <input type="text" name="buscar" className="search_client" />
+        </div>
 
-      <Box mt={2} ml={2}>
-        <Button
-          variant="contained"
-          size="medium"
-          className="open_client"
-          onClick={() => {
-            SetisOpened(true);
-          }}
-          visibility={`${!isOpened}`}
-        >Agregar</Button>
-      </Box>
+          <Button
+            variant="contained"
+            size="medium"
+            className="open_client"
+            onClick={() => {
+              SetisOpened(true);
+            }}
+            visibility={`${!isOpened}`}
+          >
+            Agregar
+          </Button>
+      </div>
 
       {clientsQuery.status === 'loading' ? (
         <div>loading</div>
       ) : clientsQuery.status === 'error' ? (
         <div>error</div>
       ) : (
-        <Udatagrid data={GridProps} name="Clientes" />
+        <Udatagrid data={GridProps} name="Clientes"/>
       )}
-
-<div>hd</div>
-      <div>hd</div>
 
       {isOpened ? (
         <ClientP

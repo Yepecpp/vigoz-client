@@ -6,8 +6,8 @@ const Dashboard = ({ Comp }) => {
     <>
       <Navbar />
       <div className="container_dash">
-      <Sidebar />
-        <main>
+        <Sidebar />
+        <main className='main_dash'>
           <>{Comp ? <Comp /> : <h1>Home</h1>}</>
         </main>
       </div>
