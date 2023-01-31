@@ -18,6 +18,12 @@ function Navbar() {
       setIcon('nav__toggler toggle');
     } else setIcon('nav__toggler');
   };
+
+  const handleClick = () => {
+    setActive('nav__menu');
+    setIcon('nav__toggler');
+    return;
+  };
   
   return (
     <nav className="nav">
@@ -26,22 +32,22 @@ function Navbar() {
       </Link>
       <ul className={active}>
         <li className="nav__item">
-          <Link to={'/'} className="nav__link">
+          <Link to={'/'} onClick={handleClick} className="nav__link">
             Inicio
           </Link>
         </li>
         <li className="nav__item">
-          <Link to={'/About'} className="nav__link">
+          <Link to={'/About'} onClick={handleClick} className="nav__link">
             Acerca de Nosotros
           </Link>
         </li>
         <li className="nav__item">
-          <Link to={'/Contacto'} className="nav__link">
+          <Link to={'/Contacto'} onClick={handleClick} className="nav__link">
             Contacto
           </Link>
         </li>
         <li className="nav__item">
-          <Link to={'/Servicios'} className="nav__link">
+          <Link to={'/Servicios'} onClick={handleClick} className="nav__link">
             Servicios
           </Link>
         </li>
@@ -56,6 +62,7 @@ function Navbar() {
           className="nav__link" 
           onClick={() => {
             LogOut(Setauth);
+            handleClick;
           }}
           >
             Log Out
@@ -64,6 +71,7 @@ function Navbar() {
         <li className="nav__item">
           <Link
           to={'/Dashboard'}
+          onClick={handleClick}
           className="nav__link"
           >
             Dashboard
@@ -73,7 +81,7 @@ function Navbar() {
       ) : (
         <>
         <li className="nav__item">
-          <Link to={'/Login'} className="nav__link">
+          <Link to={'/Login'} onClick={handleClick} className="nav__link">
             Login
           </Link>
         </li>

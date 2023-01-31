@@ -266,7 +266,6 @@ html {
 //Sobre Nosotros
 
 .contenedor_sbn_all {
-  font-family: 'Rubik', sans-serif;
   font-size: large;
   width: 100vw;
   height: 100vh;
@@ -276,21 +275,46 @@ html {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
   .contenedor_sbn {
     width: 60vw;
     height: 50vh;
-    background-color: #888888;
+    background-color: #d4d4d4;
     border-radius: 30px;
     padding: 3vh 3vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    .about_logo{
+      font-size: 10rem;
+      position: absolute;
+      top: 22vh;
+      left: 46vw;
+    }
+
     .wrapper-about {
       font-weight: 400;
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .contenedor_sbn_all {
+    .contenedor_sbn {
+      width: 90vw;
+      height: 50vh;
+      
+      .about_logo{
+        font-size: 10rem;
+        position: absolute;
+        top: 24vh;
+        left: 38vw;
+      }
     }
   }
 }
