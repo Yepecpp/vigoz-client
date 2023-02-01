@@ -4,7 +4,7 @@ const Nominap = () => {
   return (
     <div className="container">
       <div className="Name">
-        <h2>COMPAÑIA DE HIELO VIGOZ S.A.</h2>
+        <h2>COMPAÑIA DE HIELO VIGOZ S.R.L</h2>
       </div>
       <div className="Sub">
         <h3>Nomina del 2023</h3>

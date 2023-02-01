@@ -4,7 +4,7 @@ import { useAuthContext } from '../contexts/Auth';
 const Perfilc = () => {
   const [auth] = useAuthContext();
   return (
-    <div className="user-profile">
+    <div className="user-profile" style={{ backgroundImage: 'url(/circle.png)' }}>
       <div className="contenedor_user_info">
         <div className="photobutton">
           <div className="user-photo">
@@ -31,8 +31,8 @@ const Perfilc = () => {
           <label htmlFor="">Usuario</label>
           <div className="username">{auth.data.login.username}</div>
         </div>
-      </div>
-      <div className="form-container">
+        {/*  </div>
+       <div className="form-container">
         <form>
           <div className="personal-data">
             <h3>Personal Data</h3>
@@ -88,8 +88,9 @@ const Perfilc = () => {
             <Button variant="outlined">Save Changes</Button>
           </div>
         </form>
+        */}
       </div>
-    </div>
+    </div> 
   );
 };
 
