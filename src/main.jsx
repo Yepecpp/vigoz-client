@@ -9,13 +9,15 @@ import './styles/Dashboard.p.scss';
 import './styles/NoPage.p.scss';
 import './styles/Index.p.scss';
 import './styles/Perfil.p.scss';
-import './styles/Cliente.scss';
+import './styles/Cliente.p.scss';
 import './styles/Almacen.p.scss';
 import './styles/Gastos.p.scss';
 import './styles/Nomina.p.scss';
 import './styles/Register.p.scss';
 import './styles/Popup.scss';
 import './styles/Loading.p.scss';
+import './styles/Restricted.p.scss';
+//scss
 
 const queryClient = new QueryClient();
 const Render = () => {

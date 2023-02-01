@@ -2,10 +2,19 @@
 @import './imports/Letters.scss';
 
 //Footer
+<<<<<<< HEAD
 body {
   overflow-x: hidden;
 }
 
+=======
+.circle_user{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ 
+}
+>>>>>>> b2fab63d0f52cf95fe993d6f94c1761a13d47304
 .footerdash {
   background-color: #111;
   height: auto;
