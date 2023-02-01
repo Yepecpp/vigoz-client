@@ -176,6 +176,10 @@ body {
     gap: 1vw;
   }
 
+  .switchSidebar {
+    display: none;
+  }
+
   @media screen and (max-width: 768px) {
     .itemText_sidebar {
       display: none;

@@ -24,7 +24,7 @@ function Navbar() {
     setIcon('nav__toggler');
     return;
   };
-  
+
   return (
     <nav className="nav">
       <Link to={'/'} className="nav__brand">
@@ -52,41 +52,39 @@ function Navbar() {
           </Link>
         </li>
 
-        
-
-      {auth?.isAuth ? (
-        <>
-          <li className="nav__item">
-          <Link 
-          to={'/Login'} 
-          className="nav__link" 
-          onClick={() => {
-            LogOut(Setauth);
-            handleClick;
-          }}
-          >
-            Log Out
-          </Link>
-        </li>
-        <li className="nav__item">
-          <Link
-          to={'/Dashboard'}
-          onClick={handleClick}
-          className="nav__link"
-          >
-            Dashboard
-          </Link>
-        </li>
-        </>
-      ) : (
-        <>
-        <li className="nav__item">
-          <Link to={'/Login'} onClick={handleClick} className="nav__link">
-            Login
-          </Link>
-        </li>
-        </>
-      ) }
+        {auth?.isAuth ? (
+          <>
+            <li className="nav__item">
+              <Link
+                to={'/Login'}
+                className="nav__link"
+                onClick={() => {
+                  LogOut(Setauth);
+                  handleClick;
+                }}
+              >
+                Log Out
+              </Link>
+            </li>
+            <li className="nav__item">
+              <Link
+                to={'/Dashboard'}
+                onClick={handleClick}
+                className="nav__link"
+              >
+                Dashboard
+              </Link>
+            </li>
+          </>
+        ) : (
+          <>
+            <li className="nav__item">
+              <Link to={'/Login'} onClick={handleClick} className="nav__link">
+                Login
+              </Link>
+            </li>
+          </>
+        )}
       </ul>
       <div onClick={navToggle} className={icon}>
         <div className="line1"></div>

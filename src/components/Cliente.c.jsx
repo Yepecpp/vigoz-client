@@ -58,22 +58,22 @@ const Cliente = () => {
   return (
     <div className="container_formClient">
       <div className="controls_clientForm">
-        <div className='container_search_client'>
+        <div className="container_search_client">
           <label className="text_client">Search:</label>
           <input type="text" name="buscar" className="search_client" />
         </div>
 
-          <Button
-            variant="contained"
-            size="medium"
-            className="open_client"
-            onClick={() => {
-              SetisOpened(true);
-            }}
-            visibility={`${!isOpened}`}
-          >
-            Agregar
-          </Button>
+        <Button
+          variant="contained"
+          size="medium"
+          className="open_client"
+          onClick={() => {
+            SetisOpened(true);
+          }}
+          visibility={`${!isOpened}`}
+        >
+          Agregar
+        </Button>
       </div>
 
       {clientsQuery.status === 'loading' ? (
@@ -81,7 +81,7 @@ const Cliente = () => {
       ) : clientsQuery.status === 'error' ? (
         <div>error</div>
       ) : (
-        <Udatagrid data={GridProps} name="Clientes"/>
+        <Udatagrid data={GridProps} name="Clientes" />
       )}
 
       {isOpened ? (
