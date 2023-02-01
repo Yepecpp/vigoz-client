@@ -1,6 +1,7 @@
 import { useLocation, Navigate, Outlet } from 'react-router-dom';
 import { useAuthContext } from '../../contexts/Auth';
 import Restricted from './Restricted.c';
+import Loading from '../Loading.c'
 import { AxiosClient } from '../../libs/axios';
 function RequireAuth({ allowRoles = [], allowDep = [] }) {
   const [auth, Setauth] = useAuthContext();
@@ -36,7 +37,7 @@ function RequireAuth({ allowRoles = [], allowDep = [] }) {
       });
   }
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
   return auth?.isEmp ? (
     <Outlet />
