@@ -1,27 +1,38 @@
-import React from 'react';
+import { useState } from 'react';
+import { Button } from '@mui/material';
 
 const Usuariosc = () => {
+  const [isOpened, SetisOpened] = useState(false);
+  const [client, SetClient] = useState({});
   return (
     <div>
-      <h1>Componente de Usuario</h1>
-      {/*       <div className="container_complet">
-        <div className="center">
-          <h2 className="text1">Sign Up</h2>
-          <h3 className="text2">Enter email and password to continue</h3>
-          <form className="form_contair_1">
-            <input className="text_3" type="text" placeholder="Usermane" />
-            <input
-              className="text_4"
-              id="text"
-              type="password"
-              placeholder="Password"
-            />
-            <button className="btn">Create Account</button>
-            <hr className="hr1" /> <h2 className="rh">continue with</h2>
-            <hr className="hr2" />
-          </form>
+      <div className="container_formClient">
+      <div className="controls_clientForm">
+        <div className='container_search_client'>
+          <label className="text_client">Search:</label>
+          <input type="text" name="buscar" className="search_client" />
         </div>
-      </div> */}
+
+          <Button
+            variant="contained"
+            size="medium"
+            className="open_client"
+            onClick={() => {
+              SetisOpened(true);
+            }}
+            visibility={`${!isOpened}`}
+          >
+            Agregar
+          </Button>
+      </div>
+
+      {isOpened ? (
+        <ClientP
+          SetisOpened={SetisOpened}
+          useClient={() => [client, SetClient]}
+        />
+      ) : null}
+    </div>
     </div>
   );
 };
