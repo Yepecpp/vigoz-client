@@ -17,6 +17,7 @@ import Nomina from './pages/dashpages/Nomina.dash';
 import Registerp from './pages/dashpages/Usuarios.p';
 import DistributionC from './pages/dashpages/Distribution.dash';
 import Usuariosc from './components/Usuarios.c';
+import noentre from './components/routes/Restricted.c';
 
 const App = () => {
   return (
@@ -61,6 +62,10 @@ const App = () => {
               element={<Dashboard Comp={DistributionC} />}
             />
           </Route>
+          <Route
+              path="/Dashboard/noentre"
+              element={<Dashboard Comp={noentre} />}
+            />
           {/* Catch all route, must be last */}
           <Route path="*" element={<Home Comp={NoPage} />} />
         </Routes>
