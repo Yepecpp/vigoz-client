@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <div className="container_allSidebar">
       <div className="container_userSidebar">
-        <img src="/public/media/img.jpg" className="img_userSidebar" />
+        <img src="/media/img.jpg" className="img_userSidebar" />
         <p className="name_userSidebar">{`${auth.data.name} ${auth.data.last_name}`}</p>
       </div>
 
