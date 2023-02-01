@@ -2,7 +2,12 @@
 @import './imports/Letters.scss';
 
 //Footer
-
+.circle_user{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ 
+}
 .footerdash {
   background-color: #111;
   height: auto;
