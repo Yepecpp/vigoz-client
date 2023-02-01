@@ -15,6 +15,7 @@ import './styles/Gastos.p.scss';
 import './styles/Nomina.p.scss';
 import './styles/Register.p.scss';
 import './styles/Popup.scss';
+import './styles/Loading.p.scss';
 
 const queryClient = new QueryClient();
 const Render = () => {

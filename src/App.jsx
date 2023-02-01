@@ -15,7 +15,7 @@ import Almacenp from './pages/dashpages/Almacen.dash';
 import Gastot from './pages/dashpages/Gastos.dash';
 import Nomina from './pages/dashpages/Nomina.dash';
 import Registerp from './pages/dashpages/Usuarios.p';
-//import Usuariosp from './pages/dashpages/Usuarios.p';
+import DistributionC from './pages/dashpages/Distribution.dash';
 import Usuariosc from './components/Usuarios.c';
 
 const App = () => {
@@ -55,6 +55,10 @@ const App = () => {
             <Route
               path="Dashboard/Usuarios"
               element={<Dashboard Comp={Usuariosc} />}
+            />
+            <Route
+              path="/Dashboard/Distribucion"
+              element={<Dashboard Comp={DistributionC} />}
             />
           </Route>
           {/* Catch all route, must be last */}
