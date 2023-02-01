@@ -4,6 +4,7 @@ import RequireAuth from './components/routes/RequireAuth.c';
 import Dashboard from './pages/Dashboard.p';
 import Indexdash from './pages/dashpages/Index.dash';
 import Home from './pages/Home.p';
+import Contactop from './pages/indexpages/Contacto.p';
 import NoPage from './pages/No.p';
 import Login from './pages/Login.p';
 import Index from './pages/indexpages/Index.p';
@@ -18,6 +19,7 @@ import Registerp from './pages/dashpages/Usuarios.p';
 import DistributionC from './pages/dashpages/Distribution.dash';
 import Usuariosc from './components/Usuarios.c';
 import noentre from './components/routes/Restricted.c';
+import Contactoc from './components/Contacto.c';
 
 const App = () => {
   return (
@@ -28,6 +30,7 @@ const App = () => {
           {/* Public Pages */}
           <Route path="/" element={<Home Comp={Index} />} />
           <Route path="About" element={<Home Comp={About} />} />
+          <Route path="Contacto" element={<Home Comp={Contactoc} />} />
           <Route path="Login" element={<Home Comp={Login} />} />
           <Route path="Register" element={<Home Comp={Registerp} />} />
           {/* Private Pages */}
