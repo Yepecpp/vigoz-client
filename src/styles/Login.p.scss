@@ -10,7 +10,34 @@
   background-attachment: fixed;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+}
+
+.container_login {
+  width: 35vw;
+  height: 90vh;
+  background-color: #f1f1f1;
+  // background-color: #e1e1e1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  img {
+    width: 15vw;
+    height: 35vh;
+    margin-top: 10vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container_login {
+    width: 80%;
+    
+    img {
+      width: 50vw;
+    }
+  }
 }
 
 .button-login {
@@ -52,22 +79,6 @@
   text-align: center;
   padding: 5px;
   margin: 5px;
-}
-
-.container_login {
-  width: 35vw;
-  height: 90vh;
-  background-color: #e1e1e1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 25px;
-  img {
-    width: 15vw;
-    height: 35vh;
-    margin-top: 10vh;
-  }
 }
 
 .container_info_login {

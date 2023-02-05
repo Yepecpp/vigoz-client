@@ -4,6 +4,7 @@ import RequireAuth from './components/routes/RequireAuth.c';
 import Dashboard from './pages/Dashboard.p';
 import Indexdash from './pages/dashpages/Index.dash';
 import Home from './pages/Home.p';
+import Contactop from './pages/indexpages/Contacto.p';
 import NoPage from './pages/No.p';
 import Login from './pages/Login.p';
 import Index from './pages/indexpages/Index.p';
@@ -15,8 +16,10 @@ import Almacenp from './pages/dashpages/Almacen.dash';
 import Gastot from './pages/dashpages/Gastos.dash';
 import Nomina from './pages/dashpages/Nomina.dash';
 import Registerp from './pages/dashpages/Usuarios.p';
-//import Usuariosp from './pages/dashpages/Usuarios.p';
+import DistributionC from './pages/dashpages/Distribution.dash';
 import Usuariosc from './components/Usuarios.c';
+import noentre from './components/routes/Restricted.c';
+import Contactoc from './components/Contacto.c';
 
 const App = () => {
   return (
@@ -27,6 +30,7 @@ const App = () => {
           {/* Public Pages */}
           <Route path="/" element={<Home Comp={Index} />} />
           <Route path="About" element={<Home Comp={About} />} />
+          <Route path="Contacto" element={<Home Comp={Contactoc} />} />
           <Route path="Login" element={<Home Comp={Login} />} />
           <Route path="Register" element={<Home Comp={Registerp} />} />
           {/* Private Pages */}
@@ -56,7 +60,15 @@ const App = () => {
               path="Dashboard/Usuarios"
               element={<Dashboard Comp={Usuariosc} />}
             />
+            <Route
+              path="/Dashboard/Distribucion"
+              element={<Dashboard Comp={DistributionC} />}
+            />
           </Route>
+          <Route
+              path="/Dashboard/noentre"
+              element={<Dashboard Comp={noentre} />}
+            />
           {/* Catch all route, must be last */}
           <Route path="*" element={<Home Comp={NoPage} />} />
         </Routes>

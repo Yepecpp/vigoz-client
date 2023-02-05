@@ -8,7 +8,7 @@ const Aboutc = () => {
       style={{ backgroundImage: 'url(/media/slider/slide2.jpeg)' }}
     >
       <div className="contenedor_sbn">
-        <GiIcebergs />
+        <GiIcebergs className='about_logo'/>
         <h1>Acerca de Nosotros</h1>
         <div className="wrapper-about">
           <p>
