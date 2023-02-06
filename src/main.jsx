@@ -9,6 +9,7 @@ import './styles/Dashboard.p.scss';
 import './styles/NoPage.p.scss';
 import './styles/Index.p.scss';
 import './styles/Perfil.p.scss';
+import './styles/Contacto.p.scss';
 import './styles/Cliente.p.scss';
 import './styles/Almacen.p.scss';
 import './styles/Gastos.p.scss';
