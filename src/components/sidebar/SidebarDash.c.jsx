@@ -55,7 +55,7 @@ const Navbar = () => {
       </div>
 
       <div className={nameclass.one}>
-        <img src="/media/user.jpg" className="img_userSidebar" />
+        <img src="/media/user.png" className="img_userSidebar" />
         <p className="name_userSidebar">{`${auth.data.name} ${auth.data.last_name}`}</p>
       </div>
       <div className={nameclass.one}></div>
@@ -77,6 +77,10 @@ const Navbar = () => {
             <Link className="link_sidebar" to="/Dashboard/Almacenes">
               <HiArchiveBoxArrowDown />
               <p className={`${nameclass.one}`}>Almacen</p>
+              <div className="container_submenuAlmacen">
+                <p>Almacen 1</p>
+                <p>Almacen 2</p>
+              </div>
             </Link>
           </li>
           <li className="item_sidebar">
