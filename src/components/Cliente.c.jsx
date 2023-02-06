@@ -72,7 +72,9 @@ const Cliente = () => {
             onChange={(e) => {
               SetSearch(e.target.value);
               // re fetch the query
-              queryClient.refetchQueries(['clients']);
+
+              queryClient.invalidateQueries('clients');
+              clientsQuery.refetch();
             }}
             value={search}
           />
@@ -92,7 +94,7 @@ const Cliente = () => {
       </div>
 
       {clientsQuery.status === 'loading' ? (
-        <div>loading</div>
+        <Loading />
       ) : clientsQuery.status === 'error' ? (
         <div>error</div>
       ) : (
