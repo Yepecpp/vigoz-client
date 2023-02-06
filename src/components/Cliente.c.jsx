@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { AxiosClient } from '../libs/axios';
 import { Button } from '@mui/material';
+import Loading from './Loading.c';
 import ClientP from './popups/Client.popup';
 import Udatagrid from './datagrid/Udatagrid.c.jsx';
 import { useQuery } from '@tanstack/react-query';
@@ -18,9 +19,9 @@ import moment from 'moment';
   createdAt: z.string().optional(),
   updatedAt: z.string().optional(),*/
 const Cliente = () => {
-  const [isOpened, SetisOpened] = useState(false);
-  const [client, SetClient] = useState({});
-  const clientsQuery = useQuery({
+    const [isOpened, SetisOpened] = useState(false);
+    const [client, SetClient] = useState({});
+    const clientsQuery = useQuery({
     queryKey: ['clients'],
     queryFn: async () => {
       const axios = AxiosClient();
@@ -77,7 +78,7 @@ const Cliente = () => {
       </div>
 
       {clientsQuery.status === 'loading' ? (
-        <div>loading</div>
+        <Loading/>
       ) : clientsQuery.status === 'error' ? (
         <div>error</div>
       ) : (
