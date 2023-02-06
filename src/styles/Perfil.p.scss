@@ -4,6 +4,9 @@
   justify-content: center;
   align-items: center;
   background-color: #001d3d;
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
  
  
 
@@ -25,14 +28,16 @@
 
   .user-info {
     flex: 1 1 auto;
-    font-size: large;
-    margin-top: 15px;
+    font-size: 20px;
+    margin-top: 50px;
     text-align: center;
     color: black;
+    margin: 70px;
     
   
     .full-name,
     .email,
+    .ts,
     .username {
       margin: 1rem;
     }
@@ -92,9 +97,7 @@
   box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);
   border: 2px solid white;
   border-radius: 12px;
-  height: 600px;
+  height: 750px;
   width: 850px;
   background-color: white;
-
-
 }
