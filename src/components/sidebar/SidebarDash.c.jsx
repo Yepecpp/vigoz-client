@@ -77,10 +77,6 @@ const Navbar = () => {
             <Link className="link_sidebar" to="/Dashboard/Almacenes">
               <HiArchiveBoxArrowDown />
               <p className={`${nameclass.one}`}>Almacen</p>
-              <div className="container_submenuAlmacen">
-                <p>Almacen 1</p>
-                <p>Almacen 2</p>
-              </div>
             </Link>
           </li>
           <li className="item_sidebar">

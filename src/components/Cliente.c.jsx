@@ -28,7 +28,6 @@ const Cliente = () => {
       setTimeout(() => {
         queryClient.invalidateQueries('clients');
         clientsQuery.refetch();
-        console.log('refetching');
       }, 1000);
   }, [search]);
   const queryClient = useQueryClient();
