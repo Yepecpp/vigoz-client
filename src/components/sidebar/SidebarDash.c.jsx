@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { HiArchiveBoxArrowDown } from 'react-icons/hi2';
 import { Switch } from '@mui/material';
 import { IoMdExit } from 'react-icons/io';
+import { TbClipboardText } from 'react-icons/tb';
 import { useState } from 'react';
 import {
   FaHouseUser,
@@ -94,6 +95,14 @@ const Navbar = () => {
             <Link className="link_sidebar" to="/Dashboard/Distribucion">
               <FaTruck />
               <p className={`${nameclass}`}>Distribución</p>
+            </Link>
+          </li>
+          <li className="item_sidebar">
+            <Link className="link_sidebar" to="/Dashboard/Provedores">
+              <TbClipboardText />
+              <p className={`${nameclass + 'itemText_sidebar'}`}>
+                Provedores
+              </p>
             </Link>
           </li>
           <li className="item_sidebar">

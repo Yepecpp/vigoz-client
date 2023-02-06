@@ -30,6 +30,9 @@ const Perfilc = () => {
           <div className="email">{auth.data.login.email}</div>
           <label htmlFor="">Usuario</label>
           <div className="username">{auth.data.login.username}</div>
+          <label htmlFor="">Computing</label>
+          <div className="ts">809-201-5432</div>
+          <div className="ts">Dominican Republic</div>
         </div>
         {/*  </div>
        <div className="form-container">

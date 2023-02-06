@@ -38,15 +38,15 @@ const Cliente = () => {
   });
   const GridProps = {
     columns: [
-      { field: ['id'], headerName: 'ID', width: 70 },
-      { field: ['name'], headerName: 'Name', width: 130 },
-      { field: ['address']['street1'], headerName: 'street', width: 130 },
-      { field: ['user'], headerName: 'User', width: 130 },
-      { field: ['identity'], headerName: 'Identity', width: 130 },
-      { field: ['rnc'], headerName: 'RNC', width: 130 },
-      { field: ['phone'], headerName: 'Phone', width: 130 },
-      { field: ['createdAt'], headerName: 'Created At', width: 130 },
-      { field: ['updatedAt'], headerName: 'Updated At', width: 130 },
+      { field: 'id', headerName: 'ID', width: 70 },
+      { field: 'name', headerName: 'Name', width: 130 },
+      { field: 'address.street1', headerName: 'street', width: 130 },
+      { field: 'user', headerName: 'User', width: 130 },
+      { field: 'identity', headerName: 'Identity', width: 130 },
+      { field: 'rnc', headerName: 'RNC', width: 130 },
+      { field: 'phone', headerName: 'Phone', width: 130 },
+      { field: 'createdAt', headerName: 'Created At', width: 130 },
+      { field: 'updatedAt', headerName: 'Updated At', width: 130 },
     ],
     rows: clientsQuery.data?.clients,
     onRowClick: (e) => {
