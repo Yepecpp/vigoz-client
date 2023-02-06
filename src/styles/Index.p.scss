@@ -65,6 +65,14 @@ body {
   transition: 0.3s ease-in;
 }
 
+.nav__togglerSidebar div {
+  width: 2.5rem;
+  height: 0.2rem;
+  margin: 0.4rem;
+  background: rgb(204, 204, 204);
+  transition: 0.3s ease-in;
+}
+
 html {
   font-size: 70%;
   width: 100vw;

@@ -1,7 +1,6 @@
 import { useAuthContext } from '../../contexts/Auth';
 import { Link } from 'react-router-dom';
 import { HiArchiveBoxArrowDown } from 'react-icons/hi2';
-import { Switch } from '@mui/material';
 import { IoMdExit } from 'react-icons/io';
 import { TbClipboardText } from 'react-icons/tb';
 import { useState } from 'react';
@@ -18,109 +17,108 @@ import {
 const Navbar = () => {
   const [auth] = useAuthContext();
   const [checked, setChecked] = useState(true);
-  const [nameclass, setNameclass] = useState('container_userSidebar');
-  const [nameclassTwo, setNameclassTwo] = useState('container_allSidebar');
-  const [nameclassThree, setNameclassThree] = useState('list_sidebar');
+  const [icon, setIcon] = useState('nav__togglerSidebar');
+  const [nameclass, setNameclass] = useState({
+    one: 'container_userSidebar',
+    two: 'container_allSidebar',
+    three: 'list_sidebar',
+  });
 
   const handleChange = () => {
+    const nameClases = [
+      'container_userSidebar',
+      'container_allSidebar',
+      'list_sidebar',
+    ];
+    let NameClasses = nameclass;
     if (checked) {
       setChecked(false);
-      setNameclass('container_userSidebar switchSidebar');
+      setIcon('nav__togglerSidebar');
+      NameClasses.one = 'switchSidebar container_userSidebar';
+      NameClasses.two = 'switch_container_allSidebar container_allSidebar';
+      NameClasses.three = 'switch_list_sidebar list_sidebar';
     } else {
       setChecked(true);
-      setNameclass('container_userSidebar');
+      NameClasses.one = nameClases[0];
+      NameClasses.two = nameClases[1];
+      NameClasses.three = nameClases[2];
+      setIcon('nav__togglerSidebar toggle');
     }
-
-    if (checked) {
-      setNameclassTwo('switch_container_allSidebar container_allSidebar');
-    } else {
-      setNameclassTwo('container_allSidebar');
-    }
-
-    if (checked) {
-      setNameclassThree('list_sidebar switch_list_sidebar');
-    } else {
-      setNameclassThree('list_sidebar');
-    }
+    setNameclass(NameClasses);
   };
-
   return (
-    <div className={`${nameclassTwo}`}>
-      <Switch
-        checked={checked}
-        onChange={handleChange}
-        inputProps={{ 'aria-label': 'controlled' }}
-      />
+    <div className={nameclass.two}>
+      <div onClick={handleChange} className={icon}>
+        <div className="line1"></div>
+        <div className="line2"></div>
+        <div className="line3"></div>
+      </div>
 
-      <div className={`${nameclass}`}>
+      <div className={nameclass.one}>
         <img src="/media/user.jpg" className="img_userSidebar" />
         <p className="name_userSidebar">{`${auth.data.name} ${auth.data.last_name}`}</p>
       </div>
-
-      <div className={`${nameclass}`}></div>
-
+      <div className={nameclass.one}></div>
       <nav className="container_sidebar">
-        <ul className={`${nameclassThree}`}>
+        <ul className={nameclass.three}>
           <li className="item_sidebar">
             <Link className="link_sidebar" to="/Dashboard/">
               <FaHouseUser />
-              <p className={`${nameclass}`}>Dashboard</p>
+              <p className={nameclass.one}>Dashboard</p>
             </Link>
           </li>
           <li className="item_sidebar">
             <Link className="link_sidebar" to="/Dashboard/Nominas">
               <FaOutdent />
-              <p className={`${nameclass}`}>Nomina</p>
+              <p className={`${nameclass.one}`}>Nomina</p>
             </Link>
           </li>
           <li className="item_sidebar">
             <Link className="link_sidebar" to="/Dashboard/Almacenes">
               <HiArchiveBoxArrowDown />
-              <p className={`${nameclass}`}>Almacen</p>
+              <p className={`${nameclass.one}`}>Almacen</p>
             </Link>
           </li>
           <li className="item_sidebar">
             <Link className="link_sidebar" to="/Dashboard/Gastos">
               <FaRegListAlt />
-              <p className={`${nameclass}`}>Gastos</p>
+              <p className={`${nameclass.one}`}>Gastos</p>
             </Link>
           </li>
           <li className="item_sidebar">
             <Link className="link_sidebar" to="/Dashboard/Usuarios">
               <FaUser />
-              <p className={`${nameclass}`}>Usuarios</p>
+              <p className={`${nameclass.one}`}>Usuarios</p>
             </Link>
           </li>
           <li className="item_sidebar">
             <Link className="link_sidebar" to="/Dashboard/Distribucion">
               <FaTruck />
-              <p className={`${nameclass}`}>Distribución</p>
+              <p className={`${nameclass.one}`}>Distribución</p>
             </Link>
           </li>
           <li className="item_sidebar">
             <Link className="link_sidebar" to="/Dashboard/Provedores">
               <TbClipboardText />
-              <p className={`${nameclass + 'itemText_sidebar'}`}>
-                Provedores
-              </p>
+              <p className={nameclass.one}>Provedores</p>
             </Link>
           </li>
           <li className="item_sidebar">
             <Link className="link_sidebar" to="/Dashboard/Clientes">
               <FaUserFriends />
-              <p className={`${nameclass}`}>Clientes</p>
+              <p className={nameclass.one}>Clientes</p>
             </Link>
           </li>
           <li className="item_sidebar">
             <Link className="link_sidebar" to="/Dashboard/Perfil">
               <FaRegUser />
-              <p className={`${nameclass}`}>Perfil</p>
+              <p className={nameclass.one}>Perfil</p>
             </Link>
           </li>
           <li className="item_sidebar" id="exit_sidebar">
             <Link className="link_sidebar" to="/">
               <IoMdExit />
-              <p className={`${nameclass}`}>Salir</p>
+              <p className={nameclass.one}>Salir</p>
             </Link>
           </li>
         </ul>
