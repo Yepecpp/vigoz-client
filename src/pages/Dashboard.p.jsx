@@ -1,6 +1,6 @@
 import React from 'react';
 import Sidebar from '../components/sidebar/SidebarDash.c';
-import NavbarDash from '../components/navbar/NavbarDash.c';
+import NavbarDash from '../components/navbar/NavBarDash.c';
 const Dashboard = ({ Comp }) => {
   return (
     <>
