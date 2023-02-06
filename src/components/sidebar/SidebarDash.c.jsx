@@ -1,6 +1,7 @@
 import { useAuthContext } from '../../contexts/Auth';
 import { Link } from 'react-router-dom';
 import { HiArchiveBoxArrowDown } from 'react-icons/hi2';
+import { Switch } from '@mui/material';
 import { IoMdExit } from 'react-icons/io';
 import { TbClipboardText } from 'react-icons/tb';
 import { useState } from 'react';
@@ -17,7 +18,7 @@ import {
 const Navbar = () => {
   const [auth] = useAuthContext();
   const [checked, setChecked] = useState(true);
-  const [icon, setIcon] = useState('nav__togglerSidebar');
+  const [icon, setIcon] = useState('nav__toggler');
   const [nameclass, setNameclass] = useState({
     one: 'container_userSidebar',
     two: 'container_allSidebar',
@@ -33,7 +34,7 @@ const Navbar = () => {
     let NameClasses = nameclass;
     if (checked) {
       setChecked(false);
-      setIcon('nav__togglerSidebar');
+      setIcon('nav__toggler toggle');
       NameClasses.one = 'switchSidebar container_userSidebar';
       NameClasses.two = 'switch_container_allSidebar container_allSidebar';
       NameClasses.three = 'switch_list_sidebar list_sidebar';
@@ -42,13 +43,13 @@ const Navbar = () => {
       NameClasses.one = nameClases[0];
       NameClasses.two = nameClases[1];
       NameClasses.three = nameClases[2];
-      setIcon('nav__togglerSidebar toggle');
+      setIcon('nav__toggler');
     }
     setNameclass(NameClasses);
   };
   return (
     <div className={nameclass.two}>
-      <div onClick={handleChange} className={icon}>
+      <div onClick={handleChange} className={icon + 'itemsidebar'}>
         <div className="line1"></div>
         <div className="line2"></div>
         <div className="line3"></div>

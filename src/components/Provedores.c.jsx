@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import { Button } from '@mui/material';
+import {useState} from 'react';
 import Udatagrid from './datagrid/Udatagrid.c.jsx';
+import AgregarData from './AgregarData.c.jsx';
 
 const Provedores = () => {
   const [isOpened, SetisOpened] = useState(false);
-
   const GridProps = {
     columns: [
       { field: 'id', headerName: 'ID', width: 100 },
@@ -19,24 +18,7 @@ const Provedores = () => {
 
   return (
     <div className="container_formProvedores">
-      <div className="controls_provedoresForm">
-        <div className="container_search_provedores">
-          <label className="text_provedores">Search:</label>
-          <input type="text" name="buscar" className="search_provedores" />
-        </div>
-
-        <Button
-          variant="contained"
-          size="medium"
-          className="open_provedores"
-          onClick={() => {
-            SetisOpened(true);
-          }}
-          visibility={`${!isOpened}`}
-        >
-          Agregar
-        </Button>
-      </div>
+      <AgregarData isOpened={isOpened} SetisOpened={SetisOpened} />
       <Udatagrid data={GridProps} />
     </div>
   );

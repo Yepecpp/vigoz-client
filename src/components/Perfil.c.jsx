@@ -26,13 +26,27 @@ const Perfilc = () => {
           <div className="full-name">
             {`${auth.data.name} ${auth.data.last_name}`}
           </div>
-          <label htmlFor="">Correo Electronico</label>
+           <label htmlFor="">Correo Electronico</label>
+          <div className="ts">Programmer</div>
           <div className="email">{auth.data.login.email}</div>
           <label htmlFor="">Usuario</label>
           <div className="username">{auth.data.login.username}</div>
+        </div>
+        <div className="container_2">
+          <div className="cont_box">
           <label htmlFor="">Computing</label>
           <div className="ts">809-201-5432</div>
           <div className="ts">Dominican Republic</div>
+          </div>
+          
+          <div className="cont_two">
+           <label htmlFor="">Correo Electronico</label>
+          <div className="ts">Programmer</div>
+          <div className="email">{auth.data.login.email}</div>
+          <label htmlFor="">Usuario</label>
+          <div className="username">{auth.data.login.username}</div>
+
+        </div>
         </div>
         {/*  </div>
        <div className="form-container">

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { AxiosClient } from '../libs/axios';
-import { Button } from '@mui/material';
 import Loading from './Loading.c';
 import ClientP from './popups/Client.popup';
 import Udatagrid from './datagrid/Udatagrid.c.jsx';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import moment from 'moment';
+import AgregarData from './AgregarData.c';
+import { useEffect } from 'react';
 /*id: z.string().optional(),
   name: z.string(),
   address: addressZod
@@ -22,6 +23,14 @@ const Cliente = () => {
   const [isOpened, SetisOpened] = useState(false);
   const [client, SetClient] = useState({});
   const [search, SetSearch] = useState('');
+  useEffect(() => {
+    if (!queryClient.isFetching(['clients']))
+      setTimeout(() => {
+        queryClient.invalidateQueries('clients');
+        clientsQuery.refetch();
+        console.log('refetching');
+      }, 1000);
+  }, [search]);
   const queryClient = useQueryClient();
   const clientsQuery = useQuery({
     queryKey: ['clients'],
@@ -62,36 +71,12 @@ const Cliente = () => {
   //
   return (
     <div className="container_formClient">
-      <div className="controls_clientForm">
-        <div className="container_search_client">
-          <label className="text_client">Search:</label>
-          <input
-            type="text"
-            name="buscar"
-            className="search_client"
-            onChange={(e) => {
-              SetSearch(e.target.value);
-              // re fetch the query
-
-              queryClient.invalidateQueries('clients');
-              clientsQuery.refetch();
-            }}
-            value={search}
-          />
-        </div>
-
-        <Button
-          variant="contained"
-          size="medium"
-          className="open_client"
-          onClick={() => {
-            SetisOpened(true);
-          }}
-          visibility={`${!isOpened}`}
-        >
-          Agregar
-        </Button>
-      </div>
+      <AgregarData
+        isOpened={isOpened}
+        SetisOpened={SetisOpened}
+        handleChange={(e) => SetSearch(e.target.value)}
+        search={search}
+      />
 
       {clientsQuery.status === 'loading' ? (
         <Loading />
