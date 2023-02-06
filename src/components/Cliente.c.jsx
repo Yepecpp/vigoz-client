@@ -53,7 +53,15 @@ const Cliente = () => {
     columns: [
       { field: 'id', headerName: 'ID', width: 70 },
       { field: 'name', headerName: 'Name', width: 130 },
-      { field: 'address.street1', headerName: 'street', width: 130 },
+      {
+        field: 'address.street1',
+        headerName: 'street',
+        width: 130,
+        render: (params) => {
+          console.log(params);
+          return params.row.address.street1;
+        },
+      },
       { field: 'user', headerName: 'User', width: 130 },
       { field: 'identity', headerName: 'Identity', width: 130 },
       { field: 'rnc', headerName: 'RNC', width: 130 },
