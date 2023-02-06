@@ -8,7 +8,7 @@ const Perfilc = () => {
       <div className="contenedor_user_info">
         <div className="photobutton">
           <div className="user-photo">
-            <img src="/media/user.png"/>
+            <img src="/media/user.png" />
           </div>
           <Button
             variant="contained"
@@ -20,13 +20,13 @@ const Perfilc = () => {
           </Button>
         </div>
         <label htmlFor="" className="user_nameProfile">
-            Me
-          </label>
+          Me
+        </label>
         <div className="user-info">
           <p className="full-name">
             {`${auth.data.name} ${auth.data.last_name}`}
           </p>
-           <p htmlFor="tr">Correo Electronico</p>
+          <p htmlFor="tr">Correo Electronico</p>
           <p className="ts">Programmer</p>
           <p className="email">{auth.data.login.email}</p>
           <p htmlFor="ty">Usuario</p>
@@ -41,7 +41,7 @@ const Perfilc = () => {
           <p className="">809-201-5432</p>
           <p className="">Dominican Republic</p>
         </div>
-          
+
         <div className="cont_two">
           <label className="bold">Company</label>
           <p htmlFor="">Correo Electronico</p>
@@ -51,14 +51,14 @@ const Perfilc = () => {
           <p className="username">{auth.data.login.username}</p>
         </div>
       </div>
-    </div> 
+    </div>
   );
 };
 
 export default Perfilc;
 
-
-{/*  </div>
+{
+  /*  </div>
        <div className="form-container">
         <form>
           <div className="personal-data">
@@ -115,4 +115,5 @@ export default Perfilc;
             <Button variant="outlined">Save Changes</Button>
           </div>
         </form>
-        */}
+        */
+}
