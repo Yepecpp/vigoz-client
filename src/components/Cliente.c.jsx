@@ -3,8 +3,9 @@ import { AxiosClient } from '../libs/axios';
 import { Button } from '@mui/material';
 import ClientP from './popups/Client.popup';
 import Udatagrid from './datagrid/Udatagrid.c.jsx';
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
 import moment from 'moment';
+import Loading from './Loading.c';
 /*id: z.string().optional(),
   name: z.string(),
   address: addressZod
@@ -20,22 +21,26 @@ import moment from 'moment';
 const Cliente = () => {
   const [isOpened, SetisOpened] = useState(false);
   const [client, SetClient] = useState({});
+  const [search, SetSearch] = useState('');
+  const queryClient = useQueryClient();
   const clientsQuery = useQuery({
     queryKey: ['clients'],
     queryFn: async () => {
       const axios = AxiosClient();
-      const response = await axios.get('/clients');
+      const response = await axios.get(
+        '/clients' + `${search !== '' ? `?name=${search}` : ''}`
+      );
       response.data.clients.forEach((client) => {
         client.user = client.user ? client.user.name : 'No user';
-        client.createdAt = new Date(client.createdAt).toLocaleString();
-        client.updatedAt = new Date(client.updatedAt).toLocaleString();
-        client.identity.expiration = moment(client.identity.expiration).format(
-          'YYYY-MM-DD'
-        );
+        client.createdAt = moment(client.createdAt).format('YYYY-MM-DD');
+        client.updatedAt = moment(client.updatedAt).format('YYYY-MM-DD');
+        client.identity.expiration = // use moment to format 'yyyy-MM-dd'
+          moment(client.identity.expiration).format('YYYY-MM-DD');
       });
       return response.data;
     },
   });
+  // invalid
   const GridProps = {
     columns: [
       { field: 'id', headerName: 'ID', width: 70 },
@@ -60,7 +65,17 @@ const Cliente = () => {
       <div className="controls_clientForm">
         <div className="container_search_client">
           <label className="text_client">Search:</label>
-          <input type="text" name="buscar" className="search_client" />
+          <input
+            type="text"
+            name="buscar"
+            className="search_client"
+            onChange={(e) => {
+              SetSearch(e.target.value);
+              // re fetch the query
+              queryClient.refetchQueries(['clients']);
+            }}
+            value={search}
+          />
         </div>
 
         <Button
@@ -77,7 +92,7 @@ const Cliente = () => {
       </div>
 
       {clientsQuery.status === 'loading' ? (
-        <div>loading</div>
+        <Loading />
       ) : clientsQuery.status === 'error' ? (
         <div>error</div>
       ) : (
@@ -88,6 +103,7 @@ const Cliente = () => {
         <ClientP
           SetisOpened={SetisOpened}
           useClient={() => [client, SetClient]}
+          queryClient={queryClient}
         />
       ) : null}
     </div>
