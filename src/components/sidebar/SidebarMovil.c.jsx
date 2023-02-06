@@ -14,7 +14,7 @@ import {
   FaTruck,
 } from 'react-icons/fa';
 
-const Navbar = () => {
+const NavbarM = () => {
   const [auth] = useAuthContext();
   const [checked, setChecked] = useState(true);
   const [icon, setIcon] = useState('nav__togglerSidebar toggle');
@@ -127,4 +127,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavbarM;
