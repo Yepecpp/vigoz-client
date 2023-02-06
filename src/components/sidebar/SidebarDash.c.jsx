@@ -53,7 +53,7 @@ const Navbar = () => {
       />
 
       <div className={`${nameclass}`}>
-        <img src="/media/user.png" className="img_userSidebar" />
+        <img src="/media/user.jpg" className="img_userSidebar" />
         <p className="name_userSidebar">{`${auth.data.name} ${auth.data.last_name}`}</p>
       </div>
 
