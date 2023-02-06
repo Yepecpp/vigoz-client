@@ -4,7 +4,7 @@ import { useAuthContext } from '../contexts/Auth';
 const Perfilc = () => {
   const [auth] = useAuthContext();
   return (
-    <div className="user-profile" style={{ backgroundImage: 'url(/circle.png)' }}>
+    <div className="user-profile">
       <div className="contenedor_user_info">
         <div className="photobutton">
           <div className="user-photo">

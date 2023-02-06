@@ -1,13 +1,13 @@
 import React from 'react';
-import Sidebar from '../components/SidebarDash.c';
-import Navbar from '../components/Navbar.c';
+import Sidebar from '../components/sidebar/SidebarDash.c';
+import NavbarDash from '../components/navbar/NavBarDash.c';
 const Dashboard = ({ Comp }) => {
   return (
     <>
-      <Navbar />
+      <NavbarDash />
       <div className="container_dash">
         <Sidebar />
-        <main className='main_dash'>
+        <main className="main_dash">
           <>{Comp ? <Comp /> : <h1>Home</h1>}</>
         </main>
       </div>

@@ -1,4 +1,4 @@
-import { useAuthContext } from '../contexts/Auth';
+import { useAuthContext } from '../../contexts/Auth';
 import { Link } from 'react-router-dom';
 import { HiArchiveBoxArrowDown } from 'react-icons/hi2';
 import { Switch } from '@mui/material';
@@ -17,72 +17,84 @@ import {
 
 const Navbar = () => {
   const [auth] = useAuthContext();
-  const [checked, setChecked] = useState(false);
-  const [nameclass, setNameclass] = useState('');
+  const [checked, setChecked] = useState(true);
+  const [nameclass, setNameclass] = useState('container_userSidebar');
+  const [nameclassTwo, setNameclassTwo] = useState('container_allSidebar');
+  const [nameclassThree, setNameclassThree] = useState('list_sidebar');
 
   const handleChange = () => {
-    if (!checked) {
-      setChecked(true);
-      setNameclass('');
-    } else {
+    if (checked) {
       setChecked(false);
-      setNameclass('switchSidebar');
+      setNameclass('container_userSidebar switchSidebar');
+    } else {
+      setChecked(true);
+      setNameclass('container_userSidebar');
+    }
+
+    if (checked) {
+      setNameclassTwo('switch_container_allSidebar container_allSidebar');
+    } else {
+      setNameclassTwo('container_allSidebar');
+    }
+
+    if (checked) {
+      setNameclassThree('list_sidebar switch_list_sidebar');
+    } else {
+      setNameclassThree('list_sidebar');
     }
   };
 
   return (
-    <div className="container_allSidebar">
+    <div className={`${nameclassTwo}`}>
       <Switch
         checked={checked}
         onChange={handleChange}
         inputProps={{ 'aria-label': 'controlled' }}
       />
 
-      <div className={`${nameclass + 'container_userSidebar'}`}>
-        <img src="/media/img.jpg" className="img_userSidebar" />
+      <div className={`${nameclass}`}>
+        <img src="/media/user.png" className="img_userSidebar" />
         <p className="name_userSidebar">{`${auth.data.name} ${auth.data.last_name}`}</p>
       </div>
 
-      <div className={`${nameclass + 'line_sidebar'}`}></div>
+      <div className={`${nameclass}`}></div>
 
       <nav className="container_sidebar">
-        <ul className="list_sidebar">
+        <ul className={`${nameclassThree}`}>
           <li className="item_sidebar">
             <Link className="link_sidebar" to="/Dashboard/">
               <FaHouseUser />
-              <p className={`${nameclass + 'itemText_sidebar'}`}>Dashboard</p>
+              <p className={`${nameclass}`}>Dashboard</p>
             </Link>
           </li>
           <li className="item_sidebar">
             <Link className="link_sidebar" to="/Dashboard/Nominas">
               <FaOutdent />
-              <p className={`${nameclass + 'itemText_sidebar'}`}>Nomina</p>
+              <p className={`${nameclass}`}>Nomina</p>
             </Link>
           </li>
           <li className="item_sidebar">
             <Link className="link_sidebar" to="/Dashboard/Almacenes">
               <HiArchiveBoxArrowDown />
-              <p className={`${nameclass + 'itemText_sidebar'}`}>Almacen</p>
+              <p className={`${nameclass}`}>Almacen</p>
             </Link>
           </li>
           <li className="item_sidebar">
             <Link className="link_sidebar" to="/Dashboard/Gastos">
               <FaRegListAlt />
-              <p className={`${nameclass + 'itemText_sidebar'}`}>Gastos</p>
+              <p className={`${nameclass}`}>Gastos</p>
             </Link>
           </li>
           <li className="item_sidebar">
             <Link className="link_sidebar" to="/Dashboard/Usuarios">
               <FaUser />
-              <p className={`${nameclass + 'itemText_sidebar'}`}>Usuarios</p>
+              <p className={`${nameclass}`}>Usuarios</p>
             </Link>
           </li>
           <li className="item_sidebar">
             <Link className="link_sidebar" to="/Dashboard/Distribucion">
               <FaTruck />
-              <p className={`${nameclass + 'itemText_sidebar'}`}>
-                Distribución
-              </p>
+              <p className={`${nameclass}`}>Distribución</p>
             </Link>
           </li>
           <li className="item_sidebar">
@@ -96,19 +108,19 @@ const Navbar = () => {
           <li className="item_sidebar">
             <Link className="link_sidebar" to="/Dashboard/Clientes">
               <FaUserFriends />
-              <p className={`${nameclass + 'itemText_sidebar'}`}>Clientes</p>
+              <p className={`${nameclass}`}>Clientes</p>
             </Link>
           </li>
           <li className="item_sidebar">
             <Link className="link_sidebar" to="/Dashboard/Perfil">
               <FaRegUser />
-              <p className={`${nameclass + 'itemText_sidebar'}`}>Perfil</p>
+              <p className={`${nameclass}`}>Perfil</p>
             </Link>
           </li>
           <li className="item_sidebar" id="exit_sidebar">
             <Link className="link_sidebar" to="/">
               <IoMdExit />
-              <p className={`${nameclass + 'itemText_sidebar'}`}>Salir</p>
+              <p className={`${nameclass}`}>Salir</p>
             </Link>
           </li>
         </ul>

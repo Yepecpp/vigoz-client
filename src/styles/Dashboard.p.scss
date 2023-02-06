@@ -98,14 +98,14 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 1vh;
+  transition: ease 0.2s;
 
   .container_userSidebar {
     height: auto;
-    width: 50%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
 
     .img_userSidebar {
       width: 80%;
@@ -141,11 +141,11 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: 1vh;
     font-size: 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    transition: ease 0.2s;
   }
 
   .item_sidebar {
@@ -179,21 +179,25 @@ body {
   .switchSidebar {
     display: none;
   }
+}
 
-  @media screen and (max-width: 768px) {
-    .itemText_sidebar {
-      display: none;
-    }
+.switch_container_allSidebar {
+  width: 5%;
+  transition: ease 0.2s;
+}
 
-    .item_sidebar:hover {
-      scale: 1.1;
-      transition: ease 0.2s;
-    }
+.switch_list_sidebar {
+  gap: 5vh;
+  align-items: center;
+  transition: ease 0.2s;
+}
 
-    .link_sidebar {
-      padding: 2vh 0 2vh 5vw;
-      position: relative;
-      top: -15vh;
-    }
+@media screen and (max-width: 768px) {
+  .container_allSidebar {
+    width: 0;
+  }
+
+  .switch_container_allSidebar {
+    width: 15%;
   }
 }

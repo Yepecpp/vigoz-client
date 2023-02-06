@@ -3,9 +3,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #001d3d;
+ 
  
 
   .user-photo {
@@ -29,7 +28,8 @@
     font-size: large;
     margin-top: 15px;
     text-align: center;
-    color: white;
+    color: black;
+    
   
     .full-name,
     .email,
@@ -86,4 +86,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.contenedor_user_info{
+  color: black;
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);
+  border: 2px solid white;
+  border-radius: 12px;
+  height: 600px;
+  width: 850px;
+  background-color: white;
+
+
 }
