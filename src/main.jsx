@@ -20,6 +20,7 @@ import './styles/Loading.p.scss';
 import './styles/Restricted.p.scss';
 import './styles/Provedores.p.scss';
 import './styles/Usuarios.p.scss';
+import './styles/Agregar.p.scss';
 //scss
 
 const queryClient = new QueryClient();

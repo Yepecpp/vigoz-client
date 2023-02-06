@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import { Button } from '@mui/material';
+import {useState} from 'react';
 import Udatagrid from './datagrid/Udatagrid.c.jsx';
+import AgregarData from './AgregarData.c.jsx';
 
 const Usuariosc = () => {
   const [isOpened, SetisOpened] = useState(false);
-
   const GridProps = {
     columns: [
       { field: 'id', headerName: 'ID', width: 70 },
@@ -18,35 +17,16 @@ const Usuariosc = () => {
       { field: 'meta', headerName: 'Meta', width: 130 },
       { field: 'info', headerName: 'Info', width: 130 },
       { field: 'images', headerName: 'Images', width: 130 },
-      { field: 'isverified', headerName: 'Is Verrified', width: 130 },
-      { field: 'isemployee', headerName: 'Is Employee', width: 130 },
+      { field: 'isVerified', headerName: 'Is Verrified', width: 130 },
+      { field: 'isEmployee', headerName: 'Is Employee', width: 130 },
     ],
     rows: [],
   };
 
   return (
     <div>
-      <div className="container_formUsuario">
-      <div className="controls_usuarioForm">
-        <div className="container_search_usuario">
-          <label className="text_usuario">Search:</label>
-          <input type="text" name="buscar" className="search_usuario" />
-        </div>
-
-          <Button
-            variant="contained"
-            size="medium"
-            className="open_usuario"
-            onClick={() => {
-              SetisOpened(true);
-            }}
-            visibility={`${!isOpened}`}
-          >
-            Agregar
-          </Button>
-      </div>
-    </div>
-    <Udatagrid data={GridProps} />
+      <AgregarData isOpened={isOpened} SetisOpened={SetisOpened} />
+      <Udatagrid data={GridProps} />
     </div>
   );
 };

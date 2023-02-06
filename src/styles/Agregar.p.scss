@@ -2,31 +2,31 @@
     width: 85%;
     height: 100%;
   
-    .container_formProvedores{
+    .container_agregar{
       width: 100%;
       height: auto;
       padding: 2vh 1vw;
     }
   
-    .controls_provedoresForm {
+    .controls_agregar {
       width: 100%;
       height: 10%;
       display: flex;
       align-items: center;
       justify-content: space-around;
   
-      .container_search_provedores {
+      .container_agregar {
         height: 100%;
         width: 70%;
         display: flex;
         align-items: center;
         gap: 1vw;
   
-        .text_provedores {
+        .text_agregar {
           font-size: 2rem;
         }
   
-        .search_provedores {
+        .search_agregar {
           width: 60%;
           height: 40%;
           border: 1px solid #000;
@@ -35,7 +35,7 @@
         }
       }
   
-      .open_provedores {
+      .open_agregar {
         width: 15%;
         height: 70%;
         background-color: #002141;
