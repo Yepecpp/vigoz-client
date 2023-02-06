@@ -3,9 +3,10 @@ import { AxiosClient } from '../libs/axios';
 import Loading from './Loading.c';
 import ClientP from './popups/Client.popup';
 import Udatagrid from './datagrid/Udatagrid.c.jsx';
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
 import moment from 'moment';
 import AgregarData from './AgregarData.c';
+import { useEffect } from 'react';
 /*id: z.string().optional(),
   name: z.string(),
   address: addressZod
@@ -21,22 +22,34 @@ import AgregarData from './AgregarData.c';
 const Cliente = () => {
   const [isOpened, SetisOpened] = useState(false);
   const [client, SetClient] = useState({});
+  const [search, SetSearch] = useState('');
+  useEffect(() => {
+    if (!queryClient.isFetching(['clients']))
+      setTimeout(() => {
+        queryClient.invalidateQueries('clients');
+        clientsQuery.refetch();
+        console.log('refetching');
+      }, 1000);
+  }, [search]);
+  const queryClient = useQueryClient();
   const clientsQuery = useQuery({
     queryKey: ['clients'],
     queryFn: async () => {
       const axios = AxiosClient();
-      const response = await axios.get('/clients');
+      const response = await axios.get(
+        '/clients' + `${search !== '' ? `?name=${search}` : ''}`
+      );
       response.data.clients.forEach((client) => {
         client.user = client.user ? client.user.name : 'No user';
-        client.createdAt = new Date(client.createdAt).toLocaleString();
-        client.updatedAt = new Date(client.updatedAt).toLocaleString();
-        client.identity.expiration = moment(client.identity.expiration).format(
-          'YYYY-MM-DD'
-        );
+        client.createdAt = moment(client.createdAt).format('YYYY-MM-DD');
+        client.updatedAt = moment(client.updatedAt).format('YYYY-MM-DD');
+        client.identity.expiration = // use moment to format 'yyyy-MM-dd'
+          moment(client.identity.expiration).format('YYYY-MM-DD');
       });
       return response.data;
     },
   });
+  // invalid
   const GridProps = {
     columns: [
       { field: 'id', headerName: 'ID', width: 70 },
@@ -58,7 +71,12 @@ const Cliente = () => {
   //
   return (
     <div className="container_formClient">
-      <AgregarData isOpened={isOpened} SetisOpened={SetisOpened} />
+      <AgregarData
+        isOpened={isOpened}
+        SetisOpened={SetisOpened}
+        handleChange={(e) => SetSearch(e.target.value)}
+        search={search}
+      />
 
       {clientsQuery.status === 'loading' ? (
         <Loading />
@@ -72,6 +90,7 @@ const Cliente = () => {
         <ClientP
           SetisOpened={SetisOpened}
           useClient={() => [client, SetClient]}
+          queryClient={queryClient}
         />
       ) : null}
     </div>

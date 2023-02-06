@@ -1,4 +1,5 @@
 import { Field, ErrorMessage } from 'formik';
+import moment from 'moment';
 import PropTypes from 'prop-types';
 function Identity({ name, handleChange, errors, identity }) {
   return (
@@ -10,7 +11,7 @@ function Identity({ name, handleChange, errors, identity }) {
           <select
             name={name + 'type'}
             className="input identity"
-            value={identity?.identity?.type}
+            value={identity?.type}
             onChange={handleChange}
           >
             <option value="placeholder">Select</option>
@@ -37,10 +38,12 @@ function Identity({ name, handleChange, errors, identity }) {
           </select>
           <ErrorMessage
             name={name + name + 'type'}
-            component={() => <div className="error">{errors?.identity?.type}</div>}
+            component={() => (
+              <div className="error">{errors?.identity?.type}</div>
+            )}
           />
         </div>
-        
+
         <div className="info_popup_ext">
           <label className="label identity">Number:</label>
           <Field
@@ -64,8 +67,15 @@ function Identity({ name, handleChange, errors, identity }) {
             type="date"
             name={name + name + 'expiration'}
             className="inputdate identity"
-            value={identity?.identity?.expiration}
-            onChange={handleChange}
+            value={moment(identity?.identity?.expiration).format('YYYY-MM-DD')}
+            onChange={(e) =>
+              handleChange({
+                target: {
+                  name: name + name + 'expiration',
+                  value: e.target.value,
+                },
+              })
+            }
           />
           <ErrorMessage
             name={name + name + 'expiration'}
@@ -91,7 +101,7 @@ function Identity({ name, handleChange, errors, identity }) {
             )}
           />
         </div>
-        
+
         <div className="info_popup_ext">
           <label className="label identity">State:</label>
           <select
@@ -106,7 +116,9 @@ function Identity({ name, handleChange, errors, identity }) {
           </select>
           <ErrorMessage
             name={name + name + 'state'}
-            component={() => <div className="error">{errors?.identity?.state}</div>}
+            component={() => (
+              <div className="error">{errors?.identity?.state}</div>
+            )}
           />
         </div>
       </div>

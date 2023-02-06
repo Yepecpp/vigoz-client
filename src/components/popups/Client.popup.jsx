@@ -3,16 +3,21 @@ import IdentityP from './common/Identity.popup';
 import AddressP from './common/Address.popup';
 import { Button } from '@mui/material';
 import { Formik, useFormik, Form, Field, ErrorMessage } from 'formik';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { useMutation } from '@tanstack/react-query';
 
-function Client({ SetisOpened, useClient }) {
-  const queryClient = useQueryClient();
+function Client({ SetisOpened, useClient, queryClient }) {
   const [client] = useClient();
   const clientMutation = useMutation({
     mutationFn: async (client) => {
       const axios = AxiosClient();
-      if (client.user === '') delete client.user;
-      const response = await axios.post('/clients', { client: client });
+      if (client.user === '' || client.user === 'No user') delete client.user;
+      const response = await (Formikh.values?.id
+        ? axios.put('/clients/', {
+            client: client,
+          })
+        : axios.post('/clients/', {
+            client: client,
+          }));
       return response.data;
     },
     onSuccess: (values) => {
@@ -78,58 +83,65 @@ function Client({ SetisOpened, useClient }) {
                 />
                 <ErrorMessage
                   name="name"
-                  component={() => <div className="error">{Formikh.errors?.name}</div>}
+                  component={() => (
+                    <div className="error">{Formikh.errors?.name}</div>
+                  )}
                 />
               </div>
-              
+
               <div className="info_popup_ext">
                 <label htmlFor="user">User:</label>
                 <Field
-                type="text"
-                id="user"
-                name="user"
+                  type="text"
+                  id="user"
+                  name="user"
                   placeholder="Write your user"
                   value={Formikh.values?.user}
                   onChange={Formikh.handleChange}
                 />
                 <ErrorMessage
                   name="userid"
-                  component={() => <div className="error">{Formikh.errors?.user}</div>}
+                  component={() => (
+                    <div className="error">{Formikh.errors?.user}</div>
+                  )}
                 />
               </div>
 
               <div className="info_popup_ext">
                 <label htmlFor="rnc">RNC:</label>
                 <Field
-                type="text"
-                id="rnc"
-                name="rnc"
+                  type="text"
+                  id="rnc"
+                  name="rnc"
                   placeholder="Write your RNC"
                   value={Formikh.values?.rnc}
                   onChange={Formikh.handleChange}
                 />
                 <ErrorMessage
                   name="rnc"
-                  component={() => <div className="error">{Formikh.errors?.rnc}</div>}
+                  component={() => (
+                    <div className="error">{Formikh.errors?.rnc}</div>
+                  )}
                 />
               </div>
 
               <div className="info_popup_ext">
                 <label htmlFor="phone">Phone:</label>
                 <Field
-                type="text"
-                id="phone"
-                name="phone"
-                placeholder="(849)865-8925"
-                value={Formikh.values?.phone}
-                onChange={Formikh.handleChange}
+                  type="text"
+                  id="phone"
+                  name="phone"
+                  placeholder="(849)865-8925"
+                  value={Formikh.values?.phone}
+                  onChange={Formikh.handleChange}
                 />
                 <ErrorMessage
                   name="phone"
-                  component={() => <div className="error">{Formikh.errors?.phone}</div>}
+                  component={() => (
+                    <div className="error">{Formikh.errors?.phone}</div>
+                  )}
                 />
               </div>
-
             </div>
           </div>
 
@@ -148,9 +160,9 @@ function Client({ SetisOpened, useClient }) {
           />
 
           {/* <div className="popup_client_button"> */}
-            <Button type="submit" variant="contained" color="success">
-              Guardar
-            </Button>
+          <Button type="submit" variant="contained" color="success">
+            Guardar
+          </Button>
           {/* </div> */}
         </Form>
       </div>
