@@ -1,7 +1,7 @@
 import { useLocation, Navigate, Outlet } from 'react-router-dom';
 import { useAuthContext } from '../../contexts/Auth';
 import Restricted from './Restricted.c';
-import Loading from '../Loading.c'
+import Loading from '../Loading.c';
 import { AxiosClient } from '../../libs/axios';
 function RequireAuth({ allowRoles = [], allowDep = [] }) {
   const [auth, Setauth] = useAuthContext();

@@ -46,11 +46,11 @@ function Navbar() {
             Contacto
           </Link>
         </li>
-        <li className="nav__item">
+        {/*<li className="nav__item">
           <Link to={'/Servicios'} onClick={handleClick} className="nav__link">
             Servicios
           </Link>
-        </li>
+        </li>*/}
 
         {auth?.isAuth ? (
           <>
