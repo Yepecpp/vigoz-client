@@ -1,19 +1,18 @@
 .user-profile {
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: #001d3d;
   background-repeat: no-repeat;
   background-size: cover;
- 
+  display: flex;
+  justify-content: left;
+  align-items: center;
  
  
 
   .user-photo {
     flex: 0 0 auto;
-    width: 210px;
-    height: 210px;
+    width: 250px;
+    height: 250px;
     overflow: hidden;
     border-radius: 55%;
     display: block;
@@ -27,13 +26,12 @@
   }
 
   .user-info {
-    flex: 1 1 auto;
-    font-size: 20px;
-    margin-top: 50px;
-    text-align: center;
-    color: black;
-    margin: 70px;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: -33vh;
+    margin-left: -15vh;
   
     .full-name,
     .email,
@@ -91,13 +89,47 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  
+  right: -100vh;
 }
 .contenedor_user_info{
   color: black;
   box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);
   border: 2px solid white;
   border-radius: 12px;
-  height: 750px;
-  width: 850px;
+  height: 640px;
+  width: 560px;
   background-color: white;
+  display: flex;
+  justify-content: left;
+  margin-left: 15vh;
+  margin-top: -10vh;
+}
+
+.cont_box{
+  color: black;
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);
+  border: 2px solid white;
+  border-radius: 15px;
+  height: 21rem;
+  width: 40rem;
+  background-color: white;
+  display: flex;
+  justify-content: left;
+  margin-left: 70vh;
+  margin-top: 8rem;
+}
+
+.cont_two{
+  color: black;
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);
+  border: 2px solid white;
+  border-radius: 15px;
+  height: 21rem;
+  width: 40rem;
+  background-color: white;
+  display: flex;
+  justify-content: left;
+  margin-left: 70vh;
+  margin-top: 3rem;
 }
