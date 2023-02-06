@@ -1,10 +1,12 @@
 import React from 'react';
-import '../../components/'
+import ProvedoresC from '../../components/Provedores.c.jsx';
 
 const Provedores = () => {
   return (
-    <div>Provedores</div>
-  )
-}
+    <main>
+      <ProvedoresC />;
+    </main>
+  );
+};
 
-export default Provedores
+export default Provedores;

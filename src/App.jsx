@@ -17,6 +17,7 @@ import GastosP from './pages/dashpages/Gastos.dash';
 import NominaP from './pages/dashpages/Nomina.dash';
 import RegisterP from './pages/dashpages/Usuarios.p';
 import DistributionP from './pages/dashpages/Distribution.dash';
+import ProvedoresP from './pages/dashpages/Provedores.dash';
 import UsuariosP from './pages/dashpages/Usuarios.p';
 
 const App = () => {
@@ -35,32 +36,36 @@ const App = () => {
           <Route element={<RequireAuth />}>
             <Route path="Dashboard" element={<Dashboard Comp={IndexdashP} />} />
             <Route
-              path="Dashboard/Perfil"
-              element={<Dashboard Comp={PerfilP} />}
-            />
-            <Route
-              path="Dashboard/Clientes"
-              element={<Dashboard Comp={ClientesP} />}
-            />
-            <Route
-              path="Dashboard/Almacenes"
-              element={<Dashboard Comp={AlmacenP} />}
-            />
-            <Route
-              path="Dashboard/Gastos"
-              element={<Dashboard Comp={GastosP} />}
-            />
-            <Route
               path="Dashboard/Nominas"
               element={<Dashboard Comp={NominaP} />}
             />
+              <Route
+                path="Dashboard/Almacenes"
+                element={<Dashboard Comp={AlmacenP} />}
+              />
+              <Route
+                path="Dashboard/Gastos"
+                element={<Dashboard Comp={GastosP} />}
+              />
+              <Route
+                path="Dashboard/Usuarios"
+                element={<Dashboard Comp={UsuariosP} />}
+              />
+              <Route
+                path="/Dashboard/Distribucion"
+                element={<Dashboard Comp={DistributionP} />}
+              />
+              <Route
+                path="/Dashboard/Provedores"
+                element={<Dashboard Comp={ProvedoresP} />}
+              />
+              <Route
+                path="Dashboard/Clientes"
+                element={<Dashboard Comp={ClientesP} />}
+                />
             <Route
-              path="Dashboard/Usuarios"
-              element={<Dashboard Comp={UsuariosP} />}
-            />
-            <Route
-              path="/Dashboard/Distribucion"
-              element={<Dashboard Comp={DistributionP} />}
+              path="Dashboard/Perfil"
+              element={<Dashboard Comp={PerfilP} />}
             />
           </Route>
           {/* Catch all route, must be last */}

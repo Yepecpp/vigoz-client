@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { AxiosClient } from '../libs/axios';
 import { Button } from '@mui/material';
+import Loading from './Loading.c';
 import ClientP from './popups/Client.popup';
 import Udatagrid from './datagrid/Udatagrid.c.jsx';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import moment from 'moment';
-import Loading from './Loading.c';
 /*id: z.string().optional(),
   name: z.string(),
   address: addressZod
@@ -92,7 +92,7 @@ const Cliente = () => {
       </div>
 
       {clientsQuery.status === 'loading' ? (
-        <Loading />
+        <div>loading</div>
       ) : clientsQuery.status === 'error' ? (
         <div>error</div>
       ) : (
