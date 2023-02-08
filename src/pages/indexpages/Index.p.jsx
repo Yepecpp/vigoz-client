@@ -3,27 +3,27 @@ import Squares from '../../components/squares/Squares.c';
 
 const SquaresData = [
   {
-    imageUrl: 'aboutUs.jpg',
+    imageUrl: 'sobreNosotros.png',
     name: 'Sobre Nosotros',
   },
   {
-    imageUrl: 'contact.jpg',
+    imageUrl: 'contacto.png',
     name: 'Contacto',
   },
   {
-    imageUrl: 'services.jpg',
+    imageUrl: 'servicios.png',
     name: 'Servicios',
   },
   {
-    imageUrl: 'Hielo-marino.jpg',
+    imageUrl: 'hielo.png',
     name: 'Hielo',
   },
   {
-    imageUrl: 'poloSlide.jpg',
-    name: 'Cubos',
+    imageUrl: 'redesSociales.png',
+    name: 'Redes Sociales',
   },
   {
-    imageUrl: 'cuboHielo.jpg',
+    imageUrl: 'encargos.png',
     name: 'Encargos',
   },
 ];
@@ -36,7 +36,7 @@ const Index = () => {
           return (
             <Squares
               key={index}
-              imageUrl={'/media/slider/' + square.imageUrl}
+              imageUrl={'/media/' + square.imageUrl}
               name={square.name}
             />
           );

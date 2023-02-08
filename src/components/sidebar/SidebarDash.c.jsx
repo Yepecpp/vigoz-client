@@ -14,13 +14,6 @@ import {
   FaTruck,
 } from 'react-icons/fa';
 import { RiFolderUserFill } from 'react-icons/ri';
-import { styled } from '@mui/material/styles';
-
-const ResponsiveSide = styled('div')(({ theme }) => ({
-  [theme.breakpoints.down('mobile')]: {
-    display: 'none',
-  },
-}));
 
 const Navbar = () => {
   const [auth] = useAuthContext();
@@ -65,7 +58,7 @@ const Navbar = () => {
   };
 
   return (
-    <ResponsiveSide className={nameclass.two}>
+    <div className={nameclass.two}>
       <div onClick={handleChange} className={icon}>
         <div className="line1"></div>
         <div className="line2"></div>
@@ -163,7 +156,7 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-    </ResponsiveSide>
+    </div>
   );
 };
 

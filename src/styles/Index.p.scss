@@ -260,6 +260,11 @@ html {
     transition: ease 0.3s;
     background-image: none !important;
     background-color: #000;
+
+    p {
+      display: block;
+      position: absolute;
+    }
   }
 }
 
@@ -269,6 +274,7 @@ html {
   text-align: center;
   font-weight: bolder;
   transition: ease 0.1s;
+  display: none;
 }
 
 .squares:hover > p {
