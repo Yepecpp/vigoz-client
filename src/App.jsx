@@ -40,30 +40,30 @@ const App = () => {
               path="Dashboard/Nominas"
               element={<Dashboard Comp={NominaP} />}
             />
-              <Route
-                path="Dashboard/Almacenes"
-                element={<Dashboard Comp={AlmacenP} />}
-              />
-              <Route
-                path="Dashboard/Gastos"
-                element={<Dashboard Comp={GastosP} />}
-              />
-              <Route
-                path="Dashboard/Usuarios"
-                element={<Dashboard Comp={UsuariosP} />}
-              />
-              <Route
-                path="/Dashboard/Distribucion"
-                element={<Dashboard Comp={DistributionP} />}
-              />
-              <Route
-                path="/Dashboard/Provedores"
-                element={<Dashboard Comp={ProvedoresP} />}
-              />
-              <Route
-                path="Dashboard/Clientes"
-                element={<Dashboard Comp={ClientesP} />}
-                />
+            <Route
+              path="Dashboard/Almacenes"
+              element={<Dashboard Comp={AlmacenP} />}
+            />
+            <Route
+              path="Dashboard/Gastos"
+              element={<Dashboard Comp={GastosP} />}
+            />
+            <Route
+              path="Dashboard/Usuarios"
+              element={<Dashboard Comp={UsuariosP} />}
+            />
+            <Route
+              path="/Dashboard/Distribucion"
+              element={<Dashboard Comp={DistributionP} />}
+            />
+            <Route
+              path="/Dashboard/Provedores"
+              element={<Dashboard Comp={ProvedoresP} />}
+            />
+            <Route
+              path="Dashboard/Clientes"
+              element={<Dashboard Comp={ClientesP} />}
+            />
             <Route
               path="Dashboard/Perfil"
               element={<Dashboard Comp={PerfilP} />}

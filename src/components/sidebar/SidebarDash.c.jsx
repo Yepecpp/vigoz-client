@@ -13,18 +13,33 @@ import {
   FaUser,
   FaTruck,
 } from 'react-icons/fa';
-import { GrUserWorker } from 'react-icons/gr';
+import { RiFolderUserFill } from 'react-icons/ri';
+import { styled } from '@mui/material/styles';
 
+const ResponsiveSide = styled('div')(({ theme }) => ({
+  [theme.breakpoints.down('mobile')]: {
+    display: 'none',
+  },
+}));
 
 const Navbar = () => {
   const [auth] = useAuthContext();
   const [checked, setChecked] = useState(true);
+  const [sidebar, setSidebar] = useState('dropdown-menu');
   const [icon, setIcon] = useState('nav__togglerSidebar toggle');
   const [nameclass, setNameclass] = useState({
     one: 'container_userSidebar',
     two: 'container_allSidebar',
     three: 'list_sidebar',
   });
+
+  const handleSidebar = () => {
+    if (sidebar === 'dropdown-menu') {
+      setSidebar('dropdown-menu dropdown-menuActive');
+    } else {
+      setSidebar('dropdown-menu');
+    }
+  };
 
   const handleChange = () => {
     const nameClases = [
@@ -48,8 +63,9 @@ const Navbar = () => {
     }
     setNameclass(NameClasses);
   };
+
   return (
-    <div className={nameclass.two}>
+    <ResponsiveSide className={nameclass.two}>
       <div onClick={handleChange} className={icon}>
         <div className="line1"></div>
         <div className="line2"></div>
@@ -76,14 +92,17 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="item_sidebar">
-            <div className="link_sidebar">
+            <div className="link_sidebar" onClick={handleSidebar}>
               <HiArchiveBoxArrowDown />
               <p className={`${nameclass.one}`}>Almacen</p>
             </div>
-            <ul className="dropdown-menu">
-              <li><a href="#">HTML</a></li>
-              <li><a href="#">CSS</a></li>
-              <li><a href="#">JavaScript</a></li>
+            <ul className={sidebar}>
+              <li>
+                <Link to="/Dashboard/Almacenes">Almacen 1</Link>
+              </li>
+              <li>
+                <Link to="/Dashboard/Almacenes">Almacen 2</Link>
+              </li>
             </ul>
           </li>
           <li className="item_sidebar">
@@ -99,10 +118,18 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="item_sidebar">
-            <Link className="link_sidebar" to="/Dashboard/Distribucion">
+            <div className="link_sidebar" onClick={handleSidebar}>
               <FaTruck />
               <p className={`${nameclass.one}`}>Distribución</p>
-            </Link>
+            </div>
+            <ul className={sidebar}>
+              <li>
+                <Link to="/Dashboard/Distribucion">Distribucion 1</Link>
+              </li>
+              <li>
+                <Link to="/Dashboard/Distribucion">Distribucion 2</Link>
+              </li>
+            </ul>
           </li>
           <li className="item_sidebar">
             <Link className="link_sidebar" to="/Dashboard/Provedores">
@@ -124,7 +151,7 @@ const Navbar = () => {
           </li>
           <li className="item_sidebar">
             <Link className="link_sidebar" to="/Dashboard/Empleados">
-              <GrUserWorker />
+              <RiFolderUserFill />
               <p className={nameclass.one}>Empleados</p>
             </Link>
           </li>
@@ -136,7 +163,7 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-    </div>
+    </ResponsiveSide>
   );
 };
 
