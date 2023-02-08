@@ -13,12 +13,12 @@ import {
   FaUser,
   FaTruck,
 } from 'react-icons/fa';
-import { GrUserWorker } from 'react-icons/gr';
+import { RiFolderUserFill } from 'react-icons/ri';
 import { styled } from '@mui/material/styles';
 
 const ResponsiveSide = styled('div')(({ theme }) => ({
-  [theme.breakpoints.down('sm')]: {
-    color: 'blue',
+  [theme.breakpoints.down('mobile')]: {
+    display: 'none',
   },
 }));
 
@@ -63,8 +63,6 @@ const Navbar = () => {
     }
     setNameclass(NameClasses);
   };
-
-  //return <span>{`theme.breakpoints.up('sm') matches: ${matches}`}</span>;
 
   return (
     <ResponsiveSide className={nameclass.two}>
@@ -153,7 +151,7 @@ const Navbar = () => {
           </li>
           <li className="item_sidebar">
             <Link className="link_sidebar" to="/Dashboard/Empleados">
-              <GrUserWorker />
+              <RiFolderUserFill />
               <p className={nameclass.one}>Empleados</p>
             </Link>
           </li>
