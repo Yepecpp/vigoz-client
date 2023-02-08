@@ -1,23 +1,22 @@
 @import './imports/Colors.scss';
 @import './imports/Letters.scss';
 
-html,
-body {
-  height: 100%;
-}
-
 //Footer
+body {
+  overflow-x: hidden;
+}
 
 .footerdash {
   background-color: #111;
   height: auto;
-  width: 100vw;
+  width: 100%;
   font-family: 'Open Sans', sans-serif;
   padding-top: 40px;
   color: #fff;
 }
 
 .contenedor_footer {
+  width: 100vw;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -36,6 +35,7 @@ body {
   margin: 10px auto;
   line-height: 28px;
   font-size: 14px;
+  text-align: center;
 }
 
 .socials {
@@ -66,7 +66,7 @@ body {
 
 .footer_bajo {
   background-color: #000;
-  width: 100vw;
+  width: 100%;
   padding: 20px 0;
   text-align: center;
 }
@@ -83,84 +83,151 @@ body {
   font-weight: 200;
 }
 
-// navbar
-body {
-  padding: 0;
-  margin: 0;
-}
-
-.contenedor_logo {
-  width: 100%;
-  height: 10vh;
-  font-family: 'Open Sans', sans-serif;
-  background-color: #e1e1e1;
-}
-
-.logo {
-  display: inline-block;
-  margin: 0;
-  padding: 10px 0 0 100px;
-  padding-top: 10px;
-  padding-left: 100px;
-  cursor: pointer;
-}
-
-.logo_a {
-  text-decoration: none;
-  list-style-type: none;
-  color: #000;
-}
-
-.sidebar_ul_item {
-  list-style-type: none;
-  padding-bottom: 20px;
-  font-family: 'Open Sans', sans-serif;
-  color: #5a5a5f;
-  font-size: 1em;
-}
-
-.sidebar_ul_item .sidebar_ul_li_a {
-  text-decoration: none;
-  margin-left: 10px;
-  color: #5a5a5f;
-}
-
-.sidebar_ul_li_button {
-  width: 8em;
-  font-size: 1em;
-  text-decoration: none;
-  list-style: none;
-  border: none;
-  border-radius: 50px;
-  padding: 15px;
-  background-color: #9e9e9e;
-}
-
-.sidebar_ul_li_a:link,
-.sidebar_ul_li_a:visited,
-.sidebar_ul_li_a:active {
-  text-decoration: none;
-}
-
-.sidebar_ul_li_a:hover {
-  color: #000;
-}
-
-//navbar should have 1/5 of the screen and main should have 4/5 of the screen
-.dashwrapper {
+//DashBoard
+.container_dash {
+  width: 100vw;
+  min-height: 100vh;
+  height: 100%;
   display: flex;
-  width: 100%;
+}
+
+// SideBar
+.container_allSidebar {
+  width: 20%;
   height: auto;
-  .sidebar {
-    width: 13vw;
-    height: inherit;
-    background-color: #e1e1e1;
-    padding-right: 10px;
-    position: relative;
+  background-color: #002141;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1vh;
+  transition: ease 0.2s;
+
+  .container_userSidebar {
+    height: auto;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .img_userSidebar {
+      width: 80%;
+      background-color: #fff;
+      border-radius: 50%;
+    }
+
+    .name_userSidebar {
+      width: auto;
+      color: #fff;
+      font-size: 1.5rem;
+    }
   }
-  main {
-    width: 84vw;
-    height: 90vh;
-    position: relative;
+
+  /*   .line_sidebar {
+    height: 1px;
+    width: 80%;
+    background-color: #fff;
+  } */
+
+  .container_sidebar {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .list_sidebar {
+    width: auto;
+    height: auto;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: ease 0.2s;
+  }
+
+  .item_sidebar {
+    color: #fff;
+
+    .dropdown-menu {
+      width: 70%;
+      height: 50%;
+      padding: 0;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      list-style: none;
+      background-color: #002141;
+      position: relative;
+      top: -15%;
+      left: 30%;
+
+      li:hover {
+        scale: 1.2;
+        transition: ease 0.2s;
+      }
+    }
+
+    .dropdown-menu > li > a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.2rem;
+    }
+
+    .dropdown-menuActive {
+      display: flex;
+    }
+  }
+
+  #exit_sidebar {
+    padding-left: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .link_sidebar {
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+
+    &:hover {
+      scale: 1.2;
+      transition: ease 0.2s;
+    }
+  }
+
+  .switchSidebar {
+    display: none;
+  }
+}
+
+.switch_container_allSidebar {
+  width: 5%;
+  transition: ease 0.2s;
+}
+
+.switch_list_sidebar {
+  gap: 5vh;
+  align-items: center;
+  transition: ease 0.2s;
+}
+
+@media screen and (max-width: 768px) {
+  .container_allSidebar {
+    width: 0;
+  }
+
+  .switch_container_allSidebar {
+    width: 15%;
   }
 }

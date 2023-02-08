@@ -1,23 +1,30 @@
-import React from 'react';
 import Slider from '../../components/slider/Slider.c';
 import Squares from '../../components/squares/Squares.c';
 
 const SquaresData = [
   {
+    imageUrl: 'aboutUs.jpg',
+    name: 'Sobre Nosotros',
+  },
+  {
+    imageUrl: 'contact.jpg',
+    name: 'Contacto',
+  },
+  {
+    imageUrl: 'services.jpg',
+    name: 'Servicios',
+  },
+  {
     imageUrl: 'Hielo-marino.jpg',
     name: 'Hielo',
   },
   {
-    imageUrl: 'hieloSlide.jpg',
-    name: 'Hielo Marino',
-  },
-  {
     imageUrl: 'poloSlide.jpg',
-    name: 'Hielo Azul',
+    name: 'Cubos',
   },
   {
-    imageUrl: 'slide1.jpg',
-    name: 'Hielo verde',
+    imageUrl: 'cuboHielo.jpg',
+    name: 'Encargos',
   },
 ];
 const Index = () => {

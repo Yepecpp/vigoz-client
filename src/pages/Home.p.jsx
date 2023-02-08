@@ -1,6 +1,6 @@
 import React from 'react';
 import Footer from '../components/Footer.c';
-import Navbar from '../components/Navbar.c';
+import Navbar from '../components/navbar/Navbar.c';
 import Proptypes from 'prop-types';
 const Home = ({ Comp }) => {
   return (
