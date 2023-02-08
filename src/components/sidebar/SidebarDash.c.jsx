@@ -74,10 +74,21 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="item_sidebar">
-            <Link className="link_sidebar" to="/Dashboard/Almacenes">
+            <div className="link_sidebar">
               <HiArchiveBoxArrowDown />
               <p className={`${nameclass.one}`}>Almacen</p>
-            </Link>
+            </div>
+            <ul className="dropdown-menu">
+              <li>
+                <a href="#">HTML</a>
+              </li>
+              <li>
+                <a href="#">CSS</a>
+              </li>
+              <li>
+                <a href="#">JavaScript</a>
+              </li>
+            </ul>
           </li>
           <li className="item_sidebar">
             <Link className="link_sidebar" to="/Dashboard/Gastos">
