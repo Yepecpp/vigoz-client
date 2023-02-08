@@ -3,7 +3,7 @@ import AgregarData from './AgregarData.c';
 import Udatagrid from './datagrid/Udatagrid.c.jsx';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { AxiosClient } from '../libs/axios';
-import Loandig from './Loading.c';
+import Loading from './Loading.c';
 import moment from 'moment';
 
 
@@ -47,7 +47,7 @@ const Almacenc = () => {
       { field: 'updatedAt', headerName: 'Updated At', width: 150 },
       { field: 'branch', headerName: 'Branch', width: 150 },
     ],
-    rows: storageQuery?.data?.storage,
+    rows: storageQuery?.data?.storages,
   };
 
   return (
@@ -58,7 +58,7 @@ const Almacenc = () => {
         handleChange={(e) => SetSearch(e.target.value)}
         search={search}/>
       {storageQuery.isLoading ? (
-        <Loandig/>
+        <Loading/>
       ) : storageQuery.error ? (
         <div>error</div>
       ) : (
