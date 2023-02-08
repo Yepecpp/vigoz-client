@@ -1,5 +1,5 @@
 // PopUp Client
-.container_popupClient{
+.container_popupClient {
   width: 100vw;
   height: 108vh;
   position: absolute;
@@ -12,18 +12,19 @@
 }
 
 @keyframes popup {
-  0%{
+  0% {
     transform: translateY(100%);
   }
 
-  100%{
+  100% {
     transform: translateY(0%);
   }
 }
 
-.container_form{
+
+.container_form {
   width: 85%;
-  height: 85%;
+  height: auto;
   background-color: #fff;
   padding: 2vh 2vw;
   display: flex;
@@ -34,21 +35,21 @@
   animation: popup 0.2s;
 }
 
-.popup_client{
+.popup_client {
   outline: #000 solid 1px;
   border-radius: 20px;
-  height: 25%;
+  height: auto;
+  padding: 15px;
 
   h1 {
     padding-left: 2vw;
   }
 }
 
-.info_popup{
-  display: flex;
-  justify-content: space-evenly;
+.info_popup {
+  padding: 10px;
 
-  .info_popup_ext{
+  .info_popup_ext {
     display: flex;
     gap: 0.5vw;
     align-items: center;
@@ -56,9 +57,8 @@
   }
 }
 
-
 @media screen and (max-width: 768px) {
-  .info_popup{
+  .info_popup {
     flex-wrap: wrap;
     gap: 1vh;
     justify-content: center;
@@ -66,16 +66,16 @@
 }
 
 .close {
-    color: #fff;
-    font-size: 4rem;
-    position: absolute;
-    top: 1vh;
-    left: 92.5vw;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: #aaaaaa;
-    text-decoration: none;
-    cursor: pointer;
-  }
+  color: #fff;
+  font-size: 4rem;
+  position: absolute;
+  top: 1vh;
+  left: 92.5vw;
+}
+
+.close:hover,
+.close:focus {
+  color: #aaaaaa;
+  text-decoration: none;
+  cursor: pointer;
+}
