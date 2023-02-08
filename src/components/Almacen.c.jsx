@@ -1,11 +1,10 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import AgregarData from './AgregarData.c';
 import Udatagrid from './datagrid/Udatagrid.c.jsx';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { AxiosClient } from '../libs/axios';
 import Loading from './Loading.c';
 import moment from 'moment';
-
 
 const Almacenc = () => {
   const [isOpened, SetisOpened] = useState(false);
@@ -18,13 +17,13 @@ const Almacenc = () => {
       let response = await axios.get(
         '/storages' + `${search !== '' ? `?name=${search}` : ''}`
       );
-      console.log(response.data);
-        response.data.storages.forEach((storage) => {
+
+      response.data.storages.forEach((storage) => {
         storage.createdAt = moment(storage.createdAt).format('YYYY-MM-DD');
         storage.updatedAt = moment(storage.updatedAt).format('YYYY-MM-DD');
       });
       return response.data;
-    }
+    },
   });
 
   useEffect(() => {
@@ -52,13 +51,14 @@ const Almacenc = () => {
 
   return (
     <div>
-      <AgregarData         
+      <AgregarData
         isOpened={isOpened}
         SetisOpened={SetisOpened}
         handleChange={(e) => SetSearch(e.target.value)}
-        search={search}/>
+        search={search}
+      />
       {storageQuery.isLoading ? (
-        <Loading/>
+        <Loading />
       ) : storageQuery.error ? (
         <div>error</div>
       ) : (

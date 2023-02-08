@@ -1,7 +1,6 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import Udatagrid from './datagrid/Udatagrid.c.jsx';
 import AgregarData from './AgregarData.c.jsx';
-
 const Usuariosc = () => {
   const [isOpened, SetisOpened] = useState(false);
   const GridProps = {

@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import AgregarData from './AgregarData.c';
 import Udatagrid from './datagrid/Udatagrid.c.jsx';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
@@ -17,7 +17,7 @@ const Gasto = () => {
       let response = await axios.get(
         '/expenses' + `${search !== '' ? `?name=${search}` : ''}`
       );
-      console.log(response.data);
+
       response.data.expenses.forEach((expense) => {
         expense.date_ex = moment(expense.date_ex).format('YYYY-MM-DD');
       });

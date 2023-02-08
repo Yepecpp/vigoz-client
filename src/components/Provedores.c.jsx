@@ -3,22 +3,54 @@ import Udatagrid from './datagrid/Udatagrid.c.jsx';
 import AgregarData from './AgregarData.c.jsx';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { AxiosClient } from '../libs/axios';
-import moment from 'moment';
 import Loading from './Loading.c';
+import Upopup from './popups/Upopup.c.jsx';
 const Provedores = () => {
   const [isOpened, SetisOpened] = useState(false);
   const [search, SetSearch] = useState('');
+  const [provider, SetProvider] = useState({
+    name: 's',
+    email: 's',
+    phone: 's',
+    address: {
+      street1: 's',
+      street2: 's',
+      city: 's',
+      zip: 's',
+    },
+    description: 's',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  });
+  useEffect(() => {
+    if (!isOpened) {
+      SetProvider({
+        name: '',
+        email: '',
+        phone: '',
+        address: {
+          street1: '',
+          street2: '',
+          city: '',
+          zip: '',
+        },
+        description: '',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      });
+    }
+  }, [isOpened]);
   const queryClient = useQueryClient();
   const providerQuery = useQuery({
-    queryKey: ['providers'],
+    queryKey: ['Providers'],
     queryFn: async () => {
       const axios = AxiosClient();
       let response = await axios.get(
         '/providers' + `${search !== '' ? `?name=${search}` : ''}`
       );
       response.data.providers.forEach((provider) => {
-        provider.createdAt = moment(provider.createdAt).format('YYYY-MM-DD');
-        provider.updatedAt = moment(provider.updatedAt).format('YYYY-MM-DD');
+        provider.createdAt = new Date(provider.createdAt);
+        provider.updatedAt = new Date(provider.updatedAt);
       });
       return response.data;
     },
@@ -36,7 +68,24 @@ const Provedores = () => {
       { field: 'name', headerName: 'Name', width: 230 },
       { field: 'email', headerName: 'Email', width: 230 },
       { field: 'phone', headerName: 'Phone', width: 230 },
-      { field: 'address', headerName: 'Address', width: 230 },
+      {
+        field: 'address.street1',
+        headerName: 'street',
+        width: 130,
+        valueGetter: (params) => params.row.address.street1,
+      },
+      {
+        field: 'address.city',
+        headerName: 'city',
+        width: 130,
+        valueGetter: (params) => params.row.address.city,
+      },
+      {
+        field: 'address.zip',
+        headerName: 'zip',
+        width: 130,
+        valueGetter: (params) => params.row.address.zip,
+      },
       {
         field: 'description',
         headerName: 'Description',
@@ -44,6 +93,10 @@ const Provedores = () => {
       },
     ],
     rows: providerQuery?.data?.providers,
+    onRowClick: (e) => {
+      SetProvider(e.row);
+      SetisOpened(true);
+    },
   };
 
   return (
@@ -61,6 +114,12 @@ const Provedores = () => {
       ) : (
         <Udatagrid data={GridProps} />
       )}
+      <Upopup
+        isOpened={isOpened}
+        SetisOpened={SetisOpened}
+        Fstate={() => provider}
+        QueryKey={['Providers']}
+      />
     </div>
   );
 };

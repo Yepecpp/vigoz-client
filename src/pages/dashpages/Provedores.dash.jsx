@@ -4,7 +4,7 @@ import ProvedoresC from '../../components/Provedores.c.jsx';
 const Provedores = () => {
   return (
     <main>
-      <ProvedoresC />;
+      <ProvedoresC />
     </main>
   );
 };

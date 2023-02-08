@@ -30,7 +30,6 @@ function RequireAuth({ allowRoles = [], allowDep = [] }) {
         isLoading = false;
       })
       .catch((err) => {
-        console.log(err);
         localStorage.removeItem('auth-token');
         Setauth({ isAuth: false, token: null, data: null });
         isLoading = false;
