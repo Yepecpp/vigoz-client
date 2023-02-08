@@ -12,6 +12,7 @@ import './styles/Perfil.p.scss';
 import './styles/Nomina.p.scss';
 import './styles/Register.p.scss';
 import './styles/Popup.scss';
+import './styles/Contacto.p.scss';
 import './styles/Loading.p.scss';
 import './styles/Restricted.p.scss';
 import './styles/Usuarios.p.scss';
