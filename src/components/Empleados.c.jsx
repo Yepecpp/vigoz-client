@@ -35,14 +35,47 @@ const Empleados = () => {
 
     const GridProps = {
         columns: [
-          { field: 'id', headerName: 'ID', width: 90 },
+          { field: 'id', headerName: 'ID', width: 150 },
           { field: 'user', headerName: 'User', width: 150 },
-          { field: 'address', headerName: 'Address', width: 150 },
+          {
+            field: 'address.street1',
+            headerName: 'street',
+            width: 130,
+            valueGetter: (params) => params.row.address.street1,
+          },
           { field: 'identity', headerName: 'Identity', width: 150 },
           { field: 'birthDate', headerName: 'Birth Date', width: 150 },
-          { field: 'details', headerName: 'Details', width: 150 },
+          { 
+            field: 'details.position', 
+            headerName: 'Details', 
+            width: 150, 
+            valueGetter: (params) =>params.row.details.position 
+          },
+          { 
+            field: 'details.type', 
+            headerName: 'Type', 
+            width: 150, 
+            valueGetter: (params) =>params.row.details.type 
+          },
           { field: 'gender', headerName: 'Gender', width: 150 },
-          { field: 'salary', headerName: 'Salary', width: 150 },
+          { 
+            field: 'salary.amounts', 
+            headerName: 'Amounts', 
+            width: 150, 
+            valueGetter: (params) =>params.row.salary.amounts 
+          },
+          { 
+            field: 'salary.currency.code', 
+            headerName: 'Currency Code', 
+            width: 150, 
+            valueGetter: (params) =>params.row.salary.currency.code 
+          },
+          { 
+            field: 'salary.period', 
+            headerName: 'Period', 
+            width: 150, 
+            valueGetter: (params) =>params.row.salary.period 
+          },
           { field: 'department', headerName: 'Department', width: 150 },
           { field: 'role', headerName: 'Role', width: 150 },
         ],
