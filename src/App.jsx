@@ -1,4 +1,5 @@
 import React from 'react';
+import { ThemeProvider } from '@mui/material';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import RequireAuth from './components/routes/RequireAuth.c';
 import Dashboard from './pages/Dashboard.p';
@@ -20,26 +21,31 @@ import DistributionP from './pages/dashpages/Distribution.dash';
 import ProvedoresP from './pages/dashpages/Provedores.dash';
 import UsuariosP from './pages/dashpages/Usuarios.p';
 import Empleados from './pages/dashpages/Empleados.dash';
+import { theme } from './components/MediaQuery';
 
 const App = () => {
   return (
-    <AuthProvider>
-      <Router>
-        <Routes>
-          {/* Layout */}
-          {/* Public Pages */}
-          <Route path="/" element={<Home Comp={IndexP} />} />
-          <Route path="About" element={<Home Comp={AboutP} />} />
-          <Route path="Contacto" element={<Home Comp={ContactoP} />} />
-          <Route path="Login" element={<Home Comp={LoginP} />} />
-          <Route path="Register" element={<Home Comp={RegisterP} />} />
-          {/* Private Pages */}
-          <Route element={<RequireAuth />}>
-            <Route path="Dashboard" element={<Dashboard Comp={IndexdashP} />} />
-            <Route
-              path="Dashboard/Nominas"
-              element={<Dashboard Comp={NominaP} />}
-            />
+    <AuthProvider theme={theme}>
+      <ThemeProvider>
+        <Router>
+          <Routes>
+            {/* Layout */}
+            {/* Public Pages */}
+            <Route path="/" element={<Home Comp={IndexP} />} />
+            <Route path="About" element={<Home Comp={AboutP} />} />
+            <Route path="Contacto" element={<Home Comp={ContactoP} />} />
+            <Route path="Login" element={<Home Comp={LoginP} />} />
+            <Route path="Register" element={<Home Comp={RegisterP} />} />
+            {/* Private Pages */}
+            <Route element={<RequireAuth />}>
+              <Route
+                path="Dashboard"
+                element={<Dashboard Comp={IndexdashP} />}
+              />
+              <Route
+                path="Dashboard/Nominas"
+                element={<Dashboard Comp={NominaP} />}
+              />
               <Route
                 path="Dashboard/Almacenes"
                 element={<Dashboard Comp={AlmacenP} />}
@@ -63,20 +69,21 @@ const App = () => {
               <Route
                 path="Dashboard/Clientes"
                 element={<Dashboard Comp={ClientesP} />}
-                />
-            <Route
-              path="Dashboard/Perfil"
-              element={<Dashboard Comp={PerfilP} />}
-            />
-            <Route
-              path="Dashboard/Empleados"
-              element={<Dashboard Comp={Empleados} />}
-            />
-          </Route>
-          {/* Catch all route, must be last */}
-          <Route path="*" element={<Home Comp={NoPageP} />} />
-        </Routes>
-      </Router>
+              />
+              <Route
+                path="Dashboard/Perfil"
+                element={<Dashboard Comp={PerfilP} />}
+              />
+              <Route
+                path="Dashboard/Empleados"
+                element={<Dashboard Comp={Empleados} />}
+              />
+            </Route>
+            {/* Catch all route, must be last */}
+            <Route path="*" element={<Home Comp={NoPageP} />} />
+          </Routes>
+        </Router>
+      </ThemeProvider>
     </AuthProvider>
   );
 };
