@@ -19,6 +19,7 @@ import RegisterP from './pages/dashpages/Usuarios.p';
 import DistributionP from './pages/dashpages/Distribution.dash';
 import ProvedoresP from './pages/dashpages/Provedores.dash';
 import UsuariosP from './pages/dashpages/Usuarios.p';
+import Empleados from './pages/dashpages/Empleados.dash';
 
 const App = () => {
   return (
@@ -66,6 +67,10 @@ const App = () => {
             <Route
               path="Dashboard/Perfil"
               element={<Dashboard Comp={PerfilP} />}
+            />
+            <Route
+              path="Dashboard/Empleados"
+              element={<Dashboard Comp={Empleados} />}
             />
           </Route>
           {/* Catch all route, must be last */}

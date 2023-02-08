@@ -17,7 +17,6 @@ const Provedores = () => {
         '/providers' + `${search !== '' ? `?name=${search}` : ''}`
       );
       response.data.providers.forEach((provider) => {
-        provider.user = provider.user ? provider.user.name : 'No user';
         provider.createdAt = moment(provider.createdAt).format('YYYY-MM-DD');
         provider.updatedAt = moment(provider.updatedAt).format('YYYY-MM-DD');
       });
