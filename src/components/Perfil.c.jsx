@@ -16,7 +16,7 @@ const Perfilc = () => {
             className="upload_photo"
           >
             Upload
-            <input hidden accept="image/*" multiple type="file" />
+            <input hidden accept="image/*" type="file" />
           </Button>
         </div>
         <label htmlFor="" className="user_nameProfile">
