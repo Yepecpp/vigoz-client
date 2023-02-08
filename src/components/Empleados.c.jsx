@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import AgregarData from './AgregarData.c';
 import Udatagrid from './datagrid/Udatagrid.c.jsx';
 import { useQuery, useQueryClient } from '@tanstack/react-query';

@@ -53,21 +53,52 @@ const Cliente = () => {
     columns: [
       { field: 'id', headerName: 'ID', width: 70 },
       { field: 'name', headerName: 'Name', width: 130 },
-      {
-        field: 'address.street1',
-        headerName: 'street',
-        width: 130,
-        render: (params) => {
-          console.log(params);
-          return params.row.address.street1;
-        },
-      },
+
       { field: 'user', headerName: 'User', width: 130 },
-      { field: 'identity', headerName: 'Identity', width: 130 },
+      {
+        field: 'identity.type',
+        headerName: 'Tipo de cliente',
+        width: 130,
+        valueGetter: (params) => params.row.identity.type,
+      },
+      {
+        field: 'identity.id',
+        headerName: 'identification',
+        width: 130,
+        valueGetter: (params) =>
+          `${params.row.identity.identity.type.toUpperCase()}: ${
+            params.row.identity.identity.number
+          }`,
+      },
+      {
+        field: 'identity.expiration',
+        headerName: 'Expiration',
+        width: 130,
+        valueGetter: (params) =>
+          moment(params.row.identity.identity.expiration).format('YYYY-MM-DD'),
+      },
       { field: 'rnc', headerName: 'RNC', width: 130 },
       { field: 'phone', headerName: 'Phone', width: 130 },
       { field: 'createdAt', headerName: 'Created At', width: 130 },
       { field: 'updatedAt', headerName: 'Updated At', width: 130 },
+      {
+        field: 'address.street1',
+        headerName: 'street',
+        width: 130,
+        valueGetter: (params) => params.row.address.street1,
+      },
+      {
+        field: 'address.city',
+        headerName: 'city',
+        width: 130,
+        valueGetter: (params) => params.row.address.city,
+      },
+      {
+        field: 'address.zip',
+        headerName: 'zip',
+        width: 130,
+        valueGetter: (params) => params.row.address.zip,
+      },
     ],
     rows: clientsQuery.data?.clients,
     onRowClick: (e) => {
