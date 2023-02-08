@@ -13,6 +13,8 @@ import {
   FaUser,
   FaTruck,
 } from 'react-icons/fa';
+import { GrUserWorker } from 'react-icons/gr';
+
 
 const Navbar = () => {
   const [auth] = useAuthContext();
@@ -113,6 +115,12 @@ const Navbar = () => {
             <Link className="link_sidebar" to="/Dashboard/Perfil">
               <FaRegUser />
               <p className={nameclass.one}>Perfil</p>
+            </Link>
+          </li>
+          <li className="item_sidebar">
+            <Link className="link_sidebar" to="/Dashboard/Empleados">
+              <GrUserWorker />
+              <p className={nameclass.one}>Empleados</p>
             </Link>
           </li>
           <li className="item_sidebar" id="exit_sidebar">
