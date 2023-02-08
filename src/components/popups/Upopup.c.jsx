@@ -48,7 +48,7 @@ const Upopup = ({ Fstate, isOpened, SetisOpened, QueryKey }) => {
                 Edit {QueryKey[0]}: {Formikh.values?.name}
               </h1>
             ) : (
-              <h1>Create New Client</h1>
+              <h1>Create New {QueryKey[0]}</h1>
             )}
             <Box className="info_popup">
               {ConvertData(Formikh.values, false).map((item, index) => {
