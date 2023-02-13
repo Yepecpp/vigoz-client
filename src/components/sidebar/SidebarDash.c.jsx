@@ -14,11 +14,14 @@ import {
   FaTruck,
 } from 'react-icons/fa';
 import { RiFolderUserFill } from 'react-icons/ri';
+import Dropdown from './Dropdown.c';
 
 const Navbar = () => {
   const [auth] = useAuthContext();
   const [checked, setChecked] = useState(true);
-  const [sidebar, setSidebar] = useState('dropdown-menu');
+  {
+    /*const [sidebar, setSidebar] = useState('dropdown-menu');*/
+  }
   const [icon, setIcon] = useState('nav__togglerSidebar toggle');
   const [nameclass, setNameclass] = useState({
     one: 'container_userSidebar',
@@ -26,13 +29,13 @@ const Navbar = () => {
     three: 'list_sidebar',
   });
 
-  const handleSidebar = () => {
+  /*const handleSidebar = () => {
     if (sidebar === 'dropdown-menu') {
       setSidebar('dropdown-menu dropdown-menuActive');
     } else {
       setSidebar('dropdown-menu');
     }
-  };
+  };*/
 
   const handleChange = () => {
     const nameClases = [
@@ -79,25 +82,35 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="item_sidebar">
-            <Link className="link_sidebar" to="/Dashboard/Nominas">
+            <div className="link_sidebar">
               <FaOutdent />
-              <p className={`${nameclass.one}`}>Nomina</p>
-            </Link>
-          </li>
-          <li className="item_sidebar">
-            <div className="link_sidebar" onClick={handleSidebar}>
-              <HiArchiveBoxArrowDown />
-              <p className={`${nameclass.one}`}>Almacen</p>
+              <p className={`${nameclass.one}`}>Nominas</p>
             </div>
-            <ul className={sidebar}>
-              <li>
-                <Link to="/Dashboard/Almacenes">Almacen 1</Link>
+            <ul className="dropdown">
+              <li className="dropdown_item">
+                <Link to="/Dashboard/Nominas">Pagos</Link>
               </li>
-              <li>
-                <Link to="/Dashboard/Almacenes">Almacen 2</Link>
+              <li className="dropdown_item">
+                <Link to="/Dashboard/Nominas">Empleados</Link>
               </li>
             </ul>
           </li>
+
+          <li className="item_sidebar">
+            <div className="link_sidebar">
+              <HiArchiveBoxArrowDown />
+              <p className={`${nameclass.one}`}>Almacen</p>
+            </div>
+            <ul className="dropdown">
+              <li className="dropdown_item">
+                <Link to="/Dashboard/Almacenes">Produccion</Link>
+              </li>
+              <li className="dropdown_item">
+                <Link to="/Dashboard/Almacenes">Almacenes</Link>
+              </li>
+            </ul>
+          </li>
+
           <li className="item_sidebar">
             <Link className="link_sidebar" to="/Dashboard/Gastos">
               <FaRegListAlt />
@@ -110,20 +123,22 @@ const Navbar = () => {
               <p className={`${nameclass.one}`}>Usuarios</p>
             </Link>
           </li>
+
           <li className="item_sidebar">
-            <div className="link_sidebar" onClick={handleSidebar}>
+            <div className="link_sidebar">
               <FaTruck />
               <p className={`${nameclass.one}`}>Distribución</p>
             </div>
-            <ul className={sidebar}>
-              <li>
-                <Link to="/Dashboard/Distribucion">Distribucion 1</Link>
+            <ul className="dropdown">
+              <li className="dropdown_item">
+                <Link to="/Dashboard/Distribucion">Ventas</Link>
               </li>
-              <li>
-                <Link to="/Dashboard/Distribucion">Distribucion 2</Link>
+              <li className="dropdown_item">
+                <Link to="/Dashboard/Distribucion">Envios</Link>
               </li>
             </ul>
           </li>
+
           <li className="item_sidebar">
             <Link className="link_sidebar" to="/Dashboard/Provedores">
               <TbClipboardText />
@@ -137,15 +152,15 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="item_sidebar">
-            <Link className="link_sidebar" to="/Dashboard/Perfil">
-              <FaRegUser />
-              <p className={nameclass.one}>Perfil</p>
-            </Link>
-          </li>
-          <li className="item_sidebar">
             <Link className="link_sidebar" to="/Dashboard/Empleados">
               <RiFolderUserFill />
               <p className={nameclass.one}>Empleados</p>
+            </Link>
+          </li>
+          <li className="item_sidebar">
+            <Link className="link_sidebar" to="/Dashboard/Perfil">
+              <FaRegUser />
+              <p className={nameclass.one}>Perfil</p>
             </Link>
           </li>
           <li className="item_sidebar" id="exit_sidebar">
