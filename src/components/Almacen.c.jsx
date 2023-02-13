@@ -5,13 +5,15 @@ import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { AxiosClient } from '../libs/axios';
 import Loading from './Loading.c';
 import moment from 'moment';
+import Upopup from './popups/Upopup.c';
 
 const Almacenc = () => {
   const [isOpened, SetisOpened] = useState(false);
+  const [storage, SetStorage] = useState({Name:'', Category:'', Status:'', MaxCapacity:'', CurrentCapacity:'', Branch: ''});
   const [search, SetSearch] = useState('');
   const queryClient = useQueryClient();
   const storageQuery = useQuery({
-    queryKey: ['storages'],
+    queryKey: ['Storages'],
     queryFn: async () => {
       const axios = AxiosClient();
       let response = await axios.get(
@@ -47,6 +49,10 @@ const Almacenc = () => {
       { field: 'branch', headerName: 'Branch', width: 150 },
     ],
     rows: storageQuery?.data?.storages,
+    onRowClick: (e) => {
+      SetStorage(e.row);
+      SetisOpened(true);
+    },
   };
 
   return (
@@ -64,6 +70,13 @@ const Almacenc = () => {
       ) : (
         <Udatagrid data={GridProps} />
       )}
+
+      <Upopup
+        isOpened={isOpened}
+        SetisOpened={SetisOpened}
+        Fstate={() => storage}
+        QueryKey={['Storages']}
+      />
     </div>
   );
 };

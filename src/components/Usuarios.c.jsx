@@ -1,14 +1,75 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Udatagrid from './datagrid/Udatagrid.c.jsx';
 import AgregarData from './AgregarData.c.jsx';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
+import { AxiosClient } from '../libs/axios';
+import Loading from './Loading.c';
+import moment from 'moment';
+import Upopup from './popups/Upopup.c';
+
 const Usuariosc = () => {
   const [isOpened, SetisOpened] = useState(false);
+  const [search, SetSearch] = useState('');
+  const [user, SetUser] = useState({});
+  const queryClient = useQueryClient();
+  const userQuery = useQuery({
+    queryKey: ['Users'],
+    queryFn: async () => {
+      const axios = AxiosClient();
+      let response = await axios.get(
+        '/users' + `${search !== '' ? `?name=${search}` : ''}`
+      );
+
+      response.data.users.forEach((user) => {
+        user.lastlogin = moment(user.lastlogin).format('YYYY-MM-DD');
+      });
+      return response.data;
+    },
+  });
+
+  useEffect(() => {
+    if (!queryClient.isFetching(['Users']))
+      setTimeout(() => {
+        queryClient.invalidateQueries(['Users']);
+        userQuery.refetch();
+      }, 1000);
+  }, [search]);
+
   const GridProps = {
     columns: [
       { field: 'id', headerName: 'ID', width: 70 },
       { field: 'name', headerName: 'Name', width: 130 },
       { field: 'lastname', headerName: 'Last Name', width: 130 },
-      /*{ field: 'login', headerName: 'Login', width: 130 },*/
+      { 
+        field: 'login.email', 
+        headerName: 'Email', 
+        valueGetter: (params) => params.row.login.email,
+        width: 130 
+      },
+      { 
+        field: 'login.username', 
+        headerName: 'Username', 
+        valueGetter: (params) => params.row.login.username,
+        width: 130 
+      },
+      { 
+        field: 'login.passw', 
+        headerName: 'Password', 
+        valueGetter: (params) => params.row.login.passw,
+        width: 130 
+      },
+      { 
+        field: 'login.provider', 
+        headerName: 'Provider', 
+        valueGetter: (params) => params.row.login.provider,
+        width: 130 
+      },
+      { 
+        field: 'login.lastLogin', 
+        headerName: 'Last Login', 
+        valueGetter: (params) => params.row.login.lastLogin,
+        width: 130 
+      },
       { field: 'createdAt', headerName: 'Created At', width: 130 },
       { field: 'updatedAt', headerName: 'Update At', width: 130 },
       { field: 'status', headerName: 'Status', width: 130 },
@@ -19,13 +80,35 @@ const Usuariosc = () => {
       { field: 'isVerified', headerName: 'Is Verrified', width: 130 },
       { field: 'isEmployee', headerName: 'Is Employee', width: 130 },
     ],
-    rows: [],
+    rows: userQuery?.data?.users,
+    onRowClick: (e) => {
+      console.log(e.row);
+      SetUser(e.row);
+      SetisOpened(true);
+    },
   };
 
   return (
     <div>
-      <AgregarData isOpened={isOpened} SetisOpened={SetisOpened} />
-      <Udatagrid data={GridProps} />
+      <AgregarData
+        isOpened={isOpened}
+        SetisOpened={SetisOpened}
+        handleChange={(e) => SetSearch(e.target.value)}
+        search={search}
+      />
+      {userQuery.isLoading ? (
+        <Loading />
+      ) : userQuery.error ? (
+        <div>error</div>
+      ) : (
+        <Udatagrid data={GridProps} />
+      )}
+      <Upopup
+        isOpened={isOpened}
+        SetisOpened={SetisOpened}
+        QueryKey={['Users']}
+        Fstate={() => user}
+      />
     </div>
   );
 };

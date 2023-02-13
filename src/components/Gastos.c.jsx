@@ -5,13 +5,15 @@ import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { AxiosClient } from '../libs/axios';
 import moment from 'moment';
 import Loading from './Loading.c';
+import Upopup from './popups/Upopup.c';
 
 const Gasto = () => {
   const [isOpened, SetisOpened] = useState(false);
   const [search, SetSearch] = useState('');
+  const [expense, SetExpense] = useState({});
   const queryClient = useQueryClient();
   const expenseQuery = useQuery({
-    queryKey: ['expense'],
+    queryKey: ['Expense'],
     queryFn: async () => {
       const axios = AxiosClient();
       let response = await axios.get(
@@ -62,6 +64,13 @@ const Gasto = () => {
       ) : (
         <Udatagrid data={GridProps} />
       )}
+
+      <Upopup
+        isOpened={isOpened}
+        SetisOpened={SetisOpened}
+        Fstate={() => expense}
+        QueryKey={['Expenses']}
+      />
     </div>
   );
 };

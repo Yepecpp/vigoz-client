@@ -6,7 +6,7 @@ const Perfilc = () => {
   return (
     <div className="user-profile">
       <div className="contenedor_user_info">
-        <div className="photobutton">
+        <div className="photobutton">o
           <div className="user-photo">
             <img src="/media/user.png" />
           </div>

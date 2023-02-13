@@ -6,6 +6,8 @@ import { AxiosClient } from '../libs/axios';
 import Loading from './Loading.c';
 import moment from 'moment';
 import Upopup from './popups/Upopup.c';
+
+
 const Empleados = () => {
   const [isOpened, SetisOpened] = useState(false);
   const [search, SetSearch] = useState('');
