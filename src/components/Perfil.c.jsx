@@ -6,7 +6,7 @@ const Perfilc = () => {
   return (
     <div className="user-profile">
       <div className="contenedor_user_info">
-        <div className="photobutton">o
+        <div className="photobutton">
           <div className="user-photo">
             <img src="/media/user.png" />
           </div>
@@ -20,7 +20,7 @@ const Perfilc = () => {
           </Button>
         </div>
         <label htmlFor="" className="user_nameProfile">
-          Me
+          Me alex hiciste un lio con el sidernav con la clase e por eso que esto esta asi lo intente a las 20:56 del 13-02-2023
         </label>
         <div className="user-info">
           <p className="full-name">
@@ -56,64 +56,3 @@ const Perfilc = () => {
 };
 
 export default Perfilc;
-
-{
-  /*  </div>
-       <div className="form-container">
-        <form>
-          <div className="personal-data">
-            <h3>Personal Data</h3>
-            <div className="form-row">
-              <label htmlFor="full-name">Full Name</label>
-              <input
-                type="text"
-                id="full-name"
-                name="full-name"
-                value={auth.data.name}
-              />
-            </div>
-            <div className="form-row">
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={auth.data.login.email}
-              />
-            </div>
-            <div className="form-row">
-              <label htmlFor="phone-number">Phone Number</label>
-              <input
-                type="number"
-                id="phone-number"
-                name="phone-number"
-                value={auth.data.phone}
-              />
-            </div>
-            <Button variant="outlined">Save Changes</Button>
-          </div>
-          <div className="account-data">
-            <h3>Account Data</h3>
-            <div className="form-row">
-              <label htmlFor="username">Username</label>
-              <input
-                type="text"
-                id="username"
-                name="username"
-                value={auth.data.login.username}
-              />
-            </div>
-            <div className="form-row">
-              <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                value={auth.data.login?.password}
-              />
-            </div>
-            <Button variant="outlined">Save Changes</Button>
-          </div>
-        </form>
-        */
-}
