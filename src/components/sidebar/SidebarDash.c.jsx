@@ -14,7 +14,6 @@ import {
   FaTruck,
 } from 'react-icons/fa';
 import { RiFolderUserFill } from 'react-icons/ri';
-import Dropdown from './Dropdown.c';
 
 const Navbar = () => {
   const [auth] = useAuthContext();
@@ -69,7 +68,10 @@ const Navbar = () => {
       </div>
 
       <div className={nameclass.one}>
-        <img src="/media/user.png" className="img_userSidebar" />
+        <img
+          src={`${import.meta.env.VITE_HOSTAPI}/${auth.data.images?.avatar}`}
+          className="img_userSidebar"
+        />
         <p className="name_userSidebar">{`${auth.data.name} ${auth.data.last_name}`}</p>
       </div>
       <div className={nameclass.one}></div>

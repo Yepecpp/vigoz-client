@@ -1,5 +1,8 @@
 @import './imports/Colors.scss';
 @import './imports/Letters.scss';
+* {
+  box-sizing: border-box;
+}
 
 *,
 *::after,
@@ -11,7 +14,10 @@ body {
   margin: 0;
   padding: 0;
 }
-
+.main_dash > div {
+  width: 90vw;
+  height: 100%;
+}
 //Navbar
 .nav__item {
   list-style: none;
