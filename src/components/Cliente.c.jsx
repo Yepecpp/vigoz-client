@@ -22,7 +22,7 @@ import Upopup from './popups/Upopup.c.jsx';
   updatedAt: z.string().optional(),*/
 const Cliente = () => {
   const [isOpened, SetisOpened] = useState(false);
-  const [client, SetClient] = useState({});
+  const [client, SetClient] = useState({Name: '', Address: '', User: '', TipoCliente: '', Identificacion: '', Expiracion: '', RNC: '', Phone: '', Street: '', City: '', Zip: ''});
   const [search, SetSearch] = useState('');
   useEffect(() => {
     if (!queryClient.isFetching(['Clients']))

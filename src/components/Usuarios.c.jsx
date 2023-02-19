@@ -10,7 +10,7 @@ import Upopup from './popups/Upopup.c';
 const Usuariosc = () => {
   const [isOpened, SetisOpened] = useState(false);
   const [search, SetSearch] = useState('');
-  const [user, SetUser] = useState({});
+  const [user, SetUser] = useState({Name: '', Last_Name: '', Email: '', Username: '', Password: '', Provider: '',  Status: '', Phone: '', Meta: '', Info: ''});
   const queryClient = useQueryClient();
   const userQuery = useQuery({
     queryKey: ['Users'],
@@ -82,7 +82,6 @@ const Usuariosc = () => {
     ],
     rows: userQuery?.data?.users,
     onRowClick: (e) => {
-      console.log(e.row);
       SetUser(e.row);
       SetisOpened(true);
     },

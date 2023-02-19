@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Button } from '@mui/material';
+import PerfilPopup from './popups/Perfil.popup';
 import { useAuthContext } from '../contexts/Auth';
 import Axios from 'axios';
 const Perfilc = () => {
   const [auth] = useAuthContext();
   const [files, setFiles] = useState();
+
   return (
     <div className="user-profile">
       <div className="contenedor_user_info">
@@ -69,6 +71,9 @@ const Perfilc = () => {
           <p className="email">{auth.data.login.email}</p>
           <p htmlFor="ty">Usuario</p>
           <p className="username">{auth.data.login.username}</p>
+          <PerfilPopup
+          />
+          
         </div>
       </div>
 

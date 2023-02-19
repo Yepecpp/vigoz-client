@@ -11,7 +11,33 @@ import Upopup from './popups/Upopup.c';
 const Empleados = () => {
   const [isOpened, SetisOpened] = useState(false);
   const [search, SetSearch] = useState('');
-  const [employee, SetEmployee] = useState({});
+  const [employee, SetEmployee] = useState({User: '', 
+  address: {
+    Street1: '',
+    Street2: '',
+    City: '',
+    Zip: '',
+  },
+  indentity:{
+    Type: '',
+    Numbre: '',
+    Expiration: '',
+    Country: '',
+    State: '',
+  },
+  Birthday: new Date(),
+  datails: {
+    Position: '',
+    Type: '',
+    },
+  Gender: '',
+  Salary: {
+    Amounts: '',
+    CurrencyCode: '',
+    },
+  Department: '',
+  Role: '',
+});
   const queryClient = useQueryClient();
   const employeeQuery = useQuery({
     queryKey: ['Employees'],
