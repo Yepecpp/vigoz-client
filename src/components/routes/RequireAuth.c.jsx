@@ -13,25 +13,36 @@ function RequireAuth({ allowRoles = [], allowDep = [] }) {
     axios
       .get('/auth')
       .then((res) => {
-        Setauth(
-          res.status === 200
-            ? {
-                isAuth: true,
-                token: res.data.token,
-                data: res.data.user,
-                isEmp: res.data.is_employee,
-                employee: res.data?.employee,
-              }
-            : () => {
-                localStorage.removeItem('auth-token');
-                return { isAuth: false, token: null, data: null };
-              }
-        );
+        if (res.status === 200) {
+          localStorage.setItem('auth-token', res.data.token);
+          Setauth({
+            isAuth: true,
+            token: res.data.token,
+            data: res.data.user,
+            isEmp: res.data.is_employee,
+            employee: res.data?.employee,
+          });
+        } else {
+          localStorage.removeItem('auth-token');
+          Setauth({
+            isAuth: false,
+            token: null,
+            data: null,
+            isEmp: false,
+            employee: null,
+          });
+        }
         isLoading = false;
       })
-      .catch((err) => {
+      .catch(() => {
         localStorage.removeItem('auth-token');
-        Setauth({ isAuth: false, token: null, data: null });
+        Setauth({
+          isAuth: false,
+          token: null,
+          data: null,
+          isEmp: false,
+          employee: null,
+        });
         isLoading = false;
       });
   }

@@ -6,6 +6,7 @@ import Axios from 'axios';
 const Perfilc = () => {
   const [auth] = useAuthContext();
   const [files, setFiles] = useState();
+  const [isOpened, setIsOpened] = useState(false);
 
   return (
     <div className="user-profile">
@@ -19,14 +20,11 @@ const Perfilc = () => {
             />
           </div>
           <form
-            // action="http://localhost:3000/user/upload"
-            // method="POST"
             encType="multipart/form-data"
             onSubmit={(e) => {
               e.preventDefault();
-              console.log(files);
               Axios.put(
-                'http://localhost:3000/api/v1/users',
+                `${import.meta.env.VITE_HOSTAPI}/api/v1/users`,
                 {
                   avatar: files,
                   user: {
@@ -40,11 +38,7 @@ const Perfilc = () => {
                     authorization: 'Bearer ' + auth.token,
                   },
                 }
-              )
-                .then((res) => {
-                  console.log(res);
-                })
-                .catch((err) => console.log(err.response));
+              );
             }}
           >
             <input
@@ -71,9 +65,6 @@ const Perfilc = () => {
           <p className="email">{auth.data.login.email}</p>
           <p htmlFor="ty">Usuario</p>
           <p className="username">{auth.data.login.username}</p>
-          <PerfilPopup
-          />
-          
         </div>
       </div>
 
@@ -93,6 +84,16 @@ const Perfilc = () => {
           <p className="username">{auth.data.login.username}</p>
         </div>
       </div>
+      <Button
+        variant="outlined"
+        className="edit_profile"
+        onClick={() => setIsOpened(!isOpened)}
+      >
+        Cambiar contraseña
+      </Button>
+      {isOpened ? (
+        <PerfilPopup setIsOpened={setIsOpened} isOpened={isOpened} />
+      ) : null}
     </div>
   );
 };

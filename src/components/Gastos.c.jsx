@@ -10,10 +10,24 @@ import Upopup from './popups/Upopup.c';
 const Gasto = () => {
   const [isOpened, SetisOpened] = useState(false);
   const [search, SetSearch] = useState('');
-  const [expense, SetExpense] = useState({Category: '', Description: '', Value: '', Currency: '', Date_ex: new Date(), Status: '', Method: '', Destination: ''});
+  const [expense, SetExpense] = useState({
+    category: '',
+    description: '',
+    amount: {
+      currency: '',
+      value: '',
+    },
+    date_ex: new Date(),
+    state: {
+      status: '',
+      method: '',
+    },
+    destination: '',
+    destinationData: '',
+  });
   const queryClient = useQueryClient();
   const expenseQuery = useQuery({
-    queryKey: ['Expense'],
+    queryKey: ['expenses'],
     queryFn: async () => {
       const axios = AxiosClient();
       let response = await axios.get(
@@ -38,12 +52,32 @@ const Gasto = () => {
       { field: 'id', headerName: 'ID', width: 90 },
       { field: 'category', headerName: 'Category', width: 150 },
       { field: 'description', headerName: 'Description', width: 150 },
-      { field: 'amount.value', headerName: 'Value', width: 150 },
-      { field: 'amount.currency', headerName: 'Currency', width: 150 },
+      {
+        field: 'amount.value',
+        headerName: 'Value',
+        width: 150,
+        valueGetter: (params) => params.row.amount.value,
+      },
+      {
+        field: 'amount.currency',
+        headerName: 'Currency',
+        width: 150,
+        valueGetter: (params) => params.row.amount.currency,
+      },
       { field: 'date_ex', headerName: 'Date Ex', width: 150 },
-      { field: 'state.status', headerName: 'Status', width: 150 },
-      { field: 'state.updated', headerName: 'Updated', width: 150 },
-      { field: 'creatorEmp', headerName: 'Creator Emp', width: 150 },
+      {
+        field: 'state.status',
+        headerName: 'Status',
+        width: 150,
+        valueGetter: (params) => params.row.state.status,
+      },
+      {
+        field: 'state.updated',
+        headerName: 'Updated',
+        width: 150,
+        valueGetter: (params) => params.row.state.updated,
+      },
+      { field: 'creatorEmp', headerName: 'Empleado', width: 150 },
       { field: 'method', headerName: 'Method', width: 150 },
       { field: 'destination', headerName: 'Destination', width: 150 },
       { field: 'destinationData', headerName: 'Destination Data', width: 150 },
@@ -75,7 +109,7 @@ const Gasto = () => {
         isOpened={isOpened}
         SetisOpened={SetisOpened}
         Fstate={() => expense}
-        QueryKey={['Expenses']}
+        QueryKey={['expenses']}
       />
     </div>
   );

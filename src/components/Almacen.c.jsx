@@ -9,11 +9,17 @@ import Upopup from './popups/Upopup.c';
 
 const Almacenc = () => {
   const [isOpened, SetisOpened] = useState(false);
-  const [storage, SetStorage] = useState({Name:'', Category:'', Status:'', MaxCapacity:'', CurrentCapacity:'', Branch: ''});
+  const [storage, SetStorage] = useState({
+    name: '',
+    category: '',
+    status: '',
+    maxCapacity: 0,
+    currentCapacity: 0,
+  });
   const [search, SetSearch] = useState('');
   const queryClient = useQueryClient();
   const storageQuery = useQuery({
-    queryKey: ['Storages'],
+    queryKey: ['storages'],
     queryFn: async () => {
       const axios = AxiosClient();
       let response = await axios.get(
@@ -75,7 +81,7 @@ const Almacenc = () => {
         isOpened={isOpened}
         SetisOpened={SetisOpened}
         Fstate={() => storage}
-        QueryKey={['Storages']}
+        QueryKey={['storages']}
       />
     </div>
   );

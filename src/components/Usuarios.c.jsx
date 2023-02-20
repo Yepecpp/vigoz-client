@@ -10,10 +10,21 @@ import Upopup from './popups/Upopup.c';
 const Usuariosc = () => {
   const [isOpened, SetisOpened] = useState(false);
   const [search, SetSearch] = useState('');
-  const [user, SetUser] = useState({Name: '', Last_Name: '', Email: '', Username: '', Password: '', Provider: '',  Status: '', Phone: '', Meta: '', Info: ''});
+  const [user, SetUser] = useState({
+    name: '',
+    last_name: '',
+    login: {
+      email: '',
+      username: '',
+      provider: '',
+      passw: '',
+    },
+    phone: '',
+    status: '',
+  });
   const queryClient = useQueryClient();
   const userQuery = useQuery({
-    queryKey: ['Users'],
+    queryKey: ['users'],
     queryFn: async () => {
       const axios = AxiosClient();
       let response = await axios.get(
@@ -39,46 +50,35 @@ const Usuariosc = () => {
     columns: [
       { field: 'id', headerName: 'ID', width: 70 },
       { field: 'name', headerName: 'Name', width: 130 },
-      { field: 'lastname', headerName: 'Last Name', width: 130 },
-      { 
-        field: 'login.email', 
-        headerName: 'Email', 
+      { field: 'last_name', headerName: 'Last Name', width: 130 },
+      {
+        field: 'login.email',
+        headerName: 'Email',
         valueGetter: (params) => params.row.login.email,
-        width: 130 
+        width: 130,
       },
-      { 
-        field: 'login.username', 
-        headerName: 'Username', 
+      {
+        field: 'login.username',
+        headerName: 'Username',
         valueGetter: (params) => params.row.login.username,
-        width: 130 
+        width: 130,
       },
-      { 
-        field: 'login.passw', 
-        headerName: 'Password', 
-        valueGetter: (params) => params.row.login.passw,
-        width: 130 
-      },
-      { 
-        field: 'login.provider', 
-        headerName: 'Provider', 
+      {
+        field: 'login.provider',
+        headerName: 'Provider',
         valueGetter: (params) => params.row.login.provider,
-        width: 130 
+        width: 130,
       },
-      { 
-        field: 'login.lastLogin', 
-        headerName: 'Last Login', 
+      {
+        field: 'login.lastLogin',
+        headerName: 'Last Login',
         valueGetter: (params) => params.row.login.lastLogin,
-        width: 130 
+        width: 130,
       },
       { field: 'createdAt', headerName: 'Created At', width: 130 },
       { field: 'updatedAt', headerName: 'Update At', width: 130 },
       { field: 'status', headerName: 'Status', width: 130 },
       { field: 'phone', headerName: 'Phone', width: 130 },
-      { field: 'meta', headerName: 'Meta', width: 130 },
-      { field: 'info', headerName: 'Info', width: 130 },
-      { field: 'images', headerName: 'Images', width: 130 },
-      { field: 'isVerified', headerName: 'Is Verrified', width: 130 },
-      { field: 'isEmployee', headerName: 'Is Employee', width: 130 },
     ],
     rows: userQuery?.data?.users,
     onRowClick: (e) => {
@@ -105,7 +105,7 @@ const Usuariosc = () => {
       <Upopup
         isOpened={isOpened}
         SetisOpened={SetisOpened}
-        QueryKey={['Users']}
+        QueryKey={['users']}
         Fstate={() => user}
       />
     </div>

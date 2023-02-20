@@ -28,14 +28,6 @@ const Navbar = () => {
     three: 'list_sidebar',
   });
 
-  /*const handleSidebar = () => {
-    if (sidebar === 'dropdown-menu') {
-      setSidebar('dropdown-menu dropdown-menuActive');
-    } else {
-      setSidebar('dropdown-menu');
-    }
-  };*/
-
   const handleChange = () => {
     const nameClases = [
       'container_userSidebar',
@@ -93,7 +85,8 @@ const Navbar = () => {
                 <Link to="/Dashboard/Nominas">Pagos</Link>
               </li>
               <li className="dropdown_item">
-                <Link to="/Dashboard/Nominas">Empleados</Link>
+                <RiFolderUserFill />
+                <Link to="/Dashboard/Empleados">Empleados</Link>
               </li>
             </ul>
           </li>
@@ -126,7 +119,7 @@ const Navbar = () => {
             </Link>
           </li>
 
-          <li className="item_sidebar">
+          {/* <li className="item_sidebar">
             <div className="link_sidebar">
               <FaTruck />
               <p className={`${nameclass.one}`}>Distribución</p>
@@ -139,7 +132,7 @@ const Navbar = () => {
                 <Link to="/Dashboard/Distribucion">Envios</Link>
               </li>
             </ul>
-          </li>
+          </li> */}
 
           <li className="item_sidebar">
             <Link className="link_sidebar" to="/Dashboard/Provedores">
@@ -153,12 +146,7 @@ const Navbar = () => {
               <p className={nameclass.one}>Clientes</p>
             </Link>
           </li>
-          <li className="item_sidebar">
-            <Link className="link_sidebar" to="/Dashboard/Empleados">
-              <RiFolderUserFill />
-              <p className={nameclass.one}>Empleados</p>
-            </Link>
-          </li>
+
           <li className="item_sidebar">
             <Link className="link_sidebar" to="/Dashboard/Perfil">
               <FaRegUser />

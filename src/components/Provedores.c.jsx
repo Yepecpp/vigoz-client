@@ -42,7 +42,7 @@ const Provedores = () => {
   }, [isOpened]);
   const queryClient = useQueryClient();
   const providerQuery = useQuery({
-    queryKey: ['Providers'],
+    queryKey: ['providers'],
     queryFn: async () => {
       const axios = AxiosClient();
       let response = await axios.get(
@@ -118,7 +118,7 @@ const Provedores = () => {
         isOpened={isOpened}
         SetisOpened={SetisOpened}
         Fstate={() => provider}
-        QueryKey={['Providers']}
+        QueryKey={['providers']}
       />
     </div>
   );
