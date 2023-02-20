@@ -5,12 +5,13 @@ import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { AxiosClient } from '../libs/axios';
 import Loading from './Loading.c';
 import moment from 'moment';
-//import Upopup from './popups/Upopup.c';
+import { payrollDefault, payrollStructure } from '../structures/payroll.s';
+import Godpopup from './popups/Godpopup';
 
 const Nominap = () => {
   const [isOpened, SetisOpened] = useState(false);
   const [search, SetSearch] = useState('');
-  const [payroll, SetPayroll] = useState({});
+  const [payroll, SetPayroll] = useState(payrollDefault);
 
   const queryClient = useQueryClient();
   const payrollQuery = useQuery({
@@ -20,7 +21,6 @@ const Nominap = () => {
       let response = await axios.get(
         '/payrolls' + `${search !== '' ? `?name=${search}` : ''}`
       );
-      console.log(response.data);
       response.data.payrolls.forEach((payroll) => {
         payroll.createdAt = moment(payroll.createdAt).format('YYYY-MM-DD');
         payroll.updatedAt = moment(payroll.updatedAt).format('YYYY-MM-DD');
@@ -151,12 +151,15 @@ const Nominap = () => {
       ) : (
         <Udatagrid data={GridProps} />
       )}
-      {/* <Upopup
-        isOpened={isOpened}
-        SetisOpened={SetisOpened}
-        Fstate={() => payroll}
-        QueryKey={['payrolls']}
-      /> */}
+      {
+        <Godpopup
+          isOpened={isOpened}
+          SetisOpened={SetisOpened}
+          QueryKey={['payrolls']}
+          Dstate={payroll}
+          Structure={payrollStructure}
+        />
+      }
     </div>
   );
 };
