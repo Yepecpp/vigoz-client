@@ -4,40 +4,19 @@ import AgregarData from './AgregarData.c.jsx';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { AxiosClient } from '../libs/axios';
 import Loading from './Loading.c';
-import Upopup from './popups/Upopup.c.jsx';
+import Godpopup from './popups/Godpopup.jsx';
+import {
+  providerDefault,
+  providerStructure,
+} from '../structures/provider.s.jsx';
+
 const Provedores = () => {
   const [isOpened, SetisOpened] = useState(false);
   const [search, SetSearch] = useState('');
-  const [provider, SetProvider] = useState({
-    name: 's',
-    email: 's',
-    phone: 's',
-    address: {
-      street1: 's',
-      street2: 's',
-      city: 's',
-      zip: 's',
-    },
-    description: 's',
-    createdAt: new Date(),
-    updatedAt: new Date(),
-  });
+  const [provider, SetProvider] = useState(providerDefault);
   useEffect(() => {
     if (!isOpened) {
-      SetProvider({
-        name: '',
-        email: '',
-        phone: '',
-        address: {
-          street1: '',
-          street2: '',
-          city: '',
-          zip: '',
-        },
-        description: '',
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      });
+      SetProvider(providerDefault);
     }
   }, [isOpened]);
   const queryClient = useQueryClient();
@@ -114,11 +93,12 @@ const Provedores = () => {
       ) : (
         <Udatagrid data={GridProps} />
       )}
-      <Upopup
+      <Godpopup
         isOpened={isOpened}
         SetisOpened={SetisOpened}
-        Fstate={() => provider}
         QueryKey={['providers']}
+        Dstate={provider}
+        Structure={providerStructure}
       />
     </div>
   );

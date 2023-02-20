@@ -202,20 +202,22 @@ function RenderData(item, index, Formikh) {
   }
   if (item.type === 'object') {
     return (
-      <Box key={index} className="info_popup object">
+      <div className="container_structure">
         <h3>{item.header}</h3>
-        {item.value.map((val, index) =>
-          RenderData(
-            {
-              ...val,
-              key: `${item.key}.${val.key}`,
-              orgKey: val.key,
-            },
-            index,
-            { ...Formikh, values: Formikh.values[item.key] }
-          )
-        )}
-      </Box>
+        <Box key={index} className="info_popup object">
+          {item.value.map((val, index) =>
+            RenderData(
+              {
+                ...val,
+                key: `${item.key}.${val.key}`,
+                orgKey: val.key,
+              },
+              index,
+              { ...Formikh, values: Formikh.values[item.key] }
+            )
+          )}
+        </Box>
+      </div>
     );
   }
 }

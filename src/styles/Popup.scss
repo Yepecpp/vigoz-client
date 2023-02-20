@@ -10,19 +10,7 @@
   align-items: center;
   background-color: #000000aa;
 }
-.container_popup {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  // .object has to take 2 columns instead of just one
 
-  .object {
-    grid-column: 1 / -1;
-    display: flex;
-    flex-wrap: wrap;
-    border: #000 solid 1px;
-    border-radius: 20px;
-  }
-}
 @keyframes popup {
   0% {
     transform: translateY(100%);
@@ -57,10 +45,33 @@
   }
 }
 
+.container_structure {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column: 1 / -1;
+  gap: 2vw;
+}
+
+.container_popup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  // .object has to take 2 columns instead of just one
+
+  .object {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: #000 solid 1px;
+    border-radius: 20px;
+    justify-items: center;
+  }
+}
+
 .info_popup {
   padding: 10px;
 
   .info_popup_ext {
+    padding: 1vh 0;
     display: flex;
     gap: 0.5vw;
     align-items: center;

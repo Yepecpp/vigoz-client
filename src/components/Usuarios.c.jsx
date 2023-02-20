@@ -5,8 +5,9 @@ import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { AxiosClient } from '../libs/axios';
 import Loading from './Loading.c';
 import moment from 'moment';
-import Upopup from './popups/Godpopup';
+import Godpopup from './popups/Godpopup';
 import { userDefault, userStructure } from '../structures/users.s.jsx';
+
 const Usuariosc = () => {
   const [isOpened, SetisOpened] = useState(false);
   const [search, SetSearch] = useState('');
@@ -91,7 +92,7 @@ const Usuariosc = () => {
       ) : (
         <Udatagrid data={GridProps} />
       )}
-      <Upopup
+      <Godpopup
         isOpened={isOpened}
         SetisOpened={SetisOpened}
         QueryKey={['users']}
