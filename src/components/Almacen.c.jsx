@@ -5,7 +5,7 @@ import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { AxiosClient } from '../libs/axios';
 import Loading from './Loading.c';
 import moment from 'moment';
-import Upopup from './popups/Upopup.c';
+import Upopup from './popups/Godpopup';
 
 const Almacenc = () => {
   const [isOpened, SetisOpened] = useState(false);
@@ -76,13 +76,6 @@ const Almacenc = () => {
       ) : (
         <Udatagrid data={GridProps} />
       )}
-
-      <Upopup
-        isOpened={isOpened}
-        SetisOpened={SetisOpened}
-        Fstate={() => storage}
-        QueryKey={['storages']}
-      />
     </div>
   );
 };

@@ -10,7 +10,19 @@
   align-items: center;
   background-color: #000000aa;
 }
+.container_popup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  // .object has to take 2 columns instead of just one
 
+  .object {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    border: #000 solid 1px;
+    border-radius: 20px;
+  }
+}
 @keyframes popup {
   0% {
     transform: translateY(100%);
@@ -20,7 +32,6 @@
     transform: translateY(0%);
   }
 }
-
 
 .container_form {
   width: 85%;
