@@ -20,6 +20,7 @@ import DistributionP from './pages/dashpages/Distribution.dash';
 import ProvedoresP from './pages/dashpages/Provedores.dash';
 import UsuariosP from './pages/dashpages/Usuarios.p';
 import Empleados from './pages/dashpages/Empleados.dash';
+import DepartamentoP from './pages/dashpages/Departamento.dash';
 
 const App = () => {
   return (
@@ -63,6 +64,10 @@ const App = () => {
             <Route
               path="Dashboard/Clientes"
               element={<Dashboard Comp={ClientesP} />}
+            />
+            <Route
+              path="Dashboard/Departamento"
+              element={<Dashboard Comp={DepartamentoP} />}
             />
             <Route
               path="Dashboard/Perfil"
