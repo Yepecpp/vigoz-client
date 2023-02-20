@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { AxiosClient } from '../libs/axios';
 import Loading from './Loading.c';
-
+import { clientDefault, clientStructure } from '../structures/client.s';
 import Udatagrid from './datagrid/Udatagrid.c.jsx';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import moment from 'moment';
 import AgregarData from './AgregarData.c';
 import { useEffect } from 'react';
-import Upopup from './popups/Upopup.c.jsx';
+import Godpopup from './popups/Godpopup';
 /*id: z.string().optional(),
   name: z.string(),
   address: addressZod
@@ -22,18 +22,18 @@ import Upopup from './popups/Upopup.c.jsx';
   updatedAt: z.string().optional(),*/
 const Cliente = () => {
   const [isOpened, SetisOpened] = useState(false);
-  const [client, SetClient] = useState({Name: '', Address: '', User: '', TipoCliente: '', Identificacion: '', Expiracion: '', RNC: '', Phone: '', Street: '', City: '', Zip: ''});
+  const [client, SetClient] = useState(clientDefault);
   const [search, SetSearch] = useState('');
   useEffect(() => {
-    if (!queryClient.isFetching(['Clients']))
+    if (!queryClient.isFetching(['clients']))
       setTimeout(() => {
-        queryClient.invalidateQueries('clients');
+        queryClient.invalidateQueries(['clients']);
         clientsQuery.refetch();
       }, 1000);
   }, [search]);
   const queryClient = useQueryClient();
   const clientsQuery = useQuery({
-    queryKey: ['Clients'],
+    queryKey: ['clients'],
     queryFn: async () => {
       const axios = AxiosClient();
       const response = await axios.get(
@@ -127,11 +127,12 @@ const Cliente = () => {
         <Udatagrid data={GridProps} name="Clientes" />
       )}
 
-      <Upopup
+      <Godpopup
         isOpened={isOpened}
         SetisOpened={SetisOpened}
-        Fstate={() => client}
-        QueryKey={['Clients']}
+        QueryKey={['clients']}
+        Structure={clientStructure}
+        Dstate={client}
       />
     </div>
   );

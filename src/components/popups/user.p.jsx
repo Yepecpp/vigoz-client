@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
-import Udatagrid from './datagrid/Udatagrid.c.jsx';
+import Udatagrid from '../datagrid/Udatagrid.c.jsx';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
-import { AxiosClient } from '../libs/axios';
-import Loading from './Loading.c';
+import { AxiosClient } from '../../libs/axios';
+import Loading from '../Loading.c';
 import moment from 'moment';
-const userpopup = ({ Setuser }) => {
+import { TextField, Box, IconButton } from '@mui/material';
+import { FcSearch } from 'react-icons/fc';
+const UserPopup = ({ Formikh, item, keys, index }) => {
   const [search, SetSearch] = useState('');
   const queryClient = useQueryClient();
+  const [isOpened, SetisOpened] = useState(false);
   const userQuery = useQuery({
     queryKey: ['users'],
     queryFn: async () => {
@@ -66,28 +69,52 @@ const userpopup = ({ Setuser }) => {
     ],
     rows: userQuery?.data?.users,
     onRowClick: (e) => {
-      Setuser(e.row);
+      Formikh.setFieldValue(keys[keys.length - 1], e.row.id);
+      SetisOpened(!isOpened);
+      console.log(e.row);
     },
   };
 
   return (
-    <div>
-      <label className="text_agregar">Search:</label>
-      <input
-        type="text"
-        name="buscar"
-        className="search_agregar"
-        onChange={(e) => SetSearch(e.target.value)}
-        value={search}
-      />
-      {userQuery.isLoading ? (
-        <Loading />
-      ) : userQuery.error ? (
-        <div>error</div>
-      ) : (
-        <Udatagrid data={GridProps} />
-      )}
-    </div>
+    <>
+      <Box key={index} className="info_popup_ext">
+        <label htmlFor={item.key}>{item.header}</label>
+        <div>
+          <TextField
+            name={item.key}
+            onChange={Formikh.handleChange}
+            onBlur={Formikh.handleBlur}
+            value={Formikh.values[keys[keys.length - 1]]}
+          />
+          <IconButton>
+            <FcSearch
+              onClick={() => {
+                SetisOpened(!isOpened);
+              }}
+            />
+          </IconButton>
+        </div>
+      </Box>
+      {isOpened ? (
+        <div>
+          <label className="text_agregar">Search:</label>
+          <input
+            type="text"
+            name="buscar"
+            className="search_agregar"
+            onChange={(e) => SetSearch(e.target.value)}
+            value={search}
+          />
+          {userQuery.isLoading ? (
+            <Loading />
+          ) : userQuery.error ? (
+            <div>error</div>
+          ) : (
+            <Udatagrid data={GridProps} />
+          )}
+        </div>
+      ) : null}
+    </>
   );
 };
-export default userpopup;
+export default UserPopup;
