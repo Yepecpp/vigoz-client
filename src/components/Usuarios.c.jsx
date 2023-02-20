@@ -5,23 +5,12 @@ import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { AxiosClient } from '../libs/axios';
 import Loading from './Loading.c';
 import moment from 'moment';
-import Upopup from './popups/Upopup.c';
-
+import Upopup from './popups/Godpopup';
+import { userDefault, userStructure } from '../structures/users.s.jsx';
 const Usuariosc = () => {
   const [isOpened, SetisOpened] = useState(false);
   const [search, SetSearch] = useState('');
-  const [user, SetUser] = useState({
-    name: '',
-    last_name: '',
-    login: {
-      email: '',
-      username: '',
-      provider: '',
-      passw: '',
-    },
-    phone: '',
-    status: '',
-  });
+  const [user, SetUser] = useState(userDefault);
   const queryClient = useQueryClient();
   const userQuery = useQuery({
     queryKey: ['users'],
@@ -106,7 +95,8 @@ const Usuariosc = () => {
         isOpened={isOpened}
         SetisOpened={SetisOpened}
         QueryKey={['users']}
-        Fstate={() => user}
+        Dstate={user}
+        Structure={userStructure}
       />
     </div>
   );
