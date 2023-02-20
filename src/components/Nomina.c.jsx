@@ -5,7 +5,7 @@ import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { AxiosClient } from '../libs/axios';
 import Loading from './Loading.c';
 import moment from 'moment';
-import Upopup from './popups/Upopup.c';
+//import Upopup from './popups/Upopup.c';
 
 const Nominap = () => {
   const [isOpened, SetisOpened] = useState(false);
@@ -134,7 +134,6 @@ const Nominap = () => {
       SetPayroll(e.row);
       SetisOpened(true);
     },
-
   };
 
   return (
@@ -152,12 +151,12 @@ const Nominap = () => {
       ) : (
         <Udatagrid data={GridProps} />
       )}
-      <Upopup
+      {/* <Upopup
         isOpened={isOpened}
         SetisOpened={SetisOpened}
         Fstate={() => payroll}
         QueryKey={['payrolls']}
-      />
+      /> */}
     </div>
   );
 };

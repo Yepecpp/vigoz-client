@@ -5,39 +5,12 @@ import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { AxiosClient } from '../libs/axios';
 import Loading from './Loading.c';
 import moment from 'moment';
-import Upopup from './popups/Upopup.c';
-
+import Godpopup from './popups/Godpopup';
+import { employeeDefault, employeeStructure } from '../structures/employee.s';
 const Empleados = () => {
   const [isOpened, SetisOpened] = useState(false);
   const [search, SetSearch] = useState('');
-  const [employee, SetEmployee] = useState({
-    User: '',
-    address: {
-      Street1: '',
-      Street2: '',
-      City: '',
-      Zip: '',
-    },
-    indentity: {
-      Type: '',
-      Numbre: '',
-      Expiration: '',
-      Country: '',
-      State: '',
-    },
-    Birthday: new Date(),
-    datails: {
-      Position: '',
-      Type: '',
-    },
-    Gender: '',
-    Salary: {
-      Amounts: '',
-      CurrencyCode: '',
-    },
-    Department: '',
-    Role: '',
-  });
+  const [employee, SetEmployee] = useState(employeeDefault);
   const queryClient = useQueryClient();
   const employeeQuery = useQuery({
     queryKey: ['employees'],
@@ -141,11 +114,12 @@ const Empleados = () => {
       ) : (
         <Udatagrid data={GridProps} />
       )}
-      <Upopup
+      <Godpopup
         isOpened={isOpened}
         SetisOpened={SetisOpened}
         QueryKey={['employees']}
-        Fstate={() => employee}
+        Dstate={employee}
+        Structure={employeeStructure}
       />
     </div>
   );

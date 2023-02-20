@@ -5,7 +5,7 @@ import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { AxiosClient } from '../libs/axios';
 import moment from 'moment';
 import Loading from './Loading.c';
-import Upopup from './popups/Upopup.c';
+import Godpupop from './popups/Godpopup';
 import { expenseDefault, expenseStructure } from '../structures/expenses.s.jsx';
 
 const Gasto = () => {
@@ -92,7 +92,7 @@ const Gasto = () => {
         <Udatagrid data={GridProps} />
       )}
 
-      <Upopup
+      <Godpupop
         isOpened={isOpened}
         SetisOpened={SetisOpened}
         Dstate={expense}
