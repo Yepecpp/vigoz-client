@@ -83,7 +83,6 @@ const Navbar = () => {
           childs={Pagos, Empleados}
           />*/}
 
-
           <li className="item_sidebar">
             <div className="link_sidebar">
               <FaOutdent />
@@ -110,6 +109,10 @@ const Navbar = () => {
               <li className="dropdown_item">
                 <MdAccountBalance />
                 <Link to="/Dashboard/Almacenes">Almacenes</Link>
+              </li>
+              <li className="dropdown_item">
+                <MdAccountBalance />
+                <Link to="/Dashboard/Produccion">Produccion</Link>
               </li>
             </ul>
           </li>
