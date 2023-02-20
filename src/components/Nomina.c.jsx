@@ -14,14 +14,14 @@ const Nominap = () => {
 
   const queryClient = useQueryClient();
   const payrollQuery = useQuery({
-    queryKey: ['payroll'],
+    queryKey: ['payrolls'],
     queryFn: async () => {
       const axios = AxiosClient();
       let response = await axios.get(
         '/payrolls' + `${search !== '' ? `?name=${search}` : ''}`
       );
-
-      response.data.payroll.forEach((payroll) => {
+      console.log(response.data);
+      response.data.payrolls.forEach((payroll) => {
         payroll.createdAt = moment(payroll.createdAt).format('YYYY-MM-DD');
         payroll.updatedAt = moment(payroll.updatedAt).format('YYYY-MM-DD');
       });
@@ -131,7 +131,6 @@ const Nominap = () => {
     ],
     rows: payrollQuery?.data?.payrolls,
     onRowClick: (e) => {
-      console.log(e.row);
       SetPayroll(e.row);
       SetisOpened(true);
     },
@@ -139,7 +138,7 @@ const Nominap = () => {
   };
 
   return (
-    <div>
+    <div className="container_formProvedores">
       <AgregarData
         isOpened={isOpened}
         SetisOpened={SetisOpened}
@@ -156,8 +155,8 @@ const Nominap = () => {
       <Upopup
         isOpened={isOpened}
         SetisOpened={SetisOpened}
-        QueryKey={['payroll']}
         Fstate={() => payroll}
+        QueryKey={['payrolls']}
       />
     </div>
   );
