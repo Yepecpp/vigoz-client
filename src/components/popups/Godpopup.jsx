@@ -4,7 +4,7 @@ import { Button, Select, MenuItem, TextField, Box } from '@mui/material';
 import { Formik, useFormik, ErrorMessage } from 'formik';
 import UserPopup from './user.p';
 import moment from 'moment';
-const Upopup = ({ Structure, Dstate, isOpened, SetisOpened, QueryKey }) => {
+const Godpopup = ({ Structure, Dstate, isOpened, SetisOpened, QueryKey }) => {
   if (!isOpened) return null;
   const queryClient = useQueryClient();
   const stateMutation = useMutation({
@@ -191,7 +191,7 @@ function RenderData(item, index, Formikh) {
           name={item.key}
           onChange={Formikh.handleChange}
           onBlur={Formikh.handleBlur}
-          value={Formikh.values[keys[keys.length - 1]]}
+          //value={Formikh.values[keys[keys.length - 1]]}
         >
           {item.enums.map((item, index) => (
             <MenuItem key={index} value={item.value}>
@@ -220,7 +220,7 @@ function RenderData(item, index, Formikh) {
                 key: `${item.key}.${val.key}`,
               },
               index,
-              { ...Formikh, values: Formikh.values[item.key] }
+              { ...Formikh, values: Formikh.values[keys[keys.length - 1]] }
             )
           )}
         </Box>
@@ -228,4 +228,4 @@ function RenderData(item, index, Formikh) {
     );
   }
 }
-export default Upopup;
+export default Godpopup;
