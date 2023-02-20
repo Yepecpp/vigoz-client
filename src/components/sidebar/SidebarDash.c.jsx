@@ -4,6 +4,7 @@ import { HiArchiveBoxArrowDown } from 'react-icons/hi2';
 import { IoMdExit } from 'react-icons/io';
 import { TbClipboardText } from 'react-icons/tb';
 import { useState } from 'react';
+import Dropdown from './Dropdown.c';
 import {
   FaHouseUser,
   FaOutdent,
@@ -75,6 +76,14 @@ const Navbar = () => {
               <p className={nameclass.one}>Dashboard</p>
             </Link>
           </li>
+
+          {/*<Dropdown
+          title={Nomina}
+          Icon={<FaOutdent/>}
+          childs={Pagos, Empleados}
+          />*/}
+
+
           <li className="item_sidebar">
             <div className="link_sidebar">
               <FaOutdent />
