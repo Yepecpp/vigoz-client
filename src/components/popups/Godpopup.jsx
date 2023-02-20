@@ -22,6 +22,7 @@ const Upopup = ({ Structure, Dstate, isOpened, SetisOpened, QueryKey }) => {
     },
     onSuccess: (values) => {
       queryClient.invalidateQueries([...QueryKey, values.id]);
+      SetisOpened(false);
     },
   });
   const Formikh = useFormik({
@@ -66,9 +67,7 @@ const Upopup = ({ Structure, Dstate, isOpened, SetisOpened, QueryKey }) => {
   );
 };
 function RenderData(item, index, Formikh) {
-  if (item.type === 'password') {
-    //console.log(item);
-  }
+  const keys = item.key.split('.');
   if (item.key === 'id')
     return Formikh.values[item.key] ? (
       <h1>
@@ -83,7 +82,7 @@ function RenderData(item, index, Formikh) {
           name={item.key}
           onChange={Formikh.handleChange}
           onBlur={Formikh.handleBlur}
-          value={Formikh.values[item.key]}
+          value={Formikh.values[keys[keys.length - 1]]}
         />
         <ErrorMessage
           name={item.key}
@@ -102,7 +101,7 @@ function RenderData(item, index, Formikh) {
           name={item.key}
           onChange={Formikh.handleChange}
           onBlur={Formikh.handleBlur}
-          value={Formikh.values[item.key]}
+          value={Formikh.values[keys[keys.length - 1]]}
           type="password"
         />
         <ErrorMessage
@@ -122,7 +121,7 @@ function RenderData(item, index, Formikh) {
           name={item.key}
           onChange={Formikh.handleChange}
           onBlur={Formikh.handleBlur}
-          value={Formikh.values[item.key]}
+          value={Formikh.values[keys[keys.length - 1]]}
           type="number"
         />
         <ErrorMessage
@@ -142,7 +141,7 @@ function RenderData(item, index, Formikh) {
           name={item.key}
           onChange={Formikh.handleChange}
           onBlur={Formikh.handleBlur}
-          value={Formikh.values[item.key]}
+          value={Formikh.values[keys[keys.length - 1]]}
         >
           <MenuItem value={true}>True</MenuItem>
           <MenuItem value={false}>False</MenuItem>
@@ -184,7 +183,7 @@ function RenderData(item, index, Formikh) {
           name={item.key}
           onChange={Formikh.handleChange}
           onBlur={Formikh.handleBlur}
-          value={Formikh.values[item.key]}
+          value={Formikh.values[keys[keys.length - 1]]}
         >
           {item.enums.map((item, index) => (
             <MenuItem key={index} value={item.value}>
@@ -205,15 +204,15 @@ function RenderData(item, index, Formikh) {
     return (
       <Box key={index} className="info_popup object">
         <h3>{item.header}</h3>
-        {Object.keys(item.value).map((key, index) =>
+        {item.value.map((val, index) =>
           RenderData(
             {
-              ...item.value[key],
-              key: item.key + '.' + item.value[key].key,
-              header: item.value[key].key,
+              ...val,
+              key: `${item.key}.${val.key}`,
+              orgKey: val.key,
             },
             index,
-            Formikh
+            { ...Formikh, values: Formikh.values[item.key] }
           )
         )}
       </Box>

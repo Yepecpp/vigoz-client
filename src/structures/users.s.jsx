@@ -4,7 +4,7 @@ export const userDefault = {
   login: {
     email: '',
     username: '',
-    provider: '',
+    provider: 'local',
     passw: '',
   },
   phone: '',
@@ -46,11 +46,6 @@ export const userStructure = [
             header: 'Local',
           },
         ],
-      },
-      {
-        key: 'passw',
-        type: 'text',
-        header: 'Password',
       },
     ],
   },
