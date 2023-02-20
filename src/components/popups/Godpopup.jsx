@@ -183,6 +183,7 @@ function RenderData(item, index, Formikh) {
       </Box>
     );
   }
+
   if (item.type === 'select') {
     return (
       <Box key={index} className="info_popup_ext">
@@ -191,7 +192,7 @@ function RenderData(item, index, Formikh) {
           name={item.key}
           onChange={Formikh.handleChange}
           onBlur={Formikh.handleBlur}
-          //value={Formikh.values[keys[keys.length - 1]]}
+          value={Formikh.values[keys[keys.length - 1]]}
         >
           {item.enums.map((item, index) => (
             <MenuItem key={index} value={item.value}>
@@ -208,6 +209,7 @@ function RenderData(item, index, Formikh) {
       </Box>
     );
   }
+
   if (item.type === 'object') {
     return (
       <div className="container_structure">

@@ -3,7 +3,7 @@ import AgregarData from './AgregarData.c';
 import Udatagrid from './datagrid/Udatagrid.c.jsx';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { AxiosClient } from '../libs/axios';
-import moment from 'moment';
+//import moment from 'moment';
 import Loading from './Loading.c';
 import Godpupop from './popups/Godpopup';
 import { expenseDefault, expenseStructure } from '../structures/expenses.s.jsx';
@@ -11,8 +11,8 @@ import { expenseDefault, expenseStructure } from '../structures/expenses.s.jsx';
 const Gasto = () => {
   const [isOpened, SetisOpened] = useState(false);
   const [search, SetSearch] = useState('');
-  const [expense, SetExpense] = useState();
-  const queryClient = useQueryClient(expenseDefault);
+  const [expense, SetExpense] = useState(expenseDefault);
+  const queryClient = useQueryClient(['expenses']);
   const expenseQuery = useQuery({
     queryKey: ['expenses'],
     queryFn: async () => {
@@ -22,7 +22,7 @@ const Gasto = () => {
       );
 
       response.data.expenses.forEach((expense) => {
-        expense.date_ex = moment(expense.date_ex).format('YYYY-MM-DD');
+        expense.date_ex = new Date(expense.date_ex);
       });
       return response.data;
     },
