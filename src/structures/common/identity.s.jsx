@@ -11,7 +11,10 @@ export const identityStructure = [
     key: 'type',
     type: 'select',
     header: 'Tipo',
-    enums: [{ value: 'id', header: 'Activo' }, 'passport'],
+    enums: [
+      { value: 'id', header: 'Activo' },
+      { value: 'passport', header: 'Pasaporte' },
+    ],
   },
   {
     key: 'number',

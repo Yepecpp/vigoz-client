@@ -2,6 +2,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { AxiosClient } from '../../libs/axios';
 import { Button, Select, MenuItem, TextField, Box } from '@mui/material';
 import { Formik, useFormik, ErrorMessage } from 'formik';
+import UserPopup from './user.p';
 import moment from 'moment';
 const Upopup = ({ Structure, Dstate, isOpened, SetisOpened, QueryKey }) => {
   if (!isOpened) return null;
@@ -155,6 +156,11 @@ function RenderData(item, index, Formikh) {
       </Box>
     );
   }
+  if (item.type === 'user') {
+    return (
+      <UserPopup keys={keys} item={item} Formikh={Formikh} index={index} />
+    );
+  }
   if (item.type === 'date') {
     return (
       <Box key={index} className="info_popup_ext">
@@ -163,7 +169,9 @@ function RenderData(item, index, Formikh) {
           name={item.key}
           onChange={Formikh.handleChange}
           onBlur={Formikh.handleBlur}
-          value={moment(Formikh.values[item.key]).format('yyyy-MM-DD')}
+          value={moment(Formikh.values[keys[keys.length - 1]]).format(
+            'yyyy-MM-DD'
+          )}
           type="date"
         />
         <ErrorMessage
@@ -212,7 +220,7 @@ function RenderData(item, index, Formikh) {
               orgKey: val.key,
             },
             index,
-            { ...Formikh, values: Formikh.values[item.key] }
+            { ...Formikh, values: Formikh.values[keys[keys.length - 1]] }
           )
         )}
       </Box>
