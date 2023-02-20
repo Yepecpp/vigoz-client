@@ -3,7 +3,6 @@ import { Button } from '@mui/material';
 import PerfilPopup from './popups/Perfil.popup';
 import { useAuthContext } from '../contexts/Auth';
 import Axios from 'axios';
-
 const Perfilc = () => {
   const [auth] = useAuthContext();
   const [files, setFiles] = useState();
@@ -20,7 +19,7 @@ const Perfilc = () => {
               }`}
             />
           </div>
-          <form
+          <form className='btn_t'
             encType="multipart/form-data"
             onSubmit={(e) => {
               e.preventDefault();
@@ -53,7 +52,7 @@ const Perfilc = () => {
               }}
             />
             <Button variant="outlined" className="upload_photo" type="submit">
-              Hacer el cambio
+              Cambiar imagen
             </Button>
           </form>
         </div>
@@ -67,6 +66,13 @@ const Perfilc = () => {
           <p htmlFor="ty">Usuario</p>
           <p className="username">{auth.data.login.username}</p>
         </div>
+        <Button 
+        variant="outlined"
+        className="edit_profile"
+        onClick={() => setIsOpened(!isOpened)}
+      >
+        Cambiar contraseña
+      </Button>
       </div>
 
       <div className="container_2">
@@ -84,17 +90,9 @@ const Perfilc = () => {
           <p>Usuario</p>
           <p className="username">{auth.data.login.username}</p>
         </div>
+        
       </div>
-      <Button
-        variant="outlined"
-        className="edit_profile"
-        onClick={() => {
-          setIsOpened(true);
-          console.log();
-        }}
-      >
-        Cambiar contraseña
-      </Button>
+    
       {isOpened ? (
         <PerfilPopup setIsOpened={setIsOpened} isOpened={isOpened} />
       ) : null}
