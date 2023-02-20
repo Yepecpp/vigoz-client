@@ -90,9 +90,7 @@ const Perfilc = () => {
           <p>Usuario</p>
           <p className="username">{auth.data.login.username}</p>
         </div>
-        
       </div>
-    
       {isOpened ? (
         <PerfilPopup setIsOpened={setIsOpened} isOpened={isOpened} />
       ) : null}
