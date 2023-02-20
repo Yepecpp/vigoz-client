@@ -7,7 +7,7 @@ export const storageDefault = {
   brach: '',
 };
 
-export const userStructure = [
+export const storageStructure = [
   {
     key: 'name',
     type: 'text',

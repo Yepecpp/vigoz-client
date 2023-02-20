@@ -108,10 +108,6 @@ const Navbar = () => {
             </div>
             <ul className="dropdown">
               <li className="dropdown_item">
-                <MdWork />
-                <Link to="/Dashboard/Almacenes">Produccion</Link>
-              </li>
-              <li className="dropdown_item">
                 <MdAccountBalance />
                 <Link to="/Dashboard/Almacenes">Almacenes</Link>
               </li>

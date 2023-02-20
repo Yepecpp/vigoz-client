@@ -6,16 +6,11 @@ import { AxiosClient } from '../libs/axios';
 import Loading from './Loading.c';
 import moment from 'moment';
 import Upopup from './popups/Godpopup';
+import { storageDefault, storageStructure } from '../structures/storage.s.jsx';
 
 const Almacenc = () => {
   const [isOpened, SetisOpened] = useState(false);
-  const [storage, SetStorage] = useState({
-    name: '',
-    category: '',
-    status: '',
-    maxCapacity: 0,
-    currentCapacity: 0,
-  });
+  const [storage, SetStorage] = useState(storageDefault);
   const [search, SetSearch] = useState('');
   const queryClient = useQueryClient();
   const storageQuery = useQuery({
@@ -76,6 +71,13 @@ const Almacenc = () => {
       ) : (
         <Udatagrid data={GridProps} />
       )}
+      <Upopup
+        isOpened={isOpened}
+        SetisOpened={SetisOpened}
+        QueryKey={['storages']}
+        Dstate={storage}
+        Structure={storageStructure}
+      />
     </div>
   );
 };

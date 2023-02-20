@@ -6,26 +6,13 @@ import { AxiosClient } from '../libs/axios';
 import moment from 'moment';
 import Loading from './Loading.c';
 import Upopup from './popups/Upopup.c';
+import { expenseDefault, expenseStructure } from '../structures/expenses.s.jsx';
 
 const Gasto = () => {
   const [isOpened, SetisOpened] = useState(false);
   const [search, SetSearch] = useState('');
-  const [expense, SetExpense] = useState({
-    category: '',
-    description: '',
-    amount: {
-      currency: '',
-      value: '',
-    },
-    date_ex: new Date(),
-    state: {
-      status: '',
-      method: '',
-    },
-    destination: '',
-    destinationData: '',
-  });
-  const queryClient = useQueryClient();
+  const [expense, SetExpense] = useState();
+  const queryClient = useQueryClient(expenseDefault);
   const expenseQuery = useQuery({
     queryKey: ['expenses'],
     queryFn: async () => {
@@ -108,8 +95,9 @@ const Gasto = () => {
       <Upopup
         isOpened={isOpened}
         SetisOpened={SetisOpened}
-        Fstate={() => expense}
+        Dstate={expense}
         QueryKey={['expenses']}
+        Structure={expenseStructure}
       />
     </div>
   );
