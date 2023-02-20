@@ -11,8 +11,8 @@ import {
   FaUserFriends,
   FaRegUser,
   FaUser,
-  FaTruck,
 } from 'react-icons/fa';
+import { MdWork, MdAccountBalance, MdAttachMoney } from 'react-icons/md';
 import { RiFolderUserFill } from 'react-icons/ri';
 
 const Navbar = () => {
@@ -82,6 +82,7 @@ const Navbar = () => {
             </div>
             <ul className="dropdown">
               <li className="dropdown_item">
+                <MdAttachMoney />
                 <Link to="/Dashboard/Nominas">Pagos</Link>
               </li>
               <li className="dropdown_item">
@@ -98,9 +99,11 @@ const Navbar = () => {
             </div>
             <ul className="dropdown">
               <li className="dropdown_item">
+                <MdWork />
                 <Link to="/Dashboard/Almacenes">Produccion</Link>
               </li>
               <li className="dropdown_item">
+                <MdAccountBalance />
                 <Link to="/Dashboard/Almacenes">Almacenes</Link>
               </li>
             </ul>

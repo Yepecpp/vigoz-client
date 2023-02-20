@@ -7,40 +7,40 @@ import Loading from './Loading.c';
 import moment from 'moment';
 import Upopup from './popups/Upopup.c';
 
-
 const Empleados = () => {
   const [isOpened, SetisOpened] = useState(false);
   const [search, SetSearch] = useState('');
-  const [employee, SetEmployee] = useState({User: '', 
-  address: {
-    Street1: '',
-    Street2: '',
-    City: '',
-    Zip: '',
-  },
-  indentity:{
-    Type: '',
-    Numbre: '',
-    Expiration: '',
-    Country: '',
-    State: '',
-  },
-  Birthday: new Date(),
-  datails: {
-    Position: '',
-    Type: '',
+  const [employee, SetEmployee] = useState({
+    User: '',
+    address: {
+      Street1: '',
+      Street2: '',
+      City: '',
+      Zip: '',
     },
-  Gender: '',
-  Salary: {
-    Amounts: '',
-    CurrencyCode: '',
+    indentity: {
+      Type: '',
+      Numbre: '',
+      Expiration: '',
+      Country: '',
+      State: '',
     },
-  Department: '',
-  Role: '',
-});
+    Birthday: new Date(),
+    datails: {
+      Position: '',
+      Type: '',
+    },
+    Gender: '',
+    Salary: {
+      Amounts: '',
+      CurrencyCode: '',
+    },
+    Department: '',
+    Role: '',
+  });
   const queryClient = useQueryClient();
   const employeeQuery = useQuery({
-    queryKey: ['Employees'],
+    queryKey: ['employees'],
     queryFn: async () => {
       const axios = AxiosClient();
       let response = await axios.get(
@@ -55,9 +55,9 @@ const Empleados = () => {
   });
 
   useEffect(() => {
-    if (!queryClient.isFetching(['Employees']))
+    if (!queryClient.isFetching(['employees']))
       setTimeout(() => {
-        queryClient.invalidateQueries(['Employees']);
+        queryClient.invalidateQueries(['employees']);
         employeeQuery.refetch();
       }, 1000);
   }, [search]);
@@ -144,7 +144,7 @@ const Empleados = () => {
       <Upopup
         isOpened={isOpened}
         SetisOpened={SetisOpened}
-        QueryKey={['Employees']}
+        QueryKey={['employees']}
         Fstate={() => employee}
       />
     </div>

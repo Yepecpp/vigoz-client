@@ -2,11 +2,7 @@ import React from 'react';
 import ProvedoresC from '../../components/Provedores.c.jsx';
 
 const Provedores = () => {
-  return (
-    <main>
-      <ProvedoresC />
-    </main>
-  );
+  return <ProvedoresC />;
 };
 
 export default Provedores;
