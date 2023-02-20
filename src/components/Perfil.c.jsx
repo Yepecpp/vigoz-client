@@ -88,7 +88,10 @@ const Perfilc = () => {
       <Button
         variant="outlined"
         className="edit_profile"
-        onClick={() => setIsOpened(!isOpened)}
+        onClick={() => {
+          setIsOpened(true);
+          console.log();
+        }}
       >
         Cambiar contraseña
       </Button>

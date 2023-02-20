@@ -4,7 +4,6 @@ import { HiArchiveBoxArrowDown } from 'react-icons/hi2';
 import { IoMdExit } from 'react-icons/io';
 import { TbClipboardText } from 'react-icons/tb';
 import { useState } from 'react';
-import Dropdown from './Dropdown.c';
 import {
   FaHouseUser,
   FaOutdent,
@@ -12,6 +11,7 @@ import {
   FaUserFriends,
   FaRegUser,
   FaUser,
+  FaRegAddressCard,
 } from 'react-icons/fa';
 import { MdWork, MdAccountBalance, MdAttachMoney } from 'react-icons/md';
 import { RiFolderUserFill } from 'react-icons/ri';
@@ -155,6 +155,12 @@ const Navbar = () => {
             <Link className="link_sidebar" to="/Dashboard/Clientes">
               <FaUserFriends />
               <p className={nameclass.one}>Clientes</p>
+            </Link>
+          </li>
+          <li className="item_sidebar">
+            <Link className="link_sidebar" to="/Dashboard/Departamento">
+              <FaRegAddressCard />
+              <p className={nameclass.one}>Departamento</p>
             </Link>
           </li>
 

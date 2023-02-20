@@ -19,8 +19,13 @@ import RegisterP from './pages/dashpages/Usuarios.p';
 import DistributionP from './pages/dashpages/Distribution.dash';
 import ProvedoresP from './pages/dashpages/Provedores.dash';
 import UsuariosP from './pages/dashpages/Usuarios.p';
+<<<<<<< HEAD
 import EmpleadosP from './pages/dashpages/Empleados.dash';
 import ProduccionP from './pages/dashpages/Produccion.dash';
+=======
+import Empleados from './pages/dashpages/Empleados.dash';
+import DepartamentoP from './pages/dashpages/Departamento.dash';
+>>>>>>> 3db7324d90aeaab44dfc4acdbb3de3aacbd78979
 
 const App = () => {
   return (
@@ -72,6 +77,10 @@ const App = () => {
             <Route
               path="Dashboard/Clientes"
               element={<Dashboard Comp={ClientesP} />}
+            />
+            <Route
+              path="Dashboard/Departamento"
+              element={<Dashboard Comp={DepartamentoP} />}
             />
             <Route
               path="Dashboard/Perfil"
