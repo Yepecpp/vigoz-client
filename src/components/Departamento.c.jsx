@@ -6,10 +6,11 @@ import { useQuery, useQueryClient } from '@tanstack/react-query';
 import AgregarData from './AgregarData.c';
 import { useEffect } from 'react';
 import Godpopup from './popups/Godpopup';
+import {departmentDefault, departmentStructure} from '../structures/department.s.jsx';
 
 const Departamento = () => {
   const [isOpened, SetisOpened] = useState(false);
-  const [department, SetDepartment] = useState({});
+  const [department, SetDepartment] = useState(departmentDefault);
   const [search, SetSearch] = useState('');
 
   const queryClient = useQueryClient();
@@ -68,6 +69,7 @@ const Departamento = () => {
         SetisOpened={SetisOpened}
         QueryKey={['departments']}
         Dstate={department}
+        Structure={departmentStructure}
       />
     </div>
   );

@@ -49,19 +49,19 @@ const Provedores = () => {
       { field: 'phone', headerName: 'Phone', width: 230 },
       {
         field: 'address.street1',
-        headerName: 'street',
+        headerName: 'Street',
         width: 130,
         valueGetter: (params) => params.row.address.street1,
       },
       {
         field: 'address.city',
-        headerName: 'city',
+        headerName: 'City',
         width: 130,
         valueGetter: (params) => params.row.address.city,
       },
       {
         field: 'address.zip',
-        headerName: 'zip',
+        headerName: 'Zip',
         width: 130,
         valueGetter: (params) => params.row.address.zip,
       },

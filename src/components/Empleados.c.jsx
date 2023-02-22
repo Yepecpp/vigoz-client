@@ -47,7 +47,7 @@ const Empleados = () => {
       { field: 'birthDate', headerName: 'Birth Date', width: 150 },
       {
         field: 'details.position',
-        headerName: 'Details',
+        headerName: 'Position',
         width: 150,
         valueGetter: (params) => params.row.details.position,
       },
