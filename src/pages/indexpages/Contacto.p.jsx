@@ -3,7 +3,7 @@ import Contactoc from '../../components/Contacto.c';
 
 const Contactop = () => {
   return (
-    <Contactoc />
+    <Contactoc /> 
   );
 };
 

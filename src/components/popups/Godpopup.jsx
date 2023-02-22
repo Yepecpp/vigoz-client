@@ -41,7 +41,7 @@ const Godpopup = ({ Structure, Dstate, isOpened, SetisOpened, QueryKey }) => {
   return (
     <Formik>
       <div className="container_popupClient">
-        <form onSubmit={Formikh.handleSubmit} className="container_form">
+        <form onSubmit={Formikh.handleSubmit} className="container_formPoppup">
           <div className="popup_client">
             {Formikh.values?.id ? (
               <h1>
@@ -67,6 +67,7 @@ const Godpopup = ({ Structure, Dstate, isOpened, SetisOpened, QueryKey }) => {
     </Formik>
   );
 };
+
 function RenderData(item, index, Formikh) {
   const keys = item.key.split('.');
   if (item.key === 'id')
