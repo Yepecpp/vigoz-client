@@ -2,7 +2,7 @@ import { Button } from '@mui/material';
 
 const AgregarData = ({ isOpened, SetisOpened, handleChange, search }) => {
   return (
-    <div className="container_agregar">
+    <div className="container_agregarP">
       <div className="controls_agregar">
         <div className="container_agregar">
           <label className="text_agregar">Search:</label>

@@ -157,6 +157,19 @@ body {
     &:hover {
       .dropdown {
         display: block;
+        display: flex;
+        flex-direction: column;
+        gap: 1vh;
+
+        .dropdown_item {
+          display: flex;
+          gap: 0.3vw;
+
+          &:hover {
+            scale: 1.2;
+            transition: ease 0.2s;
+          }
+        }
       }
     }
 

@@ -1,8 +1,8 @@
 // PopUp Client
 .container_popupClient {
   width: 100vw;
-  height: 108vh;
-  position: absolute;
+  height: 100vh;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
@@ -26,17 +26,23 @@
   width: 80%;
   height: 80%;
   background-color: #fff;
-  border-radius: 20px;
   animation: popup 0.2s;
   display: flex;
   flex-direction: column;
   gap: 2vh;
+  padding: 2vh 1vw;
+
+  h1 {
+    height: 5%;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+  }
 }
 
 .popup_client {
-  height: 80%;
-  outline: #000 solid 1px;
-  border-radius: 20px;
+  height: 90%;
   overflow: auto;
 }
 
@@ -44,7 +50,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column: 1 / -1;
-  gap: 2vw;
 }
 
 .container_popup {
@@ -64,13 +69,21 @@
 
 .info_popup {
   padding: 10px;
+  column-gap: 1vh;
+  row-gap: 1vh;
 
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 1vh;
+  }
   .info_popup_ext {
-    padding: 1vh 0;
+    width: 100%;
     display: flex;
-    gap: 0.5vw;
     align-items: center;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    gap: 0.8vh;
   }
 }
 
@@ -80,19 +93,19 @@
     gap: 1vh;
     justify-content: center;
   }
-} 
+}
 
 .close {
   color: #fff;
   font-size: 4rem;
   position: absolute;
-  top: 1vh;
-  left: 92.5vw;
+  top: 4vh;
+  left: 90vw;
 }
 
 .close:hover,
 .close:focus {
-  color: #aaaaaa;
+  color: #aaa;
   text-decoration: none;
   cursor: pointer;
 }

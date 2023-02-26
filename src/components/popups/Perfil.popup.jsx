@@ -40,7 +40,7 @@ const PerfilPopup = ({ setIsOpened }) => {
         >
           &times;
         </span>
-        <p>Cambiar Contraseña</p>
+        <h2>Cambiar Contraseña</h2>
         <div className="content-contra">
           <label htmlFor="" className="info_popup">
             Contraseña actual
@@ -66,11 +66,10 @@ const PerfilPopup = ({ setIsOpened }) => {
             value={passw.confirm}
             onChange={(e) => Setpassw({ ...passw, confirm: e.target.value })}
           />
-          <Box mt={3}>
+          <Box mt={3} className="btn_contra">
             <Button
               variant="outlined"
               type="submit"
-              className="btn_contra"
               onClick={() => {
                 SendData();
               }}

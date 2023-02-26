@@ -111,7 +111,7 @@ const Navbar = () => {
                 <Link to="/Dashboard/Almacenes">Almacenes</Link>
               </li>
               <li className="dropdown_item">
-                <MdAccountBalance />
+                <MdWork />
                 <Link to="/Dashboard/Produccion">Produccion</Link>
               </li>
             </ul>

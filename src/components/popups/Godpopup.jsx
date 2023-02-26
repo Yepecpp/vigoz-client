@@ -42,14 +42,14 @@ const Godpopup = ({ Structure, Dstate, isOpened, SetisOpened, QueryKey }) => {
     <Formik>
       <div className="container_popupClient">
         <form onSubmit={Formikh.handleSubmit} className="container_formPoppup">
+          {Formikh.values?.id ? (
+            <h1>
+              Edit {QueryKey[0]}: {Formikh.values?.name}
+            </h1>
+          ) : (
+            <h1>Create New {QueryKey[0]}</h1>
+          )}
           <div className="popup_client">
-            {Formikh.values?.id ? (
-              <h1>
-                Edit {QueryKey[0]}: {Formikh.values?.name}
-              </h1>
-            ) : (
-              <h1>Create New {QueryKey[0]}</h1>
-            )}
             <Box className="info_popup container_popup">
               {Structure.map((item, index) => {
                 return RenderData(item, index, Formikh);
