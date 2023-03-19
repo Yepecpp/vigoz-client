@@ -7,10 +7,13 @@
   left: 0;
   z-index: 10;
   background-color: #000000aa;
+  justify-content: center;
+  align-items: center;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 
 @keyframes popup {
   0% {
@@ -31,6 +34,13 @@
   flex-direction: column;
   gap: 2vh;
   padding: 2vh 1vw;
+
+  h3{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin: 0;
+  }
 
   h1 {
     height: 5%;
@@ -53,6 +63,7 @@
 }
 
 .container_popup {
+  height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   // .object has to take 2 columns instead of just one
@@ -62,7 +73,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     border: #000 solid 1px;
-    border-radius: 20px;
+    border-radius: 10px;
     justify-items: center;
   }
 }
@@ -72,11 +83,6 @@
   column-gap: 1vh;
   row-gap: 1vh;
 
-  h3 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin: 1vh;
-  }
   .info_popup_ext {
     width: 100%;
     display: flex;
@@ -84,6 +90,11 @@
     font-size: 1.2rem;
     font-weight: 500;
     gap: 0.8vh;
+
+    label{
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
   }
 }
 

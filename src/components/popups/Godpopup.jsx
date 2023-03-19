@@ -81,6 +81,13 @@ function RenderData(item, index, Formikh) {
       <Box key={index} className="info_popup_ext">
         <label htmlFor={item.key}>{item.header}</label>
         <TextField
+          sx={{
+            width: 1,
+            fieldset: {
+            border: 'solid 1px #000',
+            borderRadius: 5
+            }
+          }}
           name={item.key}
           onChange={Formikh.handleChange}
           onBlur={Formikh.handleBlur}
@@ -100,6 +107,13 @@ function RenderData(item, index, Formikh) {
       <Box key={index} className="info_popup_ext">
         <label htmlFor={item.key}>{item.header}</label>
         <TextField
+          sx={{
+            width: 1,
+            fieldset: {
+            border: 'solid 1px #000',
+            borderRadius: 5
+            }
+          }}
           name={item.key}
           onChange={Formikh.handleChange}
           onBlur={Formikh.handleBlur}
@@ -120,6 +134,13 @@ function RenderData(item, index, Formikh) {
       <Box key={index} className="info_popup_ext">
         <label htmlFor={item.key}>{item.header}</label>
         <TextField
+          sx={{
+            width: 1,
+            fieldset: {
+            border: 'solid 1px #000',
+            borderRadius: 5
+            }
+          }}
           name={item.key}
           onChange={Formikh.handleChange}
           onBlur={Formikh.handleBlur}
@@ -140,6 +161,13 @@ function RenderData(item, index, Formikh) {
       <Box key={index} className="info_popup_ext">
         <label htmlFor={item.key}>{item.header}</label>
         <Select
+          sx={{
+            width: 1,
+            fieldset: {
+            border: 'solid 1px #000',
+            borderRadius: 5
+            }
+          }}
           name={item.key}
           onChange={Formikh.handleChange}
           onBlur={Formikh.handleBlur}
@@ -167,6 +195,13 @@ function RenderData(item, index, Formikh) {
       <Box key={index} className="info_popup_ext">
         <label htmlFor={item.key}>{item.header}</label>
         <TextField
+          sx={{
+            width: 1,
+            fieldset: {
+            border: 'solid 1px #000',
+            borderRadius: 5
+            }
+          }}
           name={item.key}
           onChange={Formikh.handleChange}
           onBlur={Formikh.handleBlur}
@@ -190,6 +225,13 @@ function RenderData(item, index, Formikh) {
       <Box key={index} className="info_popup_ext">
         <label htmlFor={item.key}>{item.header}</label>
         <Select
+          sx={{
+            width: 1,
+            fieldset: {
+            border: 'solid 1px #000',
+            borderRadius: 5
+            }
+          }}
           name={item.key}
           onChange={Formikh.handleChange}
           onBlur={Formikh.handleBlur}
